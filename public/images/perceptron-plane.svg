@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Perceptron linear classifier placeholder">
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <rect x="120" y="80" width="960" height="520" rx="8" fill="#f8fbff" stroke="#dbe7f3" stroke-width="4"/>
+  <g stroke="#dbe7f3" stroke-width="2">
+    <path d="M120 210 H1080"/>
+    <path d="M120 340 H1080"/>
+    <path d="M120 470 H1080"/>
+    <path d="M360 80 V600"/>
+    <path d="M600 80 V600"/>
+    <path d="M840 80 V600"/>
+  </g>
+  <path d="M250 560 L930 120" stroke="#06b6d4" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#1d4ed8">
+    <circle cx="260" cy="200" r="22"/>
+    <circle cx="330" cy="290" r="22"/>
+    <circle cx="450" cy="210" r="22"/>
+    <circle cx="510" cy="330" r="22"/>
+    <circle cx="390" cy="420" r="22"/>
+  </g>
+  <g fill="#7c3aed">
+    <circle cx="730" cy="290" r="22"/>
+    <circle cx="820" cy="380" r="22"/>
+    <circle cx="900" cy="470" r="22"/>
+    <circle cx="965" cy="340" r="22"/>
+    <circle cx="760" cy="500" r="22"/>
+  </g>
+  <text x="380" y="660" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#172033">A single learned boundary</text>
+</svg>

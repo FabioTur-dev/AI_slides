@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="AI safety frontier placeholder">
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <path d="M600 90 L890 205 V385 C890 505 775 595 600 640 C425 595 310 505 310 385 V205 Z" fill="#f8fbff" stroke="#dbe7f3" stroke-width="5"/>
+  <path d="M600 150 L812 235 V380 C812 470 730 540 600 580 C470 540 388 470 388 380 V235 Z" fill="none" stroke="#1d4ed8" stroke-width="10"/>
+  <g font-family="Inter, Arial, sans-serif" font-weight="850" font-size="25" fill="#172033" text-anchor="middle">
+    <text x="600" y="295">Robustness</text>
+    <text x="600" y="355">Privacy</text>
+    <text x="600" y="415">Fairness</text>
+    <text x="600" y="475">Alignment</text>
+  </g>
+  <g fill="#06b6d4">
+    <circle cx="300" cy="170" r="28"/><circle cx="935" cy="245" r="28"/><circle cx="260" cy="500" r="28"/><circle cx="935" cy="520" r="28"/>
+  </g>
+  <g fill="#7c3aed">
+    <circle cx="170" cy="320" r="18"/><circle cx="1030" cy="370" r="18"/>
+  </g>
+  <text x="377" y="665" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#172033">Capability needs control</text>
+</svg>

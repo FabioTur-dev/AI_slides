@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Transformer attention placeholder">
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <g stroke="#dbe7f3" stroke-width="2">
+    <path d="M140 350 H1060"/>
+    <path d="M240 160 V560"/>
+    <path d="M440 160 V560"/>
+    <path d="M640 160 V560"/>
+    <path d="M840 160 V560"/>
+  </g>
+  <g fill="none" stroke-linecap="round" opacity="0.9">
+    <path d="M240 350 C340 120, 540 120, 640 350" stroke="#1d4ed8" stroke-width="8"/>
+    <path d="M440 350 C540 540, 740 540, 840 350" stroke="#06b6d4" stroke-width="8"/>
+    <path d="M240 350 C420 40, 760 40, 960 350" stroke="#7c3aed" stroke-width="6"/>
+    <path d="M440 350 C550 235, 730 235, 840 350" stroke="#10b981" stroke-width="7"/>
+  </g>
+  <g fill="#ffffff" stroke="#bfd5ee" stroke-width="4">
+    <rect x="170" y="300" width="140" height="100" rx="8"/>
+    <rect x="370" y="300" width="140" height="100" rx="8"/>
+    <rect x="570" y="300" width="140" height="100" rx="8"/>
+    <rect x="770" y="300" width="140" height="100" rx="8"/>
+    <rect x="970" y="300" width="140" height="100" rx="8"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#172033" font-size="26" font-weight="800" text-anchor="middle">
+    <text x="240" y="360">token</text>
+    <text x="440" y="360">token</text>
+    <text x="640" y="360">token</text>
+    <text x="840" y="360">token</text>
+    <text x="1040" y="360">token</text>
+  </g>
+</svg>

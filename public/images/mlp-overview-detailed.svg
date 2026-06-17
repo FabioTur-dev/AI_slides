@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Large clean MLP diagram</title>
+  <desc id="desc">Input layer, two hidden layers, and output layer with a few clean connections and one highlighted path.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fbff"/>
+    </linearGradient>
+    <linearGradient id="blue-grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="cyan-grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="purple-grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e9d5ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="620" rx="30" fill="#fbfdff"/>
+  <circle cx="150" cy="112" r="168" fill="#06b6d4" opacity="0.075"/>
+  <circle cx="770" cy="518" r="186" fill="#7c3aed" opacity="0.075"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" letter-spacing="0">
+    <g filter="url(#shadow)">
+      <rect x="38" y="42" width="824" height="498" rx="28" fill="url(#panel)" stroke="#d9e6f5" stroke-width="2"/>
+    </g>
+
+    <g stroke="#94a3b8" stroke-width="3.2" stroke-linecap="round" opacity="0.34">
+      <line x1="120" y1="158" x2="324" y2="124"/>
+      <line x1="120" y1="158" x2="324" y2="224"/>
+      <line x1="120" y1="258" x2="324" y2="224"/>
+      <line x1="120" y1="258" x2="324" y2="324"/>
+      <line x1="120" y1="358" x2="324" y2="324"/>
+      <line x1="120" y1="358" x2="324" y2="424"/>
+      <line x1="120" y1="458" x2="324" y2="324"/>
+      <line x1="120" y1="458" x2="324" y2="424"/>
+
+      <line x1="324" y1="124" x2="542" y2="188"/>
+      <line x1="324" y1="224" x2="542" y2="188"/>
+      <line x1="324" y1="224" x2="542" y2="300"/>
+      <line x1="324" y1="324" x2="542" y2="300"/>
+      <line x1="324" y1="324" x2="542" y2="412"/>
+      <line x1="324" y1="424" x2="542" y2="412"/>
+
+      <line x1="542" y1="188" x2="756" y2="246"/>
+      <line x1="542" y1="300" x2="756" y2="246"/>
+      <line x1="542" y1="300" x2="756" y2="362"/>
+      <line x1="542" y1="412" x2="756" y2="362"/>
+    </g>
+
+    <path d="M 120 258 C 210 238 244 230 324 224 S 452 256 542 300 S 650 334 756 362" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" opacity="0.9" filter="url(#glow)" marker-end="url(#arrow-cyan)"/>
+
+    <g stroke="#ffffff" stroke-width="8">
+      <circle cx="120" cy="158" r="32" fill="url(#blue-grad)"/>
+      <circle cx="120" cy="258" r="32" fill="url(#blue-grad)"/>
+      <circle cx="120" cy="358" r="32" fill="url(#blue-grad)"/>
+      <circle cx="120" cy="458" r="32" fill="url(#blue-grad)"/>
+
+      <circle cx="324" cy="124" r="34" fill="url(#cyan-grad)"/>
+      <circle cx="324" cy="224" r="36" fill="url(#purple-grad)"/>
+      <circle cx="324" cy="324" r="34" fill="url(#cyan-grad)"/>
+      <circle cx="324" cy="424" r="34" fill="url(#purple-grad)"/>
+
+      <circle cx="542" cy="188" r="35" fill="url(#purple-grad)"/>
+      <circle cx="542" cy="300" r="36" fill="url(#cyan-grad)"/>
+      <circle cx="542" cy="412" r="35" fill="url(#purple-grad)"/>
+
+      <circle cx="756" cy="246" r="36" fill="url(#blue-grad)"/>
+      <circle cx="756" cy="362" r="36" fill="url(#purple-grad)"/>
+    </g>
+
+    <g fill="#172033" font-size="23" font-weight="850" text-anchor="middle">
+      <text x="120" y="578">Input Layer</text>
+      <text x="324" y="578">Hidden Layer 1</text>
+      <text x="542" y="578">Hidden Layer 2</text>
+      <text x="756" y="578">Output Layer</text>
+    </g>
+  </g>
+</svg>

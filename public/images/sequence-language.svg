@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Sequential language modeling visual">
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <g fill="#f8fbff" stroke="#dbe7f3" stroke-width="4">
+    <rect x="110" y="180" width="980" height="170" rx="18"/>
+    <rect x="190" y="455" width="820" height="130" rx="18"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-weight="850" text-anchor="middle">
+    <g fill="#ffffff">
+      <rect x="170" y="230" width="130" height="70" rx="12" fill="#1d4ed8"/>
+      <rect x="330" y="230" width="130" height="70" rx="12" fill="#06b6d4"/>
+      <rect x="490" y="230" width="130" height="70" rx="12" fill="#7c3aed"/>
+      <rect x="650" y="230" width="130" height="70" rx="12" fill="#1d4ed8"/>
+      <rect x="810" y="230" width="130" height="70" rx="12" fill="#10b981"/>
+    </g>
+    <g fill="#ffffff" font-size="24">
+      <text x="235" y="274">token</text>
+      <text x="395" y="274">token</text>
+      <text x="555" y="274">token</text>
+      <text x="715" y="274">token</text>
+      <text x="875" y="274">token</text>
+    </g>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="7">
+    <path d="M300 265 H330" stroke="#94a3b8"/>
+    <path d="M460 265 H490" stroke="#94a3b8"/>
+    <path d="M620 265 H650" stroke="#94a3b8"/>
+    <path d="M780 265 H810" stroke="#94a3b8"/>
+    <path d="M235 300 C305 430, 445 430, 515 300" stroke="#1d4ed8" opacity="0.55"/>
+    <path d="M395 300 C480 510, 725 510, 875 300" stroke="#7c3aed" opacity="0.55"/>
+  </g>
+  <g fill="#172033" font-family="Inter, Arial, sans-serif" font-weight="850" font-size="28">
+    <text x="300" y="535">memory</text>
+    <text x="520" y="535">context</text>
+    <text x="745" y="535">prediction</text>
+  </g>
+  <g fill="#06b6d4">
+    <circle cx="270" cy="500" r="14"/>
+    <circle cx="490" cy="500" r="14"/>
+    <circle cx="720" cy="500" r="14"/>
+  </g>
+</svg>

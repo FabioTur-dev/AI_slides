@@ -1,0 +1,87 @@
+{
+  "deck": "From the Perceptron to Agentic AI",
+  "scope": "Slides 1, 3, and 7 through 12 local visuals",
+  "style": {
+    "description": "Premium academic AI keynote opening slide with a clean, modern, university-level visual identity.",
+    "palette": ["white", "deep blue", "electric blue", "cyan", "purple", "dark gray"],
+    "constraints": [
+      "Use local assets only.",
+      "No brand logos.",
+      "No external image URLs.",
+      "Keep all visual elements inside a 16:9-safe frame.",
+      "Leave clean negative space for title typography."
+    ]
+  },
+  "assets": [
+    {
+      "id": "slide-1-ai-evolution-hero",
+      "target": "public/images/slide-1-ai-evolution-hero.png",
+      "slides": [1],
+      "prompt": "Create a visually striking conceptual image representing the evolution of artificial intelligence from biological neuron to artificial neuron to neural network to transformer, generative AI, and agentic AI. Clean white or very light background with refined scientific depth, subtle glass panels, faint technical grid, and elegant lighting. Left-to-right evolution arc: organic neural signal motif, single artificial neuron, layered neural network, attention/token field, generative multimodal core, and an agentic system node with tools/environment feedback. Leave clean negative space on the left third for title text; main visual anchor on the right two-thirds. Premium academic keynote style inspired by OpenAI, NVIDIA, Apple keynote, and Google DeepMind. Blue, cyan, purple, and dark-gray accents. No readable text, no logos, no watermarks, no robot mascots, no dark background.",
+      "negative_prompt": "dark cluttered scene, brand logos, robot mascot, illegible tiny labels, generic stock photo, busy collage, overflow-prone composition"
+    },
+    {
+      "id": "slide-3-ai-capabilities",
+      "target": "public/images/slide-3-ai-capabilities.png",
+      "slides": [3],
+      "prompt": "Clean futuristic academic keynote illustration of an artificial intelligence core connecting five abstract capabilities: perception, learning, reasoning, generation, and action. White or very light background, subtle scientific grid, glassmorphism panels, refined blue/cyan/purple accents, soft shadows, elegant depth. A central abstract AI core made of luminous geometric nodes, with five connected capability streams around it represented only by abstract icons/shapes: eye/sensor motif, learning graph, reasoning network, generative spark/canvas, and action/tool/environment loop. Right-side hero visual with clean negative space on the left, high clarity, 16:9, professional university lecture and AI conference keynote style. No readable text, no labels, no logos, no watermark.",
+      "negative_prompt": "people, robot mascot, dark background, cluttered stock art, readable text, brand logos, watermark"
+    },
+    {
+      "id": "slide-7-perceptron-linear-boundary",
+      "target": "public/images/perceptron-linear-boundary.svg",
+      "slides": [7],
+      "prompt": "Clean academic keynote visualization of a perceptron learning a linear decision boundary. Two groups of 2D points in blue and purple, separated by a glowing straight line, subtle arrows showing the boundary moving during learning. White background, blue purple cyan accents, elegant scientific style, no text inside image, 16:9.",
+      "negative_prompt": "stock photo, busy labels, equations, dark background, cluttered plot, unreadable text, watermark"
+    },
+    {
+      "id": "slide-8-xor-perceptron-limitation",
+      "target": "public/images/xor-perceptron-limitation.svg",
+      "slides": [8],
+      "prompt": "Clean academic keynote comparison visualization: left panel shows linearly separable 2D points separated by one straight line; right panel shows XOR pattern with diagonal classes and a crossed-out straight boundary. White background, blue purple cyan accents, elegant scientific style, no text inside image, 16:9.",
+      "negative_prompt": "stock photo, excessive labels, dense equations, dark background, cluttered chart, watermark"
+    },
+    {
+      "id": "slide-9-one-neuron-to-network",
+      "target": "public/images/one-neuron-to-network.svg",
+      "slides": [9],
+      "prompt": "Clean premium academic keynote diagram showing a conceptual transition from one artificial neuron/perceptron to many connected neurons in layers. Left: a single neuron with one simple linear boundary. Center: elegant glowing connector arrow. Right: input layer, two hidden layers, output layer with connected nodes and richer abstract boundaries. White background, blue cyan purple accents, soft shadows, no readable text inside the image, 16:9.",
+      "negative_prompt": "stock photo, robot, dark background, clutter, dense equations, readable labels, watermark"
+    },
+    {
+      "id": "slide-10-lines-to-representations",
+      "target": "public/images/lines-to-representations.svg",
+      "slides": [10],
+      "prompt": "Clean academic keynote diagram showing the shift from linear boundaries to learned representations. Left: raw nonlinear or XOR-like data with blue and purple points. Middle: two small hidden layers transforming the data. Right: useful representation space where classes are easier to separate with a clean boundary. White background, blue cyan purple accents, modern scientific style, no readable text inside the image, 16:9.",
+      "negative_prompt": "stock photo, excessive labels, equations, dark background, cluttered chart, watermark"
+    },
+    {
+      "id": "slide-11-forward-propagation-flow",
+      "target": "public/images/forward-propagation-flow.svg",
+      "slides": [11],
+      "prompt": "Clean premium academic keynote diagram showing forward propagation through a neural network. Input feature nodes flow through Hidden Layer 1, Hidden Layer 2, and into an output prediction. Use connected neural nodes, glowing directional arrows, white background, blue cyan purple accents, subtle grid, soft shadows, no readable text inside the image, 16:9.",
+      "negative_prompt": "stock photo, robot, dark background, clutter, dense equations, readable labels, watermark"
+    },
+    {
+      "id": "slide-12-loss-feedback-loop",
+      "target": "public/images/loss-feedback-loop.svg",
+      "slides": [12],
+      "prompt": "Clean premium academic keynote diagram introducing loss function intuitively. Prediction and target comparison flows to error, then highlighted loss value, then update signal with a feedback arrow returning toward the network. White background, blue cyan purple accents, rounded panels, glowing arrows, soft shadows, no readable text inside the image, 16:9.",
+      "negative_prompt": "stock photo, dense formulas, dark background, cluttered chart, readable labels, watermark"
+    },
+    {
+      "id": "cnn-imagenet-real-image-grid",
+      "target": "public/images/imagenet-cat.jpg, public/images/imagenet-dog.jpg, public/images/imagenet-duck.jpg, public/images/imagenet-sunflower.jpg, public/images/imagenet-car.jpg, public/images/imagenet-airplane.jpg",
+      "slides": [24],
+      "prompt": "Replaced the synthetic ImageNet-style placeholder grid with local open-license real natural image examples from Wikimedia Commons: tabby cat, golden retriever, mallard, sunflower, car, and aircraft. These images are used to visually evoke ImageNet-style category diversity while avoiding unverified copyrighted ImageNet dataset photos.",
+      "negative_prompt": "copyrighted ImageNet photos without clear license, stock-watermarked images, logos, synthetic placeholders, abstract category blocks"
+    },
+    {
+      "id": "cnn-filter-window-placeholder",
+      "target": "slides.md inline CSS/SVG visual",
+      "slides": [27, 29],
+      "prompt": "Create a premium academic illustration showing a convolutional filter scanning a local window over an image and producing feature maps. White/light background, blue cyan purple accents, clean grid, glowing local receptive field, elegant arrows, minimal labels, no logos, no text-heavy diagram.",
+      "negative_prompt": "messy technical diagram, tiny unreadable labels, dark background, photorealistic faces, watermarks"
+    }
+  ]
+}

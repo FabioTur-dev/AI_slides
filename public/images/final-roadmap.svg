@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Final AI evolution roadmap visual">
+  <defs>
+    <linearGradient id="roadGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="0.45" stop-color="#06b6d4"/>
+      <stop offset="0.75" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <path d="M110 545 C260 210, 405 610, 570 350 S800 120, 1070 210" fill="none" stroke="url(#roadGrad)" stroke-width="14" stroke-linecap="round"/>
+  <g fill="#ffffff" stroke="#dbe7f3" stroke-width="4">
+    <circle cx="150" cy="520" r="68"/>
+    <circle cx="365" cy="345" r="68"/>
+    <circle cx="585" cy="360" r="68"/>
+    <circle cx="805" cy="235" r="68"/>
+    <circle cx="1030" cy="210" r="68"/>
+  </g>
+  <g fill="#172033" font-family="Inter, Arial, sans-serif" font-weight="850" font-size="25" text-anchor="middle">
+    <text x="150" y="528">Neuron</text>
+    <text x="365" y="353">Depth</text>
+    <text x="585" y="368">Attention</text>
+    <text x="805" y="243">LLMs</text>
+    <text x="1030" y="218">Agents</text>
+  </g>
+  <g fill="#1d4ed8">
+    <circle cx="150" cy="520" r="14"/>
+    <circle cx="365" cy="345" r="14"/>
+    <circle cx="585" cy="360" r="14"/>
+    <circle cx="805" cy="235" r="14"/>
+    <circle cx="1030" cy="210" r="14"/>
+  </g>
+  <g fill="none" stroke="#bfd5ee" stroke-width="3">
+    <rect x="225" y="575" width="750" height="72" rx="18"/>
+    <path d="M275 611 H925"/>
+  </g>
+  <g fill="#172033" font-family="Inter, Arial, sans-serif" font-weight="850" font-size="24">
+    <text x="250" y="625">representation</text>
+    <text x="500" y="625">scale</text>
+    <text x="685" y="625">agency</text>
+    <text x="840" y="625">responsibility</text>
+  </g>
+</svg>

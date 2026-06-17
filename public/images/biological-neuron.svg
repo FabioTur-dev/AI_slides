@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Biological neuron placeholder">
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M330 350 C250 245, 185 230, 110 170" stroke="#1d4ed8" stroke-width="12"/>
+    <path d="M340 360 C240 360, 180 420, 90 485" stroke="#06b6d4" stroke-width="10"/>
+    <path d="M360 320 C300 170, 250 110, 230 60" stroke="#7c3aed" stroke-width="9"/>
+    <path d="M485 352 C650 330, 770 350, 930 260 S1090 180, 1160 205" stroke="#1d4ed8" stroke-width="16"/>
+    <path d="M450 392 C630 470, 780 500, 980 450" stroke="#06b6d4" stroke-width="8"/>
+  </g>
+  <circle cx="405" cy="350" r="106" fill="#f5f9ff" stroke="#dbe7f3" stroke-width="4"/>
+  <circle cx="405" cy="350" r="36" fill="#7c3aed" opacity="0.88"/>
+  <g fill="#06b6d4">
+    <circle cx="170" cy="215" r="12"/>
+    <circle cx="145" cy="455" r="12"/>
+    <circle cx="250" cy="112" r="12"/>
+    <circle cx="925" cy="262" r="12"/>
+    <circle cx="990" cy="448" r="12"/>
+  </g>
+  <text x="300" y="615" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#172033">Signal integration in a connected cell</text>
+</svg>

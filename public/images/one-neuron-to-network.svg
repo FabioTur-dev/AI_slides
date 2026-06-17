@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">One neuron to many neurons</title>
+  <desc id="desc">A premium vector transition from one perceptron with one linear boundary to many connected neurons in layered form.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="48%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fbff"/>
+    </linearGradient>
+    <radialGradient id="blue-node" cx="38%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </radialGradient>
+    <radialGradient id="cyan-node" cx="38%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </radialGradient>
+    <radialGradient id="purple-node" cx="38%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#e9d5ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 H 0 V 44" fill="none" stroke="#d9e6f5" stroke-width="1" opacity="0.48"/>
+    </pattern>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="760" rx="38" fill="#fbfdff"/>
+  <circle cx="178" cy="134" r="190" fill="#06b6d4" opacity="0.075"/>
+  <circle cx="1182" cy="614" r="230" fill="#7c3aed" opacity="0.075"/>
+  <g filter="url(#shadow)">
+    <rect x="58" y="82" width="396" height="596" rx="30" fill="url(#panel)"/>
+    <rect x="916" y="82" width="426" height="596" rx="30" fill="url(#panel)"/>
+  </g>
+  <rect x="86" y="112" width="340" height="536" rx="24" fill="url(#grid)" stroke="#d9e6f5" stroke-width="2"/>
+  <rect x="944" y="112" width="370" height="536" rx="24" fill="url(#grid)" stroke="#d9e6f5" stroke-width="2"/>
+  <path d="M 128 568 L 386 426" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <g stroke="#ffffff" stroke-width="6">
+    <circle cx="154" cy="508" r="17" fill="url(#blue-node)"/>
+    <circle cx="208" cy="548" r="15" fill="url(#blue-node)"/>
+    <circle cx="258" cy="494" r="17" fill="url(#blue-node)"/>
+    <circle cx="314" cy="422" r="16" fill="url(#purple-node)"/>
+    <circle cx="366" cy="390" r="15" fill="url(#purple-node)"/>
+  </g>
+  <g opacity="0.94">
+    <line x1="138" y1="222" x2="252" y2="338" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="138" y1="338" x2="252" y2="338" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="138" y1="454" x2="252" y2="338" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="322" y1="338" x2="382" y2="338" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="138" cy="222" r="17" fill="url(#blue-node)" stroke="#fff" stroke-width="5"/>
+    <circle cx="138" cy="338" r="17" fill="url(#cyan-node)" stroke="#fff" stroke-width="5"/>
+    <circle cx="138" cy="454" r="17" fill="url(#purple-node)" stroke="#fff" stroke-width="5"/>
+    <circle cx="286" cy="338" r="42" fill="#ffffff" stroke="url(#accent)" stroke-width="9"/>
+    <circle cx="382" cy="338" r="16" fill="url(#purple-node)" stroke="#fff" stroke-width="5"/>
+  </g>
+  <path d="M 520 380 C 632 260 768 260 880 380" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <path d="M 548 472 C 642 544 756 544 850 472" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 18" opacity="0.5"/>
+  <g stroke="#94a3b8" stroke-width="3.2" stroke-linecap="round" opacity="0.68">
+    <line x1="990" y1="190" x2="1080" y2="150"/><line x1="990" y1="190" x2="1080" y2="250"/><line x1="990" y1="190" x2="1080" y2="350"/><line x1="990" y1="190" x2="1080" y2="450"/>
+    <line x1="990" y1="320" x2="1080" y2="150"/><line x1="990" y1="320" x2="1080" y2="250"/><line x1="990" y1="320" x2="1080" y2="350"/><line x1="990" y1="320" x2="1080" y2="450"/>
+    <line x1="990" y1="450" x2="1080" y2="150"/><line x1="990" y1="450" x2="1080" y2="250"/><line x1="990" y1="450" x2="1080" y2="350"/><line x1="990" y1="450" x2="1080" y2="450"/>
+    <line x1="1080" y1="150" x2="1172" y2="200"/><line x1="1080" y1="250" x2="1172" y2="200"/><line x1="1080" y1="350" x2="1172" y2="200"/><line x1="1080" y1="450" x2="1172" y2="200"/>
+    <line x1="1080" y1="150" x2="1172" y2="330"/><line x1="1080" y1="250" x2="1172" y2="330"/><line x1="1080" y1="350" x2="1172" y2="330"/><line x1="1080" y1="450" x2="1172" y2="330"/>
+    <line x1="1080" y1="150" x2="1172" y2="460"/><line x1="1080" y1="250" x2="1172" y2="460"/><line x1="1080" y1="350" x2="1172" y2="460"/><line x1="1080" y1="450" x2="1172" y2="460"/>
+    <line x1="1172" y1="200" x2="1260" y2="280"/><line x1="1172" y1="330" x2="1260" y2="280"/><line x1="1172" y1="460" x2="1260" y2="280"/>
+    <line x1="1172" y1="200" x2="1260" y2="410"/><line x1="1172" y1="330" x2="1260" y2="410"/><line x1="1172" y1="460" x2="1260" y2="410"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="6">
+    <circle cx="990" cy="190" r="19" fill="url(#blue-node)"/>
+    <circle cx="990" cy="320" r="19" fill="url(#cyan-node)"/>
+    <circle cx="990" cy="450" r="19" fill="url(#purple-node)"/>
+    <circle cx="1080" cy="150" r="21" fill="url(#blue-node)"/>
+    <circle cx="1080" cy="250" r="21" fill="url(#cyan-node)"/>
+    <circle cx="1080" cy="350" r="21" fill="url(#purple-node)"/>
+    <circle cx="1080" cy="450" r="21" fill="url(#blue-node)"/>
+    <circle cx="1172" cy="200" r="22" fill="url(#cyan-node)"/>
+    <circle cx="1172" cy="330" r="22" fill="url(#purple-node)"/>
+    <circle cx="1172" cy="460" r="22" fill="url(#blue-node)"/>
+    <circle cx="1260" cy="280" r="23" fill="url(#cyan-node)"/>
+    <circle cx="1260" cy="410" r="23" fill="url(#purple-node)"/>
+  </g>
+  <path d="M 964 594 C 1044 528 1138 536 1212 592" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 986 548 C 1060 604 1150 606 1228 540" fill="none" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+</svg>

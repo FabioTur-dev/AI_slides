@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Generative AI modalities visual">
+  <defs>
+    <linearGradient id="genGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="0.5" stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <circle cx="600" cy="360" r="112" fill="#172033"/>
+  <text x="600" y="372" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" fill="#ffffff">Generate</text>
+  <g fill="#f8fbff" stroke="#dbe7f3" stroke-width="4">
+    <rect x="115" y="105" width="260" height="160" rx="18"/>
+    <rect x="825" y="105" width="260" height="160" rx="18"/>
+    <rect x="115" y="500" width="260" height="160" rx="18"/>
+    <rect x="825" y="500" width="260" height="160" rx="18"/>
+  </g>
+  <g fill="none" stroke="url(#genGrad)" stroke-width="8" stroke-linecap="round">
+    <path d="M375 185 C450 205, 520 255, 555 310"/>
+    <path d="M825 185 C750 205, 680 255, 645 310"/>
+    <path d="M375 580 C450 550, 520 490, 555 410"/>
+    <path d="M825 580 C750 550, 680 490, 645 410"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-weight="850" fill="#172033" font-size="28" text-anchor="middle">
+    <text x="245" y="175">Text</text>
+    <text x="955" y="175">Images</text>
+    <text x="245" y="570">Audio</text>
+    <text x="955" y="570">Code</text>
+  </g>
+  <g stroke-linecap="round" stroke-width="8">
+    <path d="M190 220 H300" stroke="#1d4ed8"/>
+    <path d="M190 238 H275" stroke="#06b6d4"/>
+    <rect x="900" y="205" width="110" height="38" rx="8" fill="#7c3aed" stroke="none"/>
+    <path d="M190 605 C220 570, 250 640, 280 605 S330 605, 345 590" fill="none" stroke="#10b981"/>
+    <path d="M900 610 H1010 M900 632 H970" stroke="#1d4ed8"/>
+  </g>
+</svg>

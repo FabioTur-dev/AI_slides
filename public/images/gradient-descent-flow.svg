@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Gradient descent intuition</title>
+  <desc id="desc">A clean loss curve showing gradient descent steps moving downhill toward a minimum.</desc>
+  <defs>
+    <linearGradient id="curve" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="step" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="55%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadow" x="-14%" y="-18%" width="128%" height="136%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="720" rx="36" fill="#fbfdff"/>
+  <circle cx="220" cy="130" r="178" fill="#06b6d4" opacity="0.075"/>
+  <circle cx="1160" cy="600" r="224" fill="#7c3aed" opacity="0.075"/>
+  <rect x="58" y="84" width="1284" height="552" rx="32" fill="#ffffff" stroke="#d9e6f5" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="120" y="126" width="1160" height="432" rx="24" fill="#f8fbff" stroke="#d9e6f5" stroke-width="2"/>
+
+  <g stroke="#d9e6f5" stroke-width="2">
+    <line x1="210" y1="496" x2="1204" y2="496"/>
+    <line x1="210" y1="406" x2="1204" y2="406"/>
+    <line x1="210" y1="316" x2="1204" y2="316"/>
+    <line x1="210" y1="226" x2="1204" y2="226"/>
+    <line x1="266" y1="176" x2="266" y2="514"/>
+    <line x1="496" y1="176" x2="496" y2="514"/>
+    <line x1="726" y1="176" x2="726" y2="514"/>
+    <line x1="956" y1="176" x2="956" y2="514"/>
+  </g>
+
+  <text x="184" y="220" text-anchor="middle" transform="rotate(-90 184 220)" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#5c6678">Loss</text>
+  <text x="1122" y="536" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#5c6678">Weight value</text>
+
+  <path d="M 250 468 C 360 218 520 164 652 356 C 762 516 898 520 1042 330 C 1118 230 1172 196 1210 190" fill="none" stroke="url(#curve)" stroke-width="11" stroke-linecap="round" filter="url(#softGlow)"/>
+
+  <g fill="none" stroke="url(#step)" stroke-width="7" stroke-linecap="round" filter="url(#softGlow)">
+    <path d="M 1018 308 C 948 364 902 402 846 424" marker-end="url(#arrow)"/>
+    <path d="M 844 424 C 790 456 742 462 696 444" marker-end="url(#arrow)"/>
+    <path d="M 696 444 C 646 422 620 388 608 354" marker-end="url(#arrow)"/>
+  </g>
+
+  <g stroke="#ffffff" stroke-width="7">
+    <circle cx="1036" cy="302" r="22" fill="#7c3aed"/>
+    <circle cx="846" cy="424" r="22" fill="#06b6d4"/>
+    <circle cx="696" cy="444" r="22" fill="#1d4ed8"/>
+    <circle cx="608" cy="354" r="24" fill="#7c3aed"/>
+  </g>
+
+  <rect x="806" y="126" width="344" height="62" rx="31" fill="#0f172a" opacity="0.94"/>
+  <text x="978" y="164" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="780" fill="#ffffff">move opposite the gradient</text>
+
+  <rect x="432" y="470" width="352" height="58" rx="29" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+  <text x="608" y="506" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#172033">repeat until the loss is lower</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Forward propagation neural flow</title>
+  <desc id="desc">A polished horizontal neural network pipeline showing input features flowing through two hidden layers into an output prediction.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fbff"/>
+    </linearGradient>
+    <radialGradient id="blue" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </radialGradient>
+    <radialGradient id="cyan" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </radialGradient>
+    <radialGradient id="purple" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#e9d5ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 H 0 V 44" fill="none" stroke="#d9e6f5" stroke-width="1" opacity="0.46"/>
+    </pattern>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="760" rx="38" fill="#fbfdff"/>
+  <circle cx="210" cy="126" r="190" fill="#06b6d4" opacity="0.075"/>
+  <circle cx="1178" cy="616" r="230" fill="#7c3aed" opacity="0.075"/>
+  <rect x="56" y="104" width="1288" height="536" rx="32" fill="url(#panel)" filter="url(#shadow)"/>
+  <rect x="88" y="136" width="1224" height="472" rx="26" fill="url(#grid)" stroke="#d9e6f5" stroke-width="2"/>
+  <path d="M 170 560 C 370 620 616 620 822 568 C 1014 520 1164 522 1268 560" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" opacity="0.34"/>
+  <g stroke="#94a3b8" stroke-width="3.2" stroke-linecap="round" opacity="0.55">
+    <line x1="210" y1="230" x2="462" y2="170"/><line x1="210" y1="230" x2="462" y2="268"/><line x1="210" y1="230" x2="462" y2="366"/><line x1="210" y1="230" x2="462" y2="464"/>
+    <line x1="210" y1="348" x2="462" y2="170"/><line x1="210" y1="348" x2="462" y2="268"/><line x1="210" y1="348" x2="462" y2="366"/><line x1="210" y1="348" x2="462" y2="464"/>
+    <line x1="210" y1="466" x2="462" y2="170"/><line x1="210" y1="466" x2="462" y2="268"/><line x1="210" y1="466" x2="462" y2="366"/><line x1="210" y1="466" x2="462" y2="464"/>
+    <line x1="462" y1="170" x2="716" y2="222"/><line x1="462" y1="268" x2="716" y2="222"/><line x1="462" y1="366" x2="716" y2="222"/><line x1="462" y1="464" x2="716" y2="222"/>
+    <line x1="462" y1="170" x2="716" y2="348"/><line x1="462" y1="268" x2="716" y2="348"/><line x1="462" y1="366" x2="716" y2="348"/><line x1="462" y1="464" x2="716" y2="348"/>
+    <line x1="462" y1="170" x2="716" y2="474"/><line x1="462" y1="268" x2="716" y2="474"/><line x1="462" y1="366" x2="716" y2="474"/><line x1="462" y1="464" x2="716" y2="474"/>
+    <line x1="716" y1="222" x2="970" y2="288"/><line x1="716" y1="348" x2="970" y2="288"/><line x1="716" y1="474" x2="970" y2="288"/>
+    <line x1="716" y1="222" x2="970" y2="428"/><line x1="716" y1="348" x2="970" y2="428"/><line x1="716" y1="474" x2="970" y2="428"/>
+  </g>
+  <g stroke="url(#accent)" stroke-width="23" stroke-linecap="round" opacity="0.22" filter="url(#glow)">
+    <path d="M 262 348 H 406"/>
+    <path d="M 520 348 H 656"/>
+    <path d="M 774 348 H 914"/>
+    <path d="M 1026 358 H 1174"/>
+  </g>
+  <g stroke="url(#accent)" stroke-width="13" stroke-linecap="round" opacity="1" filter="url(#glow)">
+    <path d="M 262 348 H 406" marker-end="url(#arrow)"/>
+    <path d="M 520 348 H 656" marker-end="url(#arrow)"/>
+    <path d="M 774 348 H 914" marker-end="url(#arrow)"/>
+    <path d="M 1026 358 H 1174" marker-end="url(#arrow)"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="7">
+    <circle cx="210" cy="230" r="24" fill="url(#blue)"/>
+    <circle cx="210" cy="348" r="24" fill="url(#cyan)"/>
+    <circle cx="210" cy="466" r="24" fill="url(#purple)"/>
+    <circle cx="462" cy="170" r="26" fill="url(#blue)"/>
+    <circle cx="462" cy="268" r="26" fill="url(#cyan)"/>
+    <circle cx="462" cy="366" r="26" fill="url(#purple)"/>
+    <circle cx="462" cy="464" r="26" fill="url(#blue)"/>
+    <circle cx="716" cy="222" r="27" fill="url(#cyan)"/>
+    <circle cx="716" cy="348" r="27" fill="url(#purple)"/>
+    <circle cx="716" cy="474" r="27" fill="url(#blue)"/>
+    <circle cx="970" cy="288" r="29" fill="url(#cyan)"/>
+    <circle cx="970" cy="428" r="29" fill="url(#purple)"/>
+  </g>
+  <rect x="1190" y="284" width="70" height="148" rx="35" fill="#ffffff" stroke="url(#accent)" stroke-width="8" filter="url(#glow)"/>
+  <circle cx="1225" cy="328" r="13" fill="url(#cyan)"/>
+  <circle cx="1225" cy="386" r="13" fill="url(#purple)"/>
+</svg>

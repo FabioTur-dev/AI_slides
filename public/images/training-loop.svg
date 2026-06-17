@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Neural network training loop</title>
+  <desc id="desc">A polished loop diagram with spacious step cards for forward pass, compute loss, backpropagation, and update weights.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="48%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="returnAccent" x1="1" x2="0" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadow" x="-14%" y="-18%" width="128%" height="136%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="softGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
+    </marker>
+    <marker id="returnArrow" viewBox="0 0 10 10" refX="1.4" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="720" rx="36" fill="#fbfdff"/>
+  <circle cx="230" cy="126" r="180" fill="#06b6d4" opacity="0.075"/>
+  <circle cx="1170" cy="586" r="220" fill="#7c3aed" opacity="0.075"/>
+  <rect x="54" y="86" width="1292" height="548" rx="32" fill="#ffffff" stroke="#d9e6f5" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="94" y="136" width="1212" height="408" rx="26" fill="#f8fbff" stroke="#d9e6f5" stroke-width="2"/>
+
+  <g fill="none" stroke-linecap="round" stroke-width="7" opacity="0.92" filter="url(#softGlow)">
+    <path d="M 404 258 H 512" stroke="url(#accent)" marker-end="url(#arrow)"/>
+    <path d="M 774 258 H 882" stroke="url(#accent)" marker-end="url(#arrow)"/>
+    <path d="M 1138 326 C 1160 356 1160 392 1138 422" stroke="url(#accent)" marker-end="url(#arrow)"/>
+  </g>
+
+  <path d="M 760 488 C 592 564 344 558 238 450" fill="none" stroke="url(#returnAccent)" stroke-width="12" stroke-linecap="round" opacity="0.11" filter="url(#softGlow)"/>
+  <path d="M 760 488 C 592 564 344 558 238 450" fill="none" stroke="url(#returnAccent)" stroke-width="6" stroke-linecap="round" opacity="0.95" filter="url(#softGlow)" marker-end="url(#returnArrow)"/>
+
+  <g>
+    <rect x="122" y="196" width="282" height="134" rx="18" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+    <rect x="122" y="196" width="282" height="7" rx="3.5" fill="url(#accent)"/>
+    <circle cx="172" cy="263" r="22" fill="#1d4ed8"/>
+    <text x="172" y="270" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="850" fill="#ffffff">1</text>
+    <text x="212" y="252" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#172033">Forward pass</text>
+    <text x="212" y="288" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#5c6678">make a prediction</text>
+  </g>
+
+  <g>
+    <rect x="492" y="196" width="282" height="134" rx="18" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+    <rect x="492" y="196" width="282" height="7" rx="3.5" fill="url(#accent)"/>
+    <circle cx="542" cy="263" r="22" fill="#06b6d4"/>
+    <text x="542" y="270" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="850" fill="#ffffff">2</text>
+    <text x="582" y="252" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#172033">Compute loss</text>
+    <text x="582" y="288" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#5c6678">measure error</text>
+  </g>
+
+  <g>
+    <rect x="862" y="196" width="308" height="134" rx="18" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+    <rect x="862" y="196" width="308" height="7" rx="3.5" fill="url(#accent)"/>
+    <circle cx="912" cy="263" r="22" fill="#7c3aed"/>
+    <text x="912" y="270" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="850" fill="#ffffff">3</text>
+    <text x="952" y="252" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="850" fill="#172033">Backpropagation</text>
+    <text x="952" y="288" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#5c6678">send error backward</text>
+  </g>
+
+  <g>
+    <rect x="812" y="400" width="318" height="134" rx="18" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+    <rect x="812" y="400" width="318" height="7" rx="3.5" fill="url(#returnAccent)"/>
+    <circle cx="862" cy="467" r="22" fill="#7c3aed"/>
+    <text x="862" y="474" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="850" fill="#ffffff">4</text>
+    <text x="902" y="456" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#172033">Update weights</text>
+    <text x="902" y="492" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#5c6678">change parameters</text>
+  </g>
+
+  <rect x="248" y="414" width="406" height="50" rx="25" fill="#0f172a" opacity="0.94"/>
+  <text x="451" y="445" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#ffffff">better prediction next iteration</text>
+</svg>
