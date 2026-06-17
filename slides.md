@@ -3856,6 +3856,38 @@ class: future-world-models-slide
 </section>
 
 ---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — NVIDIA Cosmos</h1>
+<p>World foundation models for synthetic data, simulation, and physical AI training.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/case-nvidia-logo.svg'" alt="NVIDIA logo">
+</div>
+<div class="case-study-image-label">
+<span>world foundation models</span>
+<strong>Synthetic worlds for training physical AI.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>World models</strong><p>Cosmos provides foundation models and tools for generating realistic world states and video-like sensor scenarios.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Simulation before deployment</strong><p>Robotics and autonomous-system teams can expand training data with synthetic scenes, rare events, and controlled variations.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Safer physical AI training</strong><p>Systems can practice risky or expensive situations in simulation before meeting the real world.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Synthetic worlds let robots learn before they enter the real world.</div>
+</section>
+
+---
 class: future-world-rl-slide
 ---
 
@@ -3902,6 +3934,38 @@ class: future-world-rl-slide
 </section>
 
 ---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — DeepMind Planning</h1>
+<p>Dreamer and AlphaGo-style systems show how models can evaluate futures before acting.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/case-deepmind-logo.svg'" alt="Google DeepMind logo">
+</div>
+<div class="case-study-image-label">
+<span>model-based learning</span>
+<strong>Imagine rollouts, score actions, improve policy.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>World models + RL</strong><p>Dreamer learns compact dynamics and trains behavior from imagined trajectories; AlphaGo combined search, value estimates, and policy learning.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Plan in latent futures</strong><p>The agent simulates possible outcomes, compares expected rewards, and updates the policy before or between real actions.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Fewer costly trials</strong><p>Planning reduces blind trial-and-error by testing decisions in an internal model first.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Planning is learning to test actions in imagination before acting.</div>
+</section>
+
+---
 class: future-embodied-ai-slide
 ---
 
@@ -3942,6 +4006,38 @@ class: future-embodied-ai-slide
 </div>
 
 <div class="ts-takeaway">Embodied AI connects intelligence to the physical world.</div>
+</section>
+
+---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — Tesla Optimus</h1>
+<p>Humanoid robotics frames AI as perception, control, feedback, and safe physical action.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/case-tesla-logo.svg'" alt="Tesla logo">
+</div>
+<div class="case-study-image-label">
+<span>embodied robotics</span>
+<strong>AI must turn perception into motion.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>Vision + control policies</strong><p>Optimus is presented as a humanoid platform using perception, learned control, and robotics data to perform physical tasks.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Perceive, move, correct</strong><p>The robot estimates the scene, selects motions, observes results, and adjusts behavior through continuous feedback.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>General-purpose physical work</strong><p>Humanoid robots test whether AI can operate in spaces designed for people, tools, and everyday tasks.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Embodied AI turns predictions into physical movement.</div>
 </section>
 
 ---
@@ -3994,6 +4090,38 @@ class: future-physical-intelligence-slide
 </section>
 
 ---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — Waymo</h1>
+<p>Autonomous driving is embodied AI under strict safety and real-world constraints.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual photo">
+<div class="case-study-visual-image">
+<img :src="'/images/cnn-autonomous-car.jpg'" alt="Waymo autonomous vehicle photo from Wikimedia Commons">
+</div>
+<div class="case-study-image-label">
+<span>autonomous driving</span>
+<strong>Perception, prediction, planning, validation.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>Sensor-rich autonomy</strong><p>Cameras, lidar, radar, maps, and learned perception help the vehicle understand road users and scene geometry.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Plan safe maneuvers</strong><p>The system predicts how traffic may evolve, chooses a trajectory, and continuously checks the result against the environment.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Safety at physical scale</strong><p>Driving shows why embodied AI needs validation, redundancy, monitoring, and conservative decision-making.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Autonomous driving turns AI decisions into accountable physical behavior.</div>
+</section>
+
+---
 class: future-federated-edge-slide
 ---
 
@@ -4039,6 +4167,38 @@ class: future-federated-edge-slide
 </div>
 
 <div class="ts-takeaway">Not all intelligence will live in the cloud.</div>
+</section>
+
+---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — Google Gboard</h1>
+<p>Federated learning improves keyboard models while keeping raw typing data on devices.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/google-logo-official.png'" alt="Google logo">
+</div>
+<div class="case-study-image-label">
+<span>federated learning</span>
+<strong>On-device updates for better suggestions.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>Local training</strong><p>Phones compute small model updates from local interactions instead of uploading raw personal typing data.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Aggregate improvements</strong><p>Updates from many devices are combined to improve shared prediction and suggestion models.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Privacy-aware personalization</strong><p>The product can learn from usage patterns while reducing the need to centralize sensitive text.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Edge learning improves products while keeping raw data closer to users.</div>
 </section>
 
 ---
@@ -4092,6 +4252,38 @@ class: future-safety-slide
 </section>
 
 ---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — AWS Bedrock Guardrails</h1>
+<p>Enterprise guardrails add configurable policy and monitoring around foundation-model applications.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/case-aws-logo.svg'" alt="AWS logo">
+</div>
+<div class="case-study-image-label">
+<span>safety controls</span>
+<strong>Policy boundaries for model-powered apps.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>Guardrail policies</strong><p>Bedrock Guardrails lets teams configure content filters, denied topics, and sensitive-information handling.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Filter and monitor</strong><p>Controls can be applied around prompts and responses so applications follow organization-specific rules.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Operational trust</strong><p>Autonomous systems need repeatable safety controls, logging, and human oversight before production use.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Guardrails turn model behavior into an operational control surface.</div>
+</section>
+
+---
 class: future-stack-slide
 ---
 
@@ -4129,6 +4321,38 @@ class: future-stack-slide
 </div>
 
 <div class="ts-takeaway">Future AI will be a system, not a single model.</div>
+</section>
+
+---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — GitHub Copilot</h1>
+<p>A deployed AI stack combines foundation models, code context, tools, workflow integration, and controls.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo dark-logo">
+<img :src="'/images/case-github-logo.svg'" alt="GitHub logo">
+</div>
+<div class="case-study-image-label">
+<span>developer assistant</span>
+<strong>Foundation model embedded in the coding workflow.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>LLM + code context</strong><p>Copilot uses editor, repository, and conversational context to generate suggestions, explanations, and code changes.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Assist the workflow</strong><p>The assistant supports completion, chat, review, documentation, and increasingly agentic coding tasks.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Stack, not just model</strong><p>Usefulness comes from connecting the model to tools, files, permissions, feedback, and safety settings.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Copilot shows how AI becomes useful when embedded in the work system.</div>
 </section>
 
 ---
@@ -4172,6 +4396,38 @@ class: future-next-slide
 </div>
 
 <div class="ts-takeaway">The future of AI is capability plus control.</div>
+</section>
+
+---
+class: frontier-case-study-slide
+---
+
+<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<div class="ts-header">
+<span>CASE STUDY</span>
+<h1>Case Study — Morgan Stanley + OpenAI</h1>
+<p>Enterprise assistants connect models to governed internal knowledge and expert workflows.</p>
+</div>
+
+<div class="case-study-layout">
+<article class="ts-panel case-study-visual">
+<div class="case-study-visual-image logo">
+<img :src="'/images/case-morganstanley-logo.svg'" alt="Morgan Stanley logo">
+</div>
+<div class="case-study-image-label">
+<span>enterprise assistant</span>
+<strong>Retrieval, governance, and advisor support.</strong>
+</div>
+</article>
+
+<aside class="case-study-cards">
+<article class="ts-panel"><span>technology used</span><strong>LLM + retrieval</strong><p>The assistant connects language-model interaction to internal research, documents, and knowledge bases.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Support expert work</strong><p>Advisors can ask questions, search institutional knowledge, and surface relevant material faster.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Governed knowledge access</strong><p>Enterprise AI succeeds when it combines useful answers with permissioning, auditability, and human judgment.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Enterprise assistants combine retrieval, governance, and human expertise.</div>
 </section>
 
 ---
