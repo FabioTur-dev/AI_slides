@@ -36,9 +36,9 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="12" markerHeight="12" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
-    </marker>
+    <filter id="arrowShadow" x="-25%" y="-35%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#06b6d4" flood-opacity="0.26"/>
+    </filter>
   </defs>
   <rect width="1400" height="760" rx="38" fill="#fbfdff"/>
   <circle cx="210" cy="126" r="190" fill="#06b6d4" opacity="0.075"/>
@@ -56,17 +56,17 @@
     <line x1="716" y1="222" x2="970" y2="288"/><line x1="716" y1="348" x2="970" y2="288"/><line x1="716" y1="474" x2="970" y2="288"/>
     <line x1="716" y1="222" x2="970" y2="428"/><line x1="716" y1="348" x2="970" y2="428"/><line x1="716" y1="474" x2="970" y2="428"/>
   </g>
-  <g stroke="url(#accent)" stroke-width="23" stroke-linecap="round" opacity="0.22" filter="url(#glow)">
-    <path d="M 262 348 H 406"/>
-    <path d="M 520 348 H 656"/>
-    <path d="M 774 348 H 914"/>
-    <path d="M 1026 358 H 1174"/>
+  <g fill="url(#accent)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" filter="url(#arrowShadow)">
+    <path d="M 262 327 H 394 V 310 L 438 348 L 394 386 V 369 H 262 Z"/>
+    <path d="M 520 327 H 650 V 310 L 694 348 L 650 386 V 369 H 520 Z"/>
+    <path d="M 774 327 H 908 V 310 L 952 348 L 908 386 V 369 H 774 Z"/>
+    <path d="M 1026 337 H 1170 V 320 L 1214 358 L 1170 396 V 379 H 1026 Z"/>
   </g>
-  <g stroke="url(#accent)" stroke-width="13" stroke-linecap="round" opacity="1" filter="url(#glow)">
-    <path d="M 262 348 H 406" marker-end="url(#arrow)"/>
-    <path d="M 520 348 H 656" marker-end="url(#arrow)"/>
-    <path d="M 774 348 H 914" marker-end="url(#arrow)"/>
-    <path d="M 1026 358 H 1174" marker-end="url(#arrow)"/>
+  <g opacity="0.45">
+    <path d="M 279 339 H 392" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 537 339 H 648" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 791 339 H 906" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 1043 349 H 1168" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
   </g>
   <g stroke="#ffffff" stroke-width="7">
     <circle cx="210" cy="230" r="24" fill="url(#blue)"/>

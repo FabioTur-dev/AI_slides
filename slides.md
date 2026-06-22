@@ -3,52 +3,153 @@ theme: seriph
 title: "From the Perceptron to Agentic AI"
 info: |
   Opening slide for a premium academic presentation on the evolution of Artificial Intelligence.
-class: opening-slide
+layout: default
+class: opening-slide cover-v4-layout
 transition: fade
 drawings:
   persist: false
 colorSchema: light
 ---
 
-<section class="slide-shell hero-opening">
-  <div class="hero-copy">
-    <p class="academic-kicker">Master's-level course in Artificial Intelligence, Data Science, and Computer Engineering</p>
-    <h1>From the Perceptron to Agentic AI</h1>
-    <p class="hero-subtitle">Understanding the Evolution of Artificial Intelligence</p>
-    <p class="purpose-line">An intuitive journey from biological neurons and perceptrons to deep learning, transformers, generative AI, agents, and emerging AI frontiers.</p>
-  </div>
+<section class="slide-shell cover-v4">
+<div class="cover-v4-copy">
+<div class="cover-v4-kicker">MASTER’S-LEVEL AI COURSE</div>
+<h1 class="cover-v4-title">From the Perceptron to Agentic AI</h1>
+<p class="cover-v4-subtitle">Understanding the Evolution of Artificial Intelligence</p>
+<p class="cover-v4-support">An intuitive journey from early neural models to deep learning, transformers, generative AI, agents, and emerging AI frontiers.</p>
+</div>
+<div class="cover-v4-visual" role="img" aria-label="Minimal abstract evolution from neural foundations to agentic artificial intelligence">
+<svg class="cover-v4-svg" viewBox="0 0 560 420" aria-hidden="true">
+<defs>
+<linearGradient id="coverV4Stroke" x1="42" y1="314" x2="500" y2="96" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#1d4ed8" />
+<stop offset="0.52" stop-color="#06b6d4" />
+<stop offset="1" stop-color="#7c3aed" />
+</linearGradient>
+<radialGradient id="coverV4Glow" cx="50%" cy="50%" r="62%">
+<stop offset="0" stop-color="#ffffff" />
+<stop offset="0.54" stop-color="#eef7ff" />
+<stop offset="1" stop-color="#e9efff" />
+</radialGradient>
+<filter id="coverV4Shadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1d4ed8" flood-opacity="0.14" />
+</filter>
+</defs>
+<path class="cover-v4-grid" d="M64 88H500M64 168H500M64 248H500M64 328H500M108 54V360M206 54V360M304 54V360M402 54V360M500 54V360" />
+<path class="cover-v4-arc" stroke="url(#coverV4Stroke)" d="M70 302 C154 210 210 318 278 230 C342 146 410 188 494 92" />
+<g class="cover-v4-system" fill="url(#coverV4Glow)" filter="url(#coverV4Shadow)">
+<circle cx="86" cy="302" r="38" />
+<circle cx="206" cy="258" r="50" />
+<circle cx="318" cy="202" r="62" />
+<circle cx="458" cy="132" r="72" />
+</g>
+<g class="cover-v4-lines">
+<path d="M68 302H104M86 284V320M176 244L206 230L236 244L236 274L206 288L176 274Z" />
+<path d="M282 188L318 168L354 188L354 222L318 244L282 222Z" />
+<path d="M318 168V244M282 188L354 222M354 188L282 222" />
+<path d="M420 132C420 92 496 92 496 132C496 172 420 172 420 132Z" />
+<path d="M458 78V186M404 132H512M421 95L495 169M495 95L421 169" />
+</g>
+<g class="cover-v4-dots" stroke="url(#coverV4Stroke)">
+<circle cx="86" cy="302" r="8" />
+<circle cx="176" cy="244" r="7" />
+<circle cx="206" cy="230" r="8" />
+<circle cx="236" cy="244" r="7" />
+<circle cx="176" cy="274" r="7" />
+<circle cx="206" cy="288" r="8" />
+<circle cx="236" cy="274" r="7" />
+<circle cx="282" cy="188" r="7" />
+<circle cx="318" cy="168" r="9" />
+<circle cx="354" cy="188" r="7" />
+<circle cx="282" cy="222" r="7" />
+<circle cx="318" cy="244" r="9" />
+<circle cx="354" cy="222" r="7" />
+<circle cx="458" cy="78" r="7" />
+<circle cx="404" cy="132" r="7" />
+<circle cx="458" cy="132" r="12" />
+<circle cx="512" cy="132" r="7" />
+<circle cx="458" cy="186" r="7" />
+</g>
+</svg>
+</div>
+<div class="cover-v4-roadmap" aria-label="Course arc">Foundations · Deep Learning · Transformers · Generative AI · Agents · Frontiers</div>
+</section>
 
-  <div class="hero-figure">
-    <img :src="'/images/slide-1-ai-evolution-hero.png'" alt="Conceptual evolution of AI from neurons to modern agentic systems" />
-  </div>
+---
+class: fabio-clean-layout
+---
 
-  <div class="evolution-roadmap" aria-label="Course roadmap">
-    <div>
-      <span>01</span>
-      <strong>Foundations</strong>
-      <small>Neurons, Perceptrons, Neural Networks</small>
-    </div>
-    <div>
-      <span>02</span>
-      <strong>Deep Learning</strong>
-      <small>CNNs, Sequence Models, GPUs</small>
-    </div>
-    <div>
-      <span>03</span>
-      <strong>Modern AI</strong>
-      <small>Transformers, LLMs, Generative AI</small>
-    </div>
-    <div>
-      <span>04</span>
-      <strong>Intelligent Systems</strong>
-      <small>Agents, World Models, Embodied AI</small>
-    </div>
-    <div>
-      <span>05</span>
-      <strong>Emerging Frontiers</strong>
-      <small>Federated Learning, Edge AI, AI Safety</small>
-    </div>
-  </div>
+<section class="slide-shell fabio-clean-slide">
+<div class="fabio-clean-identity">
+<img class="fabio-clean-headshot" :src="'/images/fabio-turazza-headshot.png'" alt="Fabio Turazza portrait" />
+<h1>Fabio Turazza</h1>
+<p>PhD candidate in Artificial Intelligence</p>
+<div class="fabio-clean-pills">
+<span>Federated Learning</span>
+<span>LLMs & Agents</span>
+<span>Industrial AI</span>
+</div>
+</div>
+<div class="fabio-clean-main">
+<div class="fabio-clean-title">
+<span>Teacher profile</span>
+<h1>About me</h1>
+</div>
+<div class="fabio-clean-content">
+<figure class="fabio-clean-event">
+<img :src="'/images/fabio-iclr-rio.jpg'" alt="Fabio Turazza presenting federated learning research at ICLR in Rio de Janeiro" />
+<figcaption>ICLR · Rio de Janeiro — Federated learning research</figcaption>
+</figure>
+<div class="fabio-clean-info-cards">
+<article class="fabio-clean-info-card">
+<span>01</span>
+<h2>Research Focus</h2>
+<p>Privacy-preserving AI, federated learning, language technologies, industrial intelligent systems.</p>
+</article>
+<article class="fabio-clean-info-card">
+<span>02</span>
+<h2>Course Perspective</h2>
+<p>From neural foundations to modern agentic and generative AI systems.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+---
+class: research-context-layout
+---
+
+<section class="slide-shell research-context-slide">
+<div class="research-context-copy">
+<span>Teacher profile · Research ecosystem</span>
+<h1>Where This Research Lives</h1>
+<p>I work on Artificial Intelligence, but my research group is not an AI group by identity. Its core expertise is IoT, pervasive computing, and industrial digital twins for industrial systems.</p>
+<div class="research-context-pill-row">
+<b>IoT</b>
+<b>Pervasive Computing</b>
+<b>Industrial DTs</b>
+</div>
+<div class="research-context-note">
+<strong>The AI layer is applied on top of connected industrial systems.</strong>
+<small>Models, agents, and learning methods become useful when they are grounded in sensors, devices, machines, and operational data.</small>
+</div>
+</div>
+
+<div class="research-context-media">
+<figure class="research-context-photo">
+<img :src="'/images/research-group-arduino.jpg'" alt="Research group photo from an Arduino collaboration on industrial IoT and digital twin systems" />
+<figcaption>Arduino collaboration · industrial IoT prototyping</figcaption>
+</figure>
+<aside class="research-context-startup">
+<img :src="'/images/digiwave-logo.png'" alt="DigiWave deeptech startup logo" />
+<div>
+<span>Deeptech startup</span>
+<strong>DigiWave</strong>
+<p>An emerging digital twin platform for connected industrial environments.</p>
+</div>
+</aside>
+</div>
 </section>
 
 ---
@@ -97,86 +198,146 @@ class: roadmap-slide
 </section>
 
 ---
-class: ai-meaning-slide
+class: ai-meaning-slide ai-meaning-v3-slide
 ---
 
-<section class="slide-shell ai-meaning">
-<div class="ai-meaning-header">
-  <h1>What Do We Mean by Artificial Intelligence?</h1>
-  <p>AI is the attempt to build systems that transform data into intelligent behavior.</p>
+<section class="slide-shell ai-meaning-v3">
+<div class="ai-v3-copy">
+<span class="ai-v3-kicker">Artificial Intelligence</span>
+<h1>What Do We Mean by<br />Artificial<br />Intelligence?</h1>
+<div class="ai-v3-title-gap" aria-hidden="true"></div>
+<p class="ai-v3-subtitle">AI studies systems that can perceive, learn, reason, generate, and act.</p>
+<div class="ai-v3-principle">
+<span>Working idea</span>
+<strong>Data becomes behavior.</strong>
+<small>Models transform examples and feedback into useful decisions, language, images, and actions.</small>
+</div>
+</div>
+<aside class="ai-v3-quote-panel" aria-label="Famous quotations about artificial intelligence">
+<div class="ai-v3-main-quote">
+<span>A question that still frames the field</span>
+<blockquote>Can machines think?</blockquote>
+<cite>Alan Turing · 1950</cite>
+</div>
+<div class="ai-v3-quote-row">
+<div>
+<blockquote>the science and engineering of making intelligent machines</blockquote>
+<cite>John McCarthy</cite>
+</div>
+<div>
+<blockquote>AI is whatever hasn't been done yet.</blockquote>
+<cite>Tesler's theorem</cite>
+</div>
+</div>
+</aside>
+</section>
+
+---
+class: ai-hierarchy-slide ai-hierarchy-v2-slide
+---
+
+<section class="slide-shell ai-hierarchy-v2">
+<div class="ai-hierarchy-v2-header">
+  <span>AI terminology</span>
+  <h1>AI, Machine Learning, and Deep Learning</h1>
+  <p>Different levels of the same technical evolution, from broad intelligent systems to modern generative agents.</p>
 </div>
 
-<div class="ai-system-visual">
-  <img :src="'/images/slide-3-ai-capabilities.png'" alt="Abstract AI system connecting perception, learning, reasoning, generation, and action" />
-</div>
+<div class="hierarchy-v2-main">
+  <div class="hierarchy-v2-stack" aria-label="AI hierarchy from broad field to modern systems">
+    <article class="hierarchy-v2-layer layer-ai">
+      <b>Artificial Intelligence</b>
+      <span>systems that perform tasks requiring intelligence</span>
+    </article>
+    <article class="hierarchy-v2-layer layer-ml">
+      <b>Machine Learning</b>
+      <span>systems that learn patterns from data</span>
+    </article>
+    <article class="hierarchy-v2-layer layer-dl">
+      <b>Deep Learning</b>
+      <span>neural networks with many layers</span>
+    </article>
+    <article class="hierarchy-v2-layer layer-fm">
+      <b>Foundation Models</b>
+      <span>large models trained on broad data</span>
+    </article>
+    <article class="hierarchy-v2-layer layer-agents">
+      <b>Generative AI & Agents</b>
+      <span>models connected to tools, memory, and actions</span>
+    </article>
+  </div>
 
-<div class="capability-grid">
-  <div class="capability-card">
-    <div class="capability-icon perceive"></div>
-    <strong>Perceive</strong>
-    <span>Interpret signals from the world</span>
-  </div>
-  <div class="capability-card">
-    <div class="capability-icon learn"></div>
-    <strong>Learn</strong>
-    <span>Improve from examples and experience</span>
-  </div>
-  <div class="capability-card">
-    <div class="capability-icon reason"></div>
-    <strong>Reason</strong>
-    <span>Connect information and make decisions</span>
-  </div>
-  <div class="capability-card">
-    <div class="capability-icon generate"></div>
-    <strong>Generate</strong>
-    <span>Create new text, images, audio, video, and ideas</span>
-  </div>
-  <div class="capability-card">
-    <div class="capability-icon act"></div>
-    <strong>Act</strong>
-    <span>Use tools, interact with environments, and support humans</span>
-  </div>
+  <aside class="hierarchy-v2-note">
+    <div class="hierarchy-v2-message">
+    <span>Key idea</span>
+    <strong>Layered abstractions</strong>
+    <p>Each level reuses earlier ideas while expanding what systems can learn, generate, and do.</p>
+    </div>
+    <div class="hierarchy-v2-flow">
+      <b>Learning</b>
+      <b>Representation</b>
+      <b>Generation</b>
+      <b>Action</b>
+    </div>
+  </aside>
 </div>
 </section>
 
 ---
-class: ai-hierarchy-slide
+class: ml-timeline-slide
 ---
 
-<section class="slide-shell ai-hierarchy">
-<div class="ai-hierarchy-header">
-  <h1>AI, Machine Learning, and Deep Learning</h1>
-  <p>Three terms that are often confused — but they describe different levels of the same evolution.</p>
+<section class="slide-shell ml-timeline">
+<header class="ml-timeline-header">
+<span>Machine Learning</span>
+<h1>From Data to Predictive Models</h1>
+<p>Machine learning formalizes the idea that a system can improve by fitting patterns in data instead of being programmed with every rule by hand.</p>
+</header>
+
+<div class="ml-timeline-main">
+<div class="ml-timeline-story">
+<div class="ml-summary-card">
+<strong>Core abstraction</strong>
+<p>Given examples <span class="ml-inline-formula">D = {(x<sub>i</sub>, y<sub>i</sub>)}</span>, learn <span class="ml-inline-formula">f<sub>&theta;</sub></span> that maps inputs to useful outputs and generalizes to unseen data.</p>
+</div>
+<div class="ml-history-line" aria-label="Machine learning timeline">
+<article><span>1950s</span><b>Learning machines</b><small>Perceptrons and early statistical learning</small></article>
+<article><span>1980s</span><b>Backpropagation</b><small>Neural networks become trainable</small></article>
+<article><span>1990s</span><b>Kernels & SVMs</b><small>Strong supervised learning theory</small></article>
+<article><span>2010s</span><b>Deep learning</b><small>Large data, GPUs, representation learning</small></article>
+<article><span>2020s</span><b>Foundation models</b><small>Pretraining, transfer, generative systems</small></article>
+</div>
 </div>
 
-<div class="hierarchy-visual">
-  <div class="nested-ai-map">
-    <div class="ai-layer layer-ai">
-      <span>Artificial Intelligence</span>
-      <small>systems that perform tasks requiring intelligence</small>
-    </div>
-    <div class="ai-layer layer-ml">
-      <span>Machine Learning</span>
-      <small>systems that learn patterns from data</small>
-    </div>
-    <div class="ai-layer layer-dl">
-      <span>Deep Learning</span>
-      <small>neural networks with many layers</small>
-    </div>
-    <div class="ai-layer layer-fm">
-      <span>Foundation Models</span>
-      <small>large models trained on broad data</small>
-    </div>
-    <div class="ai-layer layer-agents">
-      <span>Generative AI & Agents</span>
-      <small>models connected to tools, memory, and actions</small>
-    </div>
-  </div>
-
-  <div class="hierarchy-note">
-    <strong>Modern AI systems are built on layers of abstraction.</strong>
-    <span>Each new layer reuses earlier ideas while expanding what systems can learn, generate, and do.</span>
-  </div>
+<div class="ml-problem-grid">
+<article class="ml-problem-card regression">
+<figure><img :src="'/images/ml-problem-regression-scatter.png'" alt="Scatter plot used to illustrate regression" /></figure>
+<div>
+<span>Regression</span>
+<strong>Predict a number</strong>
+<p class="ml-formula">f<sub>&theta;</sub>: X &rarr; &#8477;</p>
+<small>Learn continuous targets, often by minimizing mean squared error.</small>
+</div>
+</article>
+<article class="ml-problem-card classification">
+<figure><img :src="'/images/ml-problem-classification-svm.png'" alt="Support vector machine separation diagram used to illustrate classification" /></figure>
+<div>
+<span>Classification</span>
+<strong>Predict a class</strong>
+<p class="ml-formula">f<sub>&theta;</sub>: X &rarr; {1,...,K}</p>
+<small>Learn decision regions or class probabilities from labeled examples.</small>
+</div>
+</article>
+<article class="ml-problem-card clustering">
+<figure><img :src="'/images/ml-problem-clustering-kmeans.png'" alt="Color clustering visualization used to illustrate unsupervised clustering" /></figure>
+<div>
+<span>Clustering</span>
+<strong>Find groups</strong>
+<p class="ml-formula">x<sub>i</sub> &rarr; c<sub>i</sub>, c<sub>i</sub> &isin; {1,...,K}</p>
+<small>Discover structure without labels by grouping similar points.</small>
+</div>
+</article>
+</div>
 </div>
 </section>
 
@@ -197,8 +358,15 @@ class: neuron-perceptron-slide
 <span>Cell body integrates signals</span>
 <span>Axon sends output</span>
 </div>
-<div class="np-image-frame">
-<img :src="'/images/biological-neuron-vs-perceptron.png'" alt="Public-domain comparison of biological neural organization and a perceptron" />
+<div class="np-image-frame np-online-comparison">
+<figure>
+<figcaption>Biological neuron</figcaption>
+<img :src="'/images/slide-6-biological-neuron-online.svg'" alt="Labeled biological neuron diagram showing dendrites, cell body, axon, myelin sheath, and axon terminal" />
+</figure>
+<figure>
+<figcaption>Artificial neuron</figcaption>
+<img :src="'/images/slide-6-artificial-neuron-online.svg'" alt="Labeled artificial neuron diagram showing inputs, weights, summation, activation function, threshold, and output" />
+</figure>
 <div class="np-bridge">Biology <span></span> abstraction <span></span> computation</div>
 </div>
 <div class="np-card np-math-card">
@@ -333,27 +501,42 @@ class: xor-limitation-slide
 class: many-neurons-slide
 ---
 
-<section class="slide-shell many-neurons">
-<div class="many-neurons-header">
-<h1>The Solution: Many Neurons</h1>
-<p>A network combines many simple decisions into a more expressive model.</p>
+<section class="slide-shell many-neurons many-neurons-v2">
+<div class="mnv2-header">
+<span>From perceptron to network</span>
+<h1>Many Neurons Build Richer Representations</h1>
+<p>Instead of one decision boundary, a neural network composes many small transformations into features that are useful for prediction.</p>
 </div>
 
-<div class="many-neurons-layout">
-<div class="neuron-transition-visual">
-<div class="transition-label one-label">One neuron</div>
-<div class="transition-label connect-label">connect</div>
-<div class="transition-label many-label">Many neurons</div>
-<img :src="'/images/one-neuron-to-network.svg'" alt="Transition from a single perceptron to many connected neurons in layers" />
-</div>
-<div class="neuron-support-card">
-<span>One neuron learns one simple rule.</span>
-<span>Many neurons combine simple rules.</span>
-<span>A network can model richer patterns.</span>
-</div>
+<div class="mnv2-main">
+<div class="mnv2-explain">
+<article>
+<span>01</span>
+<strong>Inputs enter as signals</strong>
+<p>Raw features are passed forward as numerical values.</p>
+</article>
+<article>
+<span>02</span>
+<strong>Hidden neurons recombine them</strong>
+<p>Each unit learns a weighted combination and applies a nonlinearity.</p>
+</article>
+<article>
+<span>03</span>
+<strong>Layers create abstraction</strong>
+<p>Later layers reuse features to model nonlinear patterns.</p>
+</article>
 </div>
 
-<div class="takeaway-pill">Depth begins when simple units work together.</div>
+<figure class="mnv2-visual">
+<img :src="'/images/slide-9-artificial-neural-network-online.svg'" alt="Artificial neural network diagram with input, hidden, and output layers" />
+<figcaption>Input layer → hidden layer → output</figcaption>
+</figure>
+</div>
+
+<div class="mnv2-takeaway">
+<strong>Core idea</strong>
+<span>Expressiveness comes from composition: simple neurons become powerful when arranged in connected layers.</span>
+</div>
 </section>
 
 ---
@@ -425,39 +608,44 @@ class: mlp-slide
 </section>
 
 ---
-class: representation-slide
+class: representation-slide representation-v3-slide
 ---
 
-<section class="slide-shell representation-clarity">
-<div class="representation-header">
-<h1>From Lines to Representations</h1>
-<p>Hidden layers reshape the problem before the final decision is made.</p>
+<section class="slide-shell representation-v3">
+<header class="rep-v3-header">
+<span>Representation learning</span>
+<h1>Hidden Layers Create Geometry</h1>
+<p>Neural networks do not only draw boundaries: they transform raw inputs into internal spaces where structure becomes easier to separate.</p>
+</header>
+
+<div class="rep-v3-main">
+<figure class="rep-v3-visual">
+<img :src="'/images/slide-11-representations-online.jpg'" alt="Simple abstract neural texture with cyan and purple lines representing a learned hidden representation space" />
+<figcaption>Abstract hidden representation space</figcaption>
+</figure>
+
+<div class="rep-v3-insights">
+<article>
+<span>01</span>
+<strong>Raw input space</strong>
+<p>Examples can be tangled, noisy, and hard to separate with one simple line.</p>
+</article>
+<article>
+<span>02</span>
+<strong>Hidden representation</strong>
+<p>Each layer recombines features, creating new coordinates for the problem.</p>
+</article>
+<article>
+<span>03</span>
+<strong>Readable decision space</strong>
+<p>The final layer sees a cleaner geometry where prediction becomes simpler.</p>
+</article>
+</div>
 </div>
 
-<div class="representation-clarity-layout">
-<div class="representation-story-frame">
-<div class="representation-story-labels">
-<div>
-<strong>Raw data</strong>
-<span>XOR-like points</span>
-</div>
-<div>
-<strong>Hidden layers</strong>
-<span>Transform the space</span>
-</div>
-<div>
-<strong>Useful representation</strong>
-<span>One line separates</span>
-</div>
-</div>
-<div class="representation-story-image">
-<img :src="'/images/lines-to-representations.svg'" alt="Pipeline from raw nonlinear data through hidden layers to a useful representation space" />
-</div>
-</div>
-<div class="representation-takeaway-card">
-<strong>Hidden layers do not just classify.</strong>
-<span>They reshape the problem.</span>
-</div>
+<div class="rep-v3-takeaway">
+<strong>Key idea</strong>
+<span>The model learns the space before it learns the boundary.</span>
 </div>
 </section>
 
@@ -509,8 +697,8 @@ class: loss-intro-step-slide
 <stop offset="52%" stop-color="#06b6d4"/>
 <stop offset="100%" stop-color="#7c3aed"/>
 </linearGradient>
-<marker id="lossPerfectArrow" markerHeight="12" markerWidth="14" orient="auto" refX="12" refY="6">
-<path d="M0 0 L14 6 L0 12 Z" fill="#7c3aed"/>
+<marker id="lossPerfectArrow" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="20" orient="auto" refX="18" refY="8">
+<path d="M0 0 L20 8 L0 16 Z" fill="#5b5ff0"/>
 </marker>
 </defs>
 
@@ -611,9 +799,14 @@ class: loss-measure-slide
 <small>More confidence in the target → lower loss</small>
 </div>
 
-<div class="loss-signal-card">
+<div class="loss-signal-card loss-signal-visual-card">
+<div class="loss-signal-copy">
 <strong>Loss is not a label.</strong>
 <span>It is the score that tells learning which direction to improve.</span>
+</div>
+<figure class="loss-surface-figure">
+<img :src="'/images/perceptron-loss-surface-projection.svg'" alt="Stylized loss surface with a red optimization path and a projected point" />
+</figure>
 </div>
 </div>
 </section>
@@ -633,9 +826,22 @@ class: backpropagation-slide
 <div class="backprop-visual-frame">
 <div class="flow-caption-row">
 <div class="flow-caption forward-caption">Forward: input → hidden layers → prediction</div>
-<div class="flow-caption backward-caption">Backward: loss → gradients → earlier layers</div>
+<div class="flow-caption backward-caption">Backward: loss → chain rule → earlier layers</div>
 </div>
-<img :src="'/images/backpropagation-online-explanation.png'" alt="Backpropagation diagram showing error signals flowing backward through a neural network" />
+<img :src="'/images/backpropagation-desktop.webp'" alt="Backpropagation diagram showing inputs, hidden layers, output, and backward weight adjustments through the network" />
+<div class="chain-rule-formula">
+<span>Chain rule</span>
+<strong>
+<b><i>∂L</i><em>∂W<sub>l</sub></em></b>
+<small>=</small>
+<b><i>∂L</i><em>∂a<sub>l</sub></em></b>
+<small>·</small>
+<b><i>∂a<sub>l</sub></i><em>∂z<sub>l</sub></em></b>
+<small>·</small>
+<b><i>∂z<sub>l</sub></i><em>∂W<sub>l</sub></em></b>
+</strong>
+<p>Backpropagation multiplies local derivatives to assign credit to earlier weights.</p>
+</div>
 </div>
 
 <div class="backprop-card-stack">
@@ -672,22 +878,27 @@ class: gradient-descent-slide
 <div class="gradient-descent-layout">
 <div class="gd-visual-frame">
 <img :src="'/images/gradient-descent-flow.svg'" alt="Loss curve with gradient descent steps moving toward a lower loss minimum" />
+<div class="gd-update-rule">
+<span>Update rule</span>
+<strong>w ← w − η∇L(w)</strong>
+<p>Backpropagation gives the gradient; gradient descent turns it into a smaller-loss step.</p>
 </div>
-<div class="gd-card-stack">
-<div class="gd-card">
-<span>What it is</span>
-<strong>An optimization method</strong>
-<p>It searches for weights that make the loss smaller.</p>
 </div>
-<div class="gd-card">
-<span>What it is for</span>
-<strong>Learning from error</strong>
-<p>It turns gradients into concrete parameter updates.</p>
+<div class="gd-card-stack gd-explain-stack">
+<div class="gd-card gd-step-card">
+<span>01</span>
+<strong>Measure the slope</strong>
+<p>Slope shows how changing weights changes loss.</p>
 </div>
-<div class="gd-card emphasis">
-<span>How it works</span>
-<strong>Step downhill</strong>
-<p>Move weights opposite the gradient, then repeat.</p>
+<div class="gd-card gd-step-card">
+<span>02</span>
+<strong>Update weights</strong>
+<p>Move opposite ∇L, scaled by the learning rate η.</p>
+</div>
+<div class="gd-card gd-step-card emphasis">
+<span>03</span>
+<strong>Repeat after update</strong>
+<p>Recompute loss and continue while improvement remains.</p>
 </div>
 </div>
 </div>
@@ -819,9 +1030,21 @@ class: nonlinear-slide
 </div>
 
 <div class="activation-strip">
-<div><strong>ReLU</strong><svg viewBox="0 0 90 54"><path class="mini-axis" d="M10 40 H80 M28 10 V46"/><path class="relu-line" d="M12 39 H40 L78 14"/></svg></div>
-<div><strong>sigmoid</strong><svg viewBox="0 0 90 54"><path class="mini-axis" d="M10 40 H80 M28 10 V46"/><path class="sigmoid-line" d="M12 40 C30 40 34 30 44 25 C54 18 62 14 78 14"/></svg></div>
-<div><strong>tanh</strong><svg viewBox="0 0 90 54"><path class="mini-axis" d="M10 27 H80 M28 10 V46"/><path class="tanh-line" d="M12 42 C30 42 34 28 45 27 C56 26 60 12 78 12"/></svg></div>
+<div class="activation-card">
+<strong>ReLU</strong>
+<svg viewBox="0 0 120 74"><path class="mini-axis" d="M14 48 H108 M60 12 V62"/><path class="relu-line" d="M16 48 H60 L106 16"/></svg>
+<p><b>Pro</b> fast <b>Con</b> dead units</p>
+</div>
+<div class="activation-card">
+<strong>sigmoid</strong>
+<svg viewBox="0 0 120 74"><path class="mini-axis" d="M14 58 H108 M60 12 V62"/><path class="sigmoid-line" d="M16 56 C38 56 45 44 56 37 C68 29 78 18 106 18"/></svg>
+<p><b>Pro</b> 0-1 <b>Con</b> not centered</p>
+</div>
+<div class="activation-card">
+<strong>tanh</strong>
+<svg viewBox="0 0 120 74"><path class="mini-axis" d="M14 37 H108 M60 12 V62"/><path class="tanh-line" d="M16 56 C40 56 46 39 58 37 C72 35 78 18 106 18"/></svg>
+<p><b>Pro</b> zero-centered <b>Con</b> saturates</p>
+</div>
 </div>
 </div>
 
@@ -843,37 +1066,41 @@ class: representation-learning-slide
 <div class="rep-learning-stage">
 <em>Input</em>
 <strong>Pixels</strong>
-<span>raw input</span>
+<span>raw measurements</span>
+<small>No meaning yet: just numbers from the image.</small>
 <div class="rep-pixels" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 </div>
 <div class="rep-learning-arrow" aria-hidden="true"></div>
 <div class="rep-learning-stage">
 <em>Early layer</em>
 <strong>Edges</strong>
-<span>early features</span>
+<span>local contrast</span>
+<small>Nearby pixels are combined into simple visual cues.</small>
 <div class="rep-edges" aria-hidden="true"><i></i><i></i><i></i></div>
 </div>
 <div class="rep-learning-arrow" aria-hidden="true"></div>
 <div class="rep-learning-stage">
 <em>Deeper layer</em>
 <strong>Shapes</strong>
-<span>intermediate features</span>
+<span>parts and motifs</span>
+<small>Edges are reused to build higher-level patterns.</small>
 <div class="rep-shapes" aria-hidden="true"><i></i><i></i><i></i></div>
 </div>
 <div class="rep-learning-arrow" aria-hidden="true"></div>
 <div class="rep-learning-stage final">
 <em>Final representation</em>
 <strong>Object</strong>
-<span>high-level concept</span>
+<span>separable concept</span>
+<small>The final features make the decision easier.</small>
 <div class="rep-object" aria-hidden="true"></div>
 </div>
 </div>
 
 <div class="rep-learning-example-card">
 <div class="example-badge">Example</div>
-<strong>Image recognition</strong>
-<span>Pixels → edges → shapes → object</span>
-<p>The network builds internal features that make recognition easier.</p>
+<strong>Why it helps</strong>
+<span>Raw data → useful coordinates</span>
+<p>Training reshapes the hidden space so similar examples become easier to group and classify.</p>
 </div>
 </div>
 
@@ -890,43 +1117,50 @@ class: generalization-slide
 <p>A good model does not only work on training data — it must work on new data too.</p>
 </div>
 
-<div class="gen-premium-story">
-<div class="gen-premium-flow">
-<div class="gen-premium-card">
-<em>Seen data</em>
-<strong>Training examples</strong>
-<span>the model studies these cases</span>
-<div class="gen-premium-dots seen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="gen-v2-story">
+<div class="gen-v2-principle">
+<div class="gen-v2-kicker">Core principle</div>
+<strong>Learn the pattern that survives new data.</strong>
+<p>Training data is only a sample. A useful model captures stable structure and ignores accidental noise.</p>
+
+<div class="gen-v2-path">
+<div>
+<span>Seen cases</span>
+<strong>Training set</strong>
 </div>
-
-<div class="gen-premium-arrow" aria-hidden="true"></div>
-
-<div class="gen-premium-card rule">
-<em>General rule</em>
-<strong>Learned pattern</strong>
-<span>the useful structure behind the data</span>
-<svg viewBox="0 0 210 116" aria-hidden="true">
-<path class="rule-band" d="M24 83 C54 34 86 88 116 55 C146 22 170 37 188 28" />
-<path class="rule-line" d="M24 83 C54 34 86 88 116 55 C146 22 170 37 188 28" />
-<circle cx="48" cy="66" r="8" /><circle cx="82" cy="58" r="8" /><circle cx="118" cy="56" r="8" /><circle cx="158" cy="40" r="8" />
-</svg>
+<i aria-hidden="true"></i>
+<div>
+<span>Stable rule</span>
+<strong>Model</strong>
 </div>
-
-<div class="gen-premium-arrow" aria-hidden="true"></div>
-
-<div class="gen-premium-card">
-<em>Unseen data</em>
-<strong>New examples</strong>
-<span>the real test of learning</span>
-<div class="gen-premium-dots unseen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<i aria-hidden="true"></i>
+<div>
+<span>Unseen cases</span>
+<strong>Test set</strong>
 </div>
 </div>
 
-<div class="gen-premium-example">
-<div class="example-badge">Real world</div>
-<div class="gen-medical-mark" aria-hidden="true"></div>
+<figure class="gen-v2-chart">
+<img :src="'/images/generalization-overfitting-wikimedia.svg'" alt="Illustration of stable fitting versus overfitting on noisy data" />
+<figcaption>A smooth rule usually transfers better than a curve that chases every training point.</figcaption>
+</figure>
+</div>
+
+<div class="gen-v2-case">
+<div class="gen-v2-case-copy">
+<div class="example-badge">Real case</div>
 <strong>Medical AI</strong>
-<p>It should work on new patients, not only on patients seen during training.</p>
+<p>A diagnostic model should work on new patients, scanners, and hospitals, not only on examples seen during training.</p>
+</div>
+<figure class="gen-v2-xray">
+<img :src="'/images/generalization-medical-xray-wikimedia.jpg'" alt="Chest X-ray example for medical AI generalization" />
+<figcaption>Unseen patient image</figcaption>
+</figure>
+<div class="gen-v2-checks">
+<span>train on examples</span>
+<span>validate on held-out patients</span>
+<span>deploy only if performance transfers</span>
+</div>
 </div>
 </div>
 
@@ -993,12 +1227,12 @@ class: fight-overfitting-slide
 
 <div class="rl-fight-layout">
 <div class="rl-technique-grid">
-<div><strong>More data</strong><span>reduce noise</span></div>
-<div><strong>Validation set</strong><span>check new data</span></div>
-<div><strong>Regularization</strong><span>limit complexity</span></div>
-<div><strong>Dropout</strong><span>avoid reliance</span></div>
-<div><strong>Early stopping</strong><span>stop in time</span></div>
-<div><strong>Data augmentation</strong><span>create variations</span></div>
+<div><strong>More data</strong><span>reduce noise</span><p>Expose the model to more real variation, so it learns stable patterns instead of quirks.</p></div>
+<div><strong>Validation set</strong><span>check new data</span><p>Keep examples out of training and use them to detect when generalization starts to drop.</p></div>
+<div><strong>Regularization</strong><span>limit complexity</span><p>Add a penalty for overly large or complex weights, making simpler solutions preferable.</p></div>
+<div><strong>Dropout</strong><span>avoid reliance</span><p>Randomly hide units during training so the network cannot depend on one fragile path.</p></div>
+<div><strong>Early stopping</strong><span>stop in time</span><p>Stop training when validation performance no longer improves, before memorization takes over.</p></div>
+<div><strong>Data augmentation</strong><span>create variations</span><p>Create transformed examples so the model learns invariances such as crop, rotate, or flip.</p></div>
 </div>
 
 <div class="rl-balance-card">
@@ -1119,26 +1353,26 @@ class: dlx-feature-slide
 class: dlx-mlp-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-mlp">
+<section class="slide-shell dlx-slide dlx-mlp dlx-mlp-v2">
 <div class="dlx-header">
 <h1>Why Images Are Hard for MLPs</h1>
 <p>Images are not just lists of numbers. They have spatial structure.</p>
 </div>
 
 <div class="dlx-main dlx-mlp-stage">
-<div class="dlx-flatten-card dlx-photo-flatten-card">
-<figure class="dlx-real-image-card">
-<div><img :src="'/images/imagenet-cat.jpg'" alt="Real cat image used as an image-classification example"><span></span></div>
-<figcaption><strong>2D image</strong><small>nearby pixels carry meaning</small></figcaption>
+<div class="dlx-flatten-card dlx-photo-flatten-card dlx-mlp-visual-v2">
+<figure class="dlx-real-image-card dlx-spatial-image-card">
+<div><img :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Zebra stripe image used to show local spatial structure"><span></span><b>local patch</b></div>
+<figcaption><strong>2D image</strong><small>nearby pixels form visible patterns</small></figcaption>
 </figure>
 <div class="dlx-flow-arrow"></div>
-<div class="dlx-vector-card">
-<strong>flatten</strong>
+<div class="dlx-vector-card dlx-flatten-vector-card">
+<strong>flatten to 1D</strong>
 <div class="dlx-vector-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<small>150,528 values</small>
+<small>spatial neighbors become distant entries</small>
 </div>
 <div class="dlx-flow-arrow"></div>
-<div class="dlx-dense-card">
+<div class="dlx-dense-card dlx-dense-mlp-card">
 <strong>dense layer</strong>
 <svg viewBox="0 0 180 128" role="img" aria-label="Fully connected layer with many connections">
 <path d="M42 26 L92 20 M42 26 L92 48 M42 26 L92 78 M42 26 L92 108 M42 64 L92 20 M42 64 L92 48 M42 64 L92 78 M42 64 L92 108 M42 102 L92 20 M42 102 L92 48 M42 102 L92 78 M42 102 L92 108 M92 20 L142 40 M92 48 L142 40 M92 78 L142 88 M92 108 L142 88" />
@@ -1165,31 +1399,44 @@ class: dlx-mlp-slide
 class: dlx-cnn-needed-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-cnn-needed">
+<section class="slide-shell dlx-slide dlx-cnn-needed dlx-cnn-needed-v2">
 <div class="dlx-header">
 <h1>Why CNNs Were Needed</h1>
-<p>CNNs exploit the structure of images.</p>
+<p>Images have geometry: nearby pixels form local patterns that should stay together.</p>
 </div>
 
-<div class="dlx-main dlx-cnn-stage">
-<div class="dlx-conv-board">
-<div class="dlx-scan-image" aria-hidden="true">
-<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span></span>
-</div>
-<div class="dlx-flow-arrow"></div>
-<div class="dlx-filter-box"><strong>shared filter</strong><p>same weights scan every position</p></div>
-<div class="dlx-flow-arrow"></div>
-<div class="dlx-map-box" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="dlx-main cnn-needed-v2-layout">
+<div class="cnn-needed-v2-copy">
+<div class="cnn-needed-v2-card problem">
+<span>Dense MLP</span>
+<strong>Flattening breaks image geometry.</strong>
 </div>
 
-<div class="dlx-cnn-principles">
-<article><strong>Locality</strong><p>nearby pixels matter together</p></article>
-<article><strong>Weight sharing</strong><p>one filter works across positions</p></article>
-<article><strong>Feature maps</strong><p>patterns are detected wherever they appear</p></article>
+<div class="cnn-needed-v2-card solution">
+<span>CNN idea</span>
+<strong>Scan local patches with shared filters.</strong>
+</div>
+
+<div class="cnn-needed-v2-flow" aria-label="CNN core operation">
+<b>local patch</b><i></i><b>shared filter</b><i></i><b>feature map</b>
 </div>
 </div>
 
-<div class="dlx-takeaway">CNNs are designed for images: local patterns, shared filters, scalable learning.</div>
+<figure class="cnn-needed-v2-visual">
+<div>
+<img :src="'/images/cnn-architecture-explained.png'" alt="Convolutional neural network architecture diagram from Wikimedia Commons">
+</div>
+<figcaption>Image → convolution and pooling → compact visual features → class prediction.</figcaption>
+</figure>
+
+<div class="cnn-needed-v2-principles">
+<article><span>01</span><strong>Local receptive fields</strong><p>each filter reads a small image neighborhood</p></article>
+<article><span>02</span><strong>Shared weights</strong><p>the same detector is reused across the whole image</p></article>
+<article><span>03</span><strong>Translation awareness</strong><p>a pattern can be found wherever it appears</p></article>
+</div>
+</div>
+
+<div class="dlx-takeaway">CNNs scale vision learning by preserving locality and sharing filters across space.</div>
 </section>
 
 ---
@@ -1228,12 +1475,28 @@ class: dlx-transition-slide
 <p>How filters learn to see edges, textures, parts, and objects.</p>
 </div>
 
-<div class="dlx-main dlx-next-stage">
-<div class="dlx-next-step dlx-next-image"><span>image</span></div>
+<div class="dlx-main dlx-next-stage dlx-next-stage-real">
+<figure class="dlx-next-step dlx-next-image dlx-real-input">
+<img :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Real zebra stripe image used as CNN input">
+<figcaption><span>input image</span><strong>real texture</strong></figcaption>
+</figure>
 <div class="dlx-flow-arrow"></div>
-<div class="dlx-next-step dlx-next-filter"><span>filter</span><i></i></div>
+<div class="dlx-next-step dlx-next-filter dlx-real-filter">
+<span>Sobel filter</span>
+<div class="dlx-kernel-matrix" aria-label="Sobel X convolution kernel">
+<b>-1</b><b>0</b><b>1</b>
+<b>-2</b><b>0</b><b>2</b>
+<b>-1</b><b>0</b><b>1</b>
+</div>
+<small>edge detector</small>
+</div>
 <div class="dlx-flow-arrow"></div>
-<div class="dlx-next-step dlx-next-maps"><span>feature maps</span><b></b><b></b><b></b></div>
+<div class="dlx-next-step dlx-next-maps dlx-real-maps">
+<span>feature maps</span>
+<figure><img class="map-edge" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible edge feature map from zebra image"><small>edges</small></figure>
+<figure><img class="map-texture" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible texture feature map from zebra image"><small>texture</small></figure>
+<figure><img class="map-contrast" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible contrast feature map from zebra image"><small>contrast</small></figure>
+</div>
 <div class="dlx-flow-arrow"></div>
 <div class="dlx-next-step dlx-next-predict"><span>prediction</span><strong>visual hierarchy</strong></div>
 </div>
@@ -1919,15 +2182,46 @@ class: nlp-sequence-intro-slide
 <span>Language</span>
 <strong>RNNs read sequences</strong>
 </div>
-<div class="nlp-redone-sequence-frame">
-<img :src="'/images/nlp-sequence-model.svg'" alt="Sequence model diagram from Dive into Deep Learning">
+<div class="language-sequence-panel">
+<div class="language-rnn-flow" aria-label="RNN sequence flow">
+<div class="language-rnn-step">
+<b>A</b>
+<span>The</span>
 </div>
-<div class="nlp-redone-token-timeline">
-<b>The</b><b>student</b><b>understands</b><b>the</b><b>concept</b>
+<i></i>
+<div class="language-rnn-step">
+<b>A</b>
+<span>student</span>
 </div>
-<div class="nlp-redone-caption">
-<b>Context over time</b>
-<span>each word changes the meaning of what comes next</span>
+<i></i>
+<div class="language-rnn-step">
+<b>A</b>
+<span>understands</span>
+</div>
+<i></i>
+<div class="language-rnn-step active">
+<b>A</b>
+<span>concept</span>
+</div>
+</div>
+<div class="language-memory-band">
+<span>hidden state h<sub>t</sub></span>
+<strong>meaning accumulates one token at a time</strong>
+</div>
+</div>
+<div class="language-context-grid">
+<div>
+<b>Order</b>
+<span>next words depend on previous ones</span>
+</div>
+<div>
+<b>Memory</b>
+<span>hidden state carries context</span>
+</div>
+<div>
+<b>Ambiguity</b>
+<span>meaning resolves over time</span>
+</div>
 </div>
 </article>
 </div>
@@ -2468,43 +2762,55 @@ class: self-attention-step-slide
 class: rnn-to-transformer-slide
 ---
 
-<section class="slide-shell transformer-section rnn-transformer-compare attn48-final">
+<section class="slide-shell transformer-section rnn-transformer-compare attn51-shift-redesign">
 <div class="ts-header">
 <span>ARCHITECTURAL SHIFT</span>
 <h1>From RNNs to Transformers</h1>
-<p>Sequential recurrence gave way to attention-based parallel processing.</p>
+<p>Language models moved from step-by-step memory to direct token interaction.</p>
 </div>
 
-<div class="attn48-final-main">
-<article class="ts-panel attn48-final-figure">
-<div class="attn48-final-head">
-<span>Online comparison figure</span>
+<div class="attn51-shift-main">
+<article class="ts-panel attn51-shift-hero">
+<div class="attn51-shift-head">
+<span>Online visual</span>
 <strong>Sequential recurrence versus direct self-attention</strong>
 </div>
-<div class="attn48-final-frame">
+<div class="attn51-shift-image">
 <img :src="'/images/nlp-cnn-rnn-self-attention.svg'" alt="CNN RNN self-attention comparison diagram from Dive into Deep Learning">
 </div>
+<p>In an RNN, information has to travel through a chain of hidden states. In a Transformer, self-attention creates direct routes between tokens.</p>
 </article>
 
-<div class="attn48-final-cards">
-<article class="ts-panel attn48-final-card rnn">
-<span>RNN / LSTM</span>
-<strong>Sequential path</strong>
-<p>Tokens are processed one after another through a hidden state.</p>
-</article>
-
-<article class="ts-panel attn48-final-card transformer">
-<span>Transformer</span>
-<strong>Direct interaction</strong>
-<p>Self-attention lets every token look at every other token.</p>
-</article>
-
-<article class="ts-panel attn48-final-card result">
-<span>Result</span>
-<strong>More scalable context</strong>
-<p>Parallel processing makes long-range dependencies easier to model.</p>
-</article>
+<aside class="attn51-shift-side">
+<article class="ts-panel attn51-shift-card rnn">
+<span>Before</span>
+<strong>RNN / LSTM</strong>
+<p>Reads one token at a time and compresses the past into a hidden state.</p>
+<div class="attn51-rnn-flow" aria-hidden="true">
+<b>x<sub>1</sub></b><i></i><b>x<sub>2</sub></b><i></i><b>x<sub>3</sub></b><i></i><b>x<sub>4</sub></b>
 </div>
+</article>
+
+<article class="ts-panel attn51-shift-card transformer">
+<span>After</span>
+<strong>Transformer</strong>
+<p>All tokens connect in parallel.</p>
+<div class="attn51-attention-web" aria-hidden="true">
+<svg viewBox="0 0 260 100">
+<path d="M38 74 C92 14 168 14 222 74" />
+<path d="M38 74 C94 92 166 92 222 74" />
+<path d="M80 30 C120 76 140 76 180 30" />
+</svg>
+<b>the</b><b>model</b><b>uses</b><b>context</b>
+</div>
+</article>
+
+<article class="ts-panel attn51-shift-card result">
+<span>Why it matters</span>
+<strong>Faster training, richer context</strong>
+<p>Long-range dependencies become easier because useful tokens can connect directly.</p>
+</article>
+</aside>
 </div>
 
 <div class="ts-takeaway">Transformers replaced recurrence with scalable contextual interaction.</div>
@@ -2514,55 +2820,62 @@ class: rnn-to-transformer-slide
 class: transformer-block-slide
 ---
 
-<section class="slide-shell transformer-section transformer-block attn49-redone">
+<section class="slide-shell transformer-section transformer-block attn52-block-redesign">
 <div class="ts-header">
 <span>TRANSFORMER ANATOMY</span>
 <h1>Inside a Transformer Block</h1>
-<p>Self-attention is combined with feed-forward layers, normalization, and residual paths.</p>
+<p>Each block mixes context across tokens, then transforms every token representation.</p>
 </div>
 
-<div class="attn49-main">
-<article class="ts-panel attn49-block-card">
-<div class="attn49-card-head">
-<span>Block anatomy</span>
-<strong>Context mixing plus feature transformation</strong>
+<div class="attn52-main">
+<article class="ts-panel attn52-block-hero">
+<div class="attn52-head">
+<span>Core block</span>
+<strong>Two operations repeated many times</strong>
 </div>
 
-<div class="attn49-block-diagram">
-<div class="attn49-signal input">token representations</div>
-<i></i>
-<div class="attn49-layer attention">
-<span>Multi-head self-attention</span>
-<b>mix context across tokens</b>
+<div class="attn52-stack">
+<div class="attn52-token-row">
+<b>The</b><b>model</b><b>reads</b><b>context</b>
 </div>
-<div class="attn49-residual first">residual + norm</div>
-<i></i>
-<div class="attn49-layer ffn">
-<span>Feed-forward network</span>
-<b>transform each token</b>
+<i class="attn52-arrow"></i>
+<div class="attn52-stage attention">
+<span>1</span>
+<div>
+<strong>Multi-head self-attention</strong>
+<p>Each token gathers the most relevant context from the whole sequence.</p>
 </div>
-<div class="attn49-residual second">residual + norm</div>
-<i></i>
-<div class="attn49-signal output">updated representations</div>
+</div>
+<div class="attn52-norm">residual connection + layer normalization</div>
+<i class="attn52-arrow"></i>
+<div class="attn52-stage ffn">
+<span>2</span>
+<div>
+<strong>Feed-forward network</strong>
+<p>The same small neural network refines each token independently.</p>
+</div>
+</div>
+<div class="attn52-norm">residual connection + layer normalization</div>
+<i class="attn52-arrow"></i>
+<div class="attn52-output">updated contextual representations</div>
 </div>
 </article>
 
-<aside class="attn49-side">
-<article class="ts-panel attn49-reference-card">
-<div class="attn49-card-head">
+<aside class="attn52-side">
+<article class="ts-panel attn52-reference">
+<div class="attn52-head">
 <span>Online reference</span>
 <strong>Original Transformer architecture</strong>
 </div>
-<div class="attn49-reference-frame">
+<div class="attn52-reference-frame">
 <img :src="'/images/transformer-full-d2l.svg'" alt="Transformer architecture diagram from Dive into Deep Learning">
 </div>
 </article>
 
-<div class="attn49-component-grid">
-<article class="ts-panel attn49-mini"><span>attention</span><strong>context mixing</strong></article>
-<article class="ts-panel attn49-mini"><span>norm</span><strong>stable activations</strong></article>
-<article class="ts-panel attn49-mini"><span>ffn</span><strong>nonlinear transform</strong></article>
-<article class="ts-panel attn49-mini"><span>skip</span><strong>train deep stacks</strong></article>
+<div class="attn52-notes">
+<article class="ts-panel attn52-note"><span>attention</span><strong>mixes tokens</strong><p>Context is shared across positions.</p></article>
+<article class="ts-panel attn52-note"><span>ffn</span><strong>updates features</strong><p>Each token gets a richer representation.</p></article>
+<article class="ts-panel attn52-note"><span>residuals</span><strong>keep gradients stable</strong><p>Deep stacks remain trainable.</p></article>
 </div>
 </aside>
 </div>
@@ -2636,8 +2949,27 @@ class: transformer-llm-transition-slide
 <span>Online figure</span>
 <strong>Transformer language models reuse the same attention backbone in different ways</strong>
 </div>
+<div class="attn51-family-body">
 <div class="attn51-image-frame">
 <img :src="'/images/elmo-gpt-bert-d2l.svg'" alt="ELMo GPT BERT comparison diagram from Dive into Deep Learning">
+</div>
+<div class="attn51-explain-grid">
+<article class="attn51-explain-card">
+<span>same backbone</span>
+<strong>Attention is the reusable engine.</strong>
+<p>The architecture can read token relationships in parallel; the training setup decides how it is used.</p>
+</article>
+<article class="attn51-explain-card">
+<span>training objective</span>
+<strong>Different objectives create different behavior.</strong>
+<p>Bidirectional understanding, next-token generation, and text-to-text mapping are trained from the same core idea.</p>
+</article>
+<article class="attn51-explain-card">
+<span>scale shift</span>
+<strong>Pretraining turns models into foundations.</strong>
+<p>Large datasets and compute make the backbone reusable across tasks instead of hand-built for one task.</p>
+</article>
+</div>
 </div>
 </article>
 
@@ -2645,17 +2977,17 @@ class: transformer-llm-transition-slide
 <article class="ts-panel attn51-model-card">
 <span>Encoder</span>
 <strong>BERT</strong>
-<p>Builds bidirectional representations for understanding.</p>
+<p>Reads context on both sides of a token, useful for classification, search, and extraction.</p>
 </article>
 <article class="ts-panel attn51-model-card">
 <span>Decoder</span>
 <strong>GPT</strong>
-<p>Predicts the next token for fluent generation.</p>
+<p>Uses causal attention to continue text one token at a time, enabling chat and code generation.</p>
 </article>
 <article class="ts-panel attn51-model-card">
 <span>Encoder-decoder</span>
 <strong>T5</strong>
-<p>Frames language tasks as text-to-text transformation.</p>
+<p>Encodes an input prompt, then decodes an output sequence for translation and summarization.</p>
 </article>
 </aside>
 </div>
@@ -2760,7 +3092,34 @@ class: llm-next-token-slide
 <strong>Language modeling turns text into repeated prediction examples</strong>
 </div>
 <div class="llm53-reference-frame">
-<img :src="'/images/nlp-lang-model-data.svg'" alt="Language model data diagram from Dive into Deep Learning">
+<div class="llm53-shift-diagram" aria-label="Input sequence aligned with target sequence shifted by one token">
+<div class="llm53-shift-rule">
+<strong>one-token shift</strong>
+<span>each input position learns to predict the next token</span>
+</div>
+<div class="llm53-sequence-grid">
+<span class="llm53-row-label">input<br><em>x<sub>t</sub></em></span>
+<b>the</b>
+<b>time</b>
+<b>machine</b>
+<b>by</b>
+<b>h</b>
+<b>g</b>
+<span class="llm53-row-label target-label">target<br><em>y<sub>t</sub></em></span>
+<b class="target-token">time</b>
+<b class="target-token">machine</b>
+<b class="target-token">by</b>
+<b class="target-token">h</b>
+<b class="target-token">g</b>
+<b class="target-token">wells</b>
+</div>
+<div class="llm53-pair-note">
+<span>example pair</span>
+<b>the</b>
+<i></i>
+<b>time</b>
+</div>
+</div>
 </div>
 <p>Every position in a text sequence can become a training example.</p>
 </article>
@@ -3191,12 +3550,12 @@ class: genai-practice-slide
 </article>
 
 <aside class="genai63-usecases">
-<article class="ts-panel genai63-use"><img :src="'/images/genai-stable-astronaut-horse.webp'" alt="Stable Diffusion generated astronaut riding a horse image"><span>design</span><strong>concept exploration</strong></article>
-<article class="ts-panel genai63-use"><img :src="'/images/gpt-decoder-only-d2l.svg'" alt="GPT decoder-only diagram from Dive into Deep Learning"><span>coding</span><strong>assist development</strong></article>
-<article class="ts-panel genai63-use"><img :src="'/images/nlp-lang-model-data.svg'" alt="Language model data diagram from Dive into Deep Learning"><span>education</span><strong>adaptive explanation</strong></article>
-<article class="ts-panel genai63-use"><img :src="'/images/genai-dalle-sample-grid.png'" alt="DALL-E generated image sample grid from Wikimedia Commons"><span>marketing</span><strong>campaign variants</strong></article>
-<article class="ts-panel genai63-use"><img :src="'/images/cnn-medical-xray.jpg'" alt="Chest X-ray image from Wikimedia Commons"><span>science</span><strong>research support</strong></article>
-<article class="ts-panel genai63-use"><img :src="'/images/cnn-industrial-quality-control.png'" alt="Industrial quality-control inspection photo from Wikimedia Commons"><span>industry</span><strong>prototype faster</strong></article>
+<article class="ts-panel genai63-use"><span>design</span><strong>concept exploration</strong><p>Rapidly compare directions before committing to one.</p></article>
+<article class="ts-panel genai63-use"><span>coding</span><strong>assist development</strong><p>Draft, explain, refactor, and test with a tighter loop.</p></article>
+<article class="ts-panel genai63-use"><span>education</span><strong>adaptive explanation</strong><p>Adjust examples and difficulty to the learner.</p></article>
+<article class="ts-panel genai63-use"><span>marketing</span><strong>campaign variants</strong><p>Generate message options for different audiences.</p></article>
+<article class="ts-panel genai63-use"><span>science</span><strong>research support</strong><p>Summarize evidence and accelerate literature review.</p></article>
+<article class="ts-panel genai63-use"><span>industry</span><strong>prototype faster</strong><p>Turn requirements into mockups, checks, and workflows.</p></article>
 </aside>
 </div>
 
@@ -3782,6 +4141,7 @@ class: agentic-future-slide
 <div class="agent75-trajectory-head">
 <span>trajectory</span>
 <strong>From language interfaces to situated systems</strong>
+<p>Each step adds more context, coordination, prediction, and physical action.</p>
 </div>
 <div class="agent75-trajectory-grid">
 <div><b>01</b><strong>tool agents</strong><p>APIs, files, web actions</p></div>
@@ -3859,7 +4219,7 @@ class: future-world-models-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-cosmos-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — NVIDIA Cosmos</h1>
@@ -3937,7 +4297,7 @@ class: future-world-rl-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-deepmind-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — DeepMind Planning</h1>
@@ -4012,7 +4372,7 @@ class: future-embodied-ai-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-optimus-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — Tesla Optimus</h1>
@@ -4093,7 +4453,7 @@ class: future-physical-intelligence-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-waymo-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — Waymo</h1>
@@ -4173,28 +4533,40 @@ class: future-federated-edge-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-gboard-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — Google Gboard</h1>
 <p>Federated learning improves keyboard models while keeping raw typing data on devices.</p>
 </div>
 
-<div class="case-study-layout">
-<article class="ts-panel case-study-visual">
-<div class="case-study-visual-image logo">
+<div class="cs-gboard-layout">
+<article class="ts-panel cs-gboard-visual">
+<div class="cs-gboard-brand">
 <img :src="'/images/google-logo-official.png'" alt="Google logo">
+<div>
+<span>Gboard federated learning</span>
+<strong>Learning from usage without collecting raw typed text.</strong>
 </div>
-<div class="case-study-image-label">
-<span>federated learning</span>
-<strong>On-device updates for better suggestions.</strong>
+</div>
+
+<div class="cs-gboard-main">
+<img :src="'/images/future-federated-learning.png'" alt="Federated learning process diagram from Wikimedia Commons">
+<div class="cs-keyboard-card">
+<span>on-device model</span>
+<div class="cs-keyboard">
+<b>q</b><b>w</b><b>e</b><b>r</b><b>t</b><b>y</b>
+<b>a</b><b>s</b><b>d</b><b>f</b><b>g</b><b>h</b>
+<b>z</b><b>x</b><b>c</b><b>v</b><b>b</b><b>n</b>
+</div>
+</div>
 </div>
 </article>
 
-<aside class="case-study-cards">
-<article class="ts-panel"><span>technology used</span><strong>Local training</strong><p>Phones compute small model updates from local interactions instead of uploading raw personal typing data.</p></article>
-<article class="ts-panel"><span>how it is used</span><strong>Aggregate improvements</strong><p>Updates from many devices are combined to improve shared prediction and suggestion models.</p></article>
-<article class="ts-panel"><span>why it matters</span><strong>Privacy-aware personalization</strong><p>The product can learn from usage patterns while reducing the need to centralize sensitive text.</p></article>
+<aside class="cs-gboard-cards">
+<article class="ts-panel"><span>01 technology</span><strong>Federated learning</strong><p>Training happens locally on many phones. Only model updates are aggregated.</p></article>
+<article class="ts-panel"><span>02 use</span><strong>Better suggestions</strong><p>Gboard can improve prediction and typing assistance from real usage patterns.</p></article>
+<article class="ts-panel"><span>03 value</span><strong>Privacy-aware improvement</strong><p>Raw typing data stays closer to the device instead of becoming centralized training data.</p></article>
 </aside>
 </div>
 
@@ -4205,46 +4577,47 @@ class: frontier-case-study-slide
 class: future-safety-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section future81">
+<section class="slide-shell transformer-section frontier-section future81 safety-rebuild-slide">
 <div class="ts-header">
 <span>SAFETY LAYER</span>
 <h1>AI Safety and Guardrails</h1>
 <p>More autonomous systems need explicit control layers around models, tools, memory, and actions.</p>
 </div>
 
-<div class="ff81-redesign-layout">
-<article class="ts-panel ff81-safety-panel">
-<div class="ff81-safety-head">
-<img :src="'/images/llm-caution-warning-sign.svg'" alt="Public-domain caution warning sign from Wikimedia Commons">
-<div>
-<span>guardrail system</span>
-<strong>Autonomy needs checkpoints before action.</strong>
-<p>Safety is a control layer around the model, not a paragraph after the model.</p>
-</div>
+<div class="safety-rebuild-layout">
+<article class="ts-panel safety-flow-panel">
+<div class="safety-flow-head">
+<span>runtime guardrails</span>
+<strong>Check before the system acts.</strong>
+<p>Guardrails sit between model outputs and real actions, adding policies, verification, and monitoring.</p>
 </div>
 
-<div class="ff81-pipeline">
-<article><span>01 model</span><strong>Propose</strong><p>answer, plan, or action</p></article>
+<div class="safety-flow">
+<article><span>01</span><strong>Model proposes</strong><p>answer, plan, tool call</p></article>
 <i></i>
-<article><span>02 policy</span><strong>Filter</strong><p>allowed, blocked, or ask</p></article>
+<article class="guard"><span>02</span><strong>Guardrail checks</strong><p>policy, privacy, risk</p></article>
 <i></i>
-<article><span>03 verify</span><strong>Check</strong><p>facts, code, side effects</p></article>
+<article><span>03</span><strong>Verify</strong><p>facts and side effects</p></article>
 <i></i>
-<article><span>04 action</span><strong>Monitor</strong><p>tool use with audit trail</p></article>
+<article><span>04</span><strong>Act or escalate</strong><p>execute, ask, or block</p></article>
+</div>
+
+<div class="safety-monitor-strip">
+<b>monitor</b><b>log</b><b>review</b><b>improve</b>
 </div>
 </article>
 
-<aside class="ts-panel ff81-control-panel">
-<div class="ff81-control-head">
+<aside class="safety-side">
+<article class="ts-panel safety-warning-card">
+<img :src="'/images/case-guardrails-warning.svg'" alt="Warning icon from Wikimedia Commons">
+<div><span>risk signal</span><strong>Fluent output is not automatic trust.</strong></div>
+</article>
+<article class="ts-panel safety-control-list">
 <span>control layers</span>
-<strong>Guardrails reduce risk before, during, and after execution.</strong>
-</div>
-<div class="ff81-control-grid">
-<article><strong>Policies</strong><p>clear boundaries for allowed actions</p></article>
-<article><strong>Verification</strong><p>evidence checks before trust</p></article>
-<article><strong>Human oversight</strong><p>approval for consequential choices</p></article>
-<article><strong>Monitoring</strong><p>detect drift, misuse, and failures</p></article>
-</div>
+<div><strong>Policy filters</strong><p>define what is allowed</p></div>
+<div><strong>Human oversight</strong><p>approve high-impact actions</p></div>
+<div><strong>Audit trails</strong><p>make decisions inspectable</p></div>
+</article>
 </aside>
 </div>
 
@@ -4255,28 +4628,40 @@ class: future-safety-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section frontier-case-study cs-bedrock-slide">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — AWS Bedrock Guardrails</h1>
 <p>Enterprise guardrails add configurable policy and monitoring around foundation-model applications.</p>
 </div>
 
-<div class="case-study-layout">
-<article class="ts-panel case-study-visual">
-<div class="case-study-visual-image logo">
+<div class="cs-bedrock-layout">
+<article class="ts-panel cs-bedrock-hero">
+<div class="cs-bedrock-logo">
 <img :src="'/images/case-aws-logo.svg'" alt="AWS logo">
+<span>Amazon Bedrock Guardrails</span>
 </div>
-<div class="case-study-image-label">
-<span>safety controls</span>
-<strong>Policy boundaries for model-powered apps.</strong>
+
+<div class="cs-bedrock-flow">
+<article><span>input</span><strong>prompt</strong></article>
+<i></i>
+<article class="guard"><span>guardrail</span><strong>policy check</strong></article>
+<i></i>
+<article><span>model</span><strong>response</strong></article>
+<i></i>
+<article class="app"><span>app</span><strong>safe output</strong></article>
+</div>
+
+<div class="cs-bedrock-bottom">
+<img :src="'/images/case-guardrails-warning.svg'" alt="Warning icon from Wikimedia Commons">
+<strong>Designed to help applications filter, block, redact, or route sensitive outputs.</strong>
 </div>
 </article>
 
-<aside class="case-study-cards">
-<article class="ts-panel"><span>technology used</span><strong>Guardrail policies</strong><p>Bedrock Guardrails lets teams configure content filters, denied topics, and sensitive-information handling.</p></article>
-<article class="ts-panel"><span>how it is used</span><strong>Filter and monitor</strong><p>Controls can be applied around prompts and responses so applications follow organization-specific rules.</p></article>
-<article class="ts-panel"><span>why it matters</span><strong>Operational trust</strong><p>Autonomous systems need repeatable safety controls, logging, and human oversight before production use.</p></article>
+<aside class="cs-bedrock-cards">
+<article class="ts-panel"><span>technology used</span><strong>Configurable policies</strong><p>Teams define denied topics, content filters, and sensitive-information handling.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Wrap prompts and responses</strong><p>Guardrails can be applied around model calls so apps follow organization-specific rules.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Enterprise control</strong><p>Production AI needs repeatable controls, monitoring, and escalation paths.</p></article>
 </aside>
 </div>
 
@@ -4287,36 +4672,42 @@ class: frontier-case-study-slide
 class: future-stack-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section future82">
+<section class="slide-shell transformer-section frontier-section future-stack-rebuild">
 <div class="ts-header">
 <span>SYSTEM ARCHITECTURE</span>
 <h1>The Future AI Stack</h1>
 <p>Future AI will combine models, tools, memory, world models, edge deployment, and safety into layered systems.</p>
 </div>
 
-<div class="ff82-redesign-layout">
-<article class="ts-panel ff82-stack-redesign">
-<div class="ff82-stack-head">
-<span>layered system</span>
-<strong>Future AI is an architecture, not a single model.</strong>
+<div class="future-stack-grid">
+<article class="ts-panel future-stack-main">
+<div class="future-stack-title">
+<span>layered stack</span>
+<strong>Useful AI emerges from connected layers.</strong>
+<p>Each layer adds a capability the model alone does not provide.</p>
 </div>
-<div class="ff82-stack-layers">
-<div class="ff82-system-layer safety"><b>Safety + human oversight</b><small>policies, audit, approval</small></div>
-<div class="ff82-system-layer edge"><b>Edge / federated deployment</b><small>privacy, latency, local adaptation</small></div>
-<div class="ff82-system-layer world"><b>World models + planning</b><small>simulate futures before acting</small></div>
-<div class="ff82-system-layer agents"><b>Agents + tools + memory</b><small>action loops around the model</small></div>
-<div class="ff82-system-layer foundation"><b>Foundation models</b><small>language, vision, multimodal reasoning</small></div>
+
+<div class="future-stack-layers">
+<article class="safety"><span>06</span><strong>Safety + oversight</strong><p>policies, audit, approvals</p></article>
+<article class="edge"><span>05</span><strong>Edge / federated AI</strong><p>privacy, latency, local learning</p></article>
+<article class="world"><span>04</span><strong>World models</strong><p>simulate futures before acting</p></article>
+<article class="agent"><span>03</span><strong>Agents + tools</strong><p>memory, plans, tool calls</p></article>
+<article class="memory"><span>02</span><strong>Context + retrieval</strong><p>documents, code, user state</p></article>
+<article class="foundation"><span>01</span><strong>Foundation model</strong><p>language, vision, multimodal reasoning</p></article>
 </div>
 </article>
 
-<aside class="ff82-system-panel">
-<div class="ts-panel ff82-system-image">
+<aside class="future-stack-side">
+<article class="ts-panel future-stack-visual">
 <img :src="'/images/agent-genai-agent.png'" alt="GenAI agent architecture diagram from Wikimedia Commons">
-</div>
-<article class="ts-panel ff82-system-note">
-<span>systems view</span>
-<strong>Capabilities emerge from how models connect to tools, memory, deployment, and control.</strong>
+<div><span>online architecture visual</span><strong>Modern systems wrap models with data, tools, and control flow.</strong></div>
 </article>
+
+<div class="future-stack-principles">
+<article class="ts-panel"><span>connect</span><strong>models to context</strong></article>
+<article class="ts-panel"><span>act</span><strong>tools make outputs useful</strong></article>
+<article class="ts-panel"><span>control</span><strong>safety makes action deployable</strong></article>
+</div>
 </aside>
 </div>
 
@@ -4327,28 +4718,40 @@ class: future-stack-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section cs-copilot-rebuild">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — GitHub Copilot</h1>
 <p>A deployed AI stack combines foundation models, code context, tools, workflow integration, and controls.</p>
 </div>
 
-<div class="case-study-layout">
-<article class="ts-panel case-study-visual">
-<div class="case-study-visual-image logo dark-logo">
+<div class="copilot-layout">
+<article class="ts-panel copilot-product">
+<div class="copilot-brand">
 <img :src="'/images/case-github-logo.svg'" alt="GitHub logo">
+<div><span>developer assistant</span><strong>Copilot lives inside the workflow, not beside it.</strong></div>
 </div>
-<div class="case-study-image-label">
-<span>developer assistant</span>
-<strong>Foundation model embedded in the coding workflow.</strong>
+
+<div class="copilot-editor">
+<div class="copilot-tabs"><b>app.ts</b><b>tests</b><b>chat</b></div>
+<div class="copilot-code">
+<p><i>1</i><span>function summarizeCourse(slides) &#123;</span></p>
+<p><i>2</i><span class="muted">  // Copilot suggests the next step</span></p>
+<p><i>3</i><span>  const topics = extractKeyConcepts(slides)</span></p>
+<p><i>4</i><span class="suggestion">  return buildStudyGuide(topics)</span></p>
+<p><i>5</i><span>&#125;</span></p>
+</div>
+<aside class="copilot-chat">
+<span>copilot chat</span>
+<strong>Use repo context to explain, edit, test.</strong>
+</aside>
 </div>
 </article>
 
-<aside class="case-study-cards">
-<article class="ts-panel"><span>technology used</span><strong>LLM + code context</strong><p>Copilot uses editor, repository, and conversational context to generate suggestions, explanations, and code changes.</p></article>
-<article class="ts-panel"><span>how it is used</span><strong>Assist the workflow</strong><p>The assistant supports completion, chat, review, documentation, and increasingly agentic coding tasks.</p></article>
-<article class="ts-panel"><span>why it matters</span><strong>Stack, not just model</strong><p>Usefulness comes from connecting the model to tools, files, permissions, feedback, and safety settings.</p></article>
+<aside class="copilot-cards">
+<article class="ts-panel"><span>technology used</span><strong>LLM + repository context</strong><p>Suggestions are grounded in the open file, neighboring code, project structure, and developer prompts.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>From suggestion to workflow</strong><p>Copilot can complete code, explain logic, draft tests, answer questions, and help with code review.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>AI as an interface</strong><p>The value comes from embedding the model inside files, tools, permissions, feedback, and controls.</p></article>
 </aside>
 </div>
 
@@ -4359,38 +4762,35 @@ class: frontier-case-study-slide
 class: future-next-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section future83">
+<section class="slide-shell transformer-section frontier-section capability-rebuild">
 <div class="ts-header">
 <span>WHAT COMES NEXT?</span>
 <h1>Capability Plus Control</h1>
 <p>The frontier is not only bigger models. It is the balance between autonomy, grounding, deployment, and governance.</p>
 </div>
 
-<div class="ff83-redesign-layout">
-<article class="ts-panel ff83-frontier-hero">
+<div class="capability-layout">
+<article class="ts-panel capability-hero">
 <img :src="'/images/future-earth-apollo17.jpg'" alt="NASA Apollo 17 image of Earth from Wikimedia Commons">
-<div class="ff83-hero-copy">
-<span>frontier map</span>
-<strong>Capability matters only when it is grounded, deployed, and governed.</strong>
+<div class="capability-hero-copy">
+<span>frontier principle</span>
+<strong>Power is useful only when it is grounded and controlled.</strong>
+<p>Future AI is not a race toward autonomy alone; it is capability with verification, deployment, and governance.</p>
 </div>
 </article>
 
-<div class="ff83-quadrants">
-<article class="ts-panel ff83-quadrant">
-<img :src="'/images/llm-datacenter-server-racks.jpg'" alt="Datacenter server racks photo from Wikimedia Commons">
-<div><span>models</span><strong>More capable</strong><p>scale, reasoning support, long context</p></div>
+<div class="capability-cards">
+<article class="ts-panel">
+<b>01</b><span>model capability</span><strong>Better reasoning is only the starting point.</strong><p>Scale, long context, multimodal inputs, and stronger reasoning increase what the system can understand and generate.</p>
 </article>
-<article class="ts-panel ff83-quadrant">
-<img :src="'/images/agent-generative-architecture.png'" alt="Generative agent architecture figure from Wikimedia Commons">
-<div><span>agents</span><strong>More autonomous</strong><p>tools, memory, planning, collaboration</p></div>
+<article class="ts-panel">
+<b>02</b><span>agent autonomy</span><strong>Useful autonomy needs grounding.</strong><p>Agents become valuable when they use tools, memory, retrieval, and plans tied to real tasks instead of isolated answers.</p>
 </article>
-<article class="ts-panel ff83-quadrant">
-<img :src="'/images/agent-robonaut-working.jpg'" alt="NASA Robonaut 2 working image from Wikimedia Commons">
-<div><span>embodied</span><strong>More physical</strong><p>robots, vehicles, labs, factories</p></div>
+<article class="ts-panel">
+<b>03</b><span>deployment context</span><strong>Real systems live inside workflows.</strong><p>Products need permissions, interfaces, data access, human review, latency budgets, and operational monitoring.</p>
 </article>
-<article class="ts-panel ff83-quadrant">
-<img :src="'/images/llm-caution-warning-sign.svg'" alt="Public-domain caution warning sign from Wikimedia Commons">
-<div><span>governance</span><strong>More controlled</strong><p>verification, oversight, monitoring</p></div>
+<article class="ts-panel">
+<b>04</b><span>control layer</span><strong>Governance turns power into reliability.</strong><p>Verification, guardrails, audit trails, and escalation paths decide when the system may act and when it must stop.</p>
 </article>
 </div>
 </div>
@@ -4402,28 +4802,42 @@ class: future-next-slide
 class: frontier-case-study-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section frontier-case-study">
+<section class="slide-shell transformer-section frontier-section enterprise-assistant-rebuild">
 <div class="ts-header">
 <span>CASE STUDY</span>
 <h1>Case Study — Morgan Stanley + OpenAI</h1>
 <p>Enterprise assistants connect models to governed internal knowledge and expert workflows.</p>
 </div>
 
-<div class="case-study-layout">
-<article class="ts-panel case-study-visual">
-<div class="case-study-visual-image logo">
+<div class="enterprise-layout">
+<article class="ts-panel enterprise-hero">
+<div class="enterprise-logo-row">
 <img :src="'/images/case-morganstanley-logo.svg'" alt="Morgan Stanley logo">
+<i></i>
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
 </div>
-<div class="case-study-image-label">
-<span>enterprise assistant</span>
-<strong>Retrieval, governance, and advisor support.</strong>
+
+<div class="enterprise-workflow">
+<article><span>advisor asks</span><strong>client question</strong></article>
+<i></i>
+<article><span>retrieve</span><strong>approved knowledge</strong></article>
+<i></i>
+<article><span>generate</span><strong>grounded answer</strong></article>
+<i></i>
+<article><span>review</span><strong>human judgment</strong></article>
+</div>
+
+<div class="enterprise-docs">
+<article><b>research library</b><small>internal documents</small></article>
+<article><b>permissioning</b><small>who can see what</small></article>
+<article><b>audit trail</b><small>governance layer</small></article>
 </div>
 </article>
 
-<aside class="case-study-cards">
-<article class="ts-panel"><span>technology used</span><strong>LLM + retrieval</strong><p>The assistant connects language-model interaction to internal research, documents, and knowledge bases.</p></article>
-<article class="ts-panel"><span>how it is used</span><strong>Support expert work</strong><p>Advisors can ask questions, search institutional knowledge, and surface relevant material faster.</p></article>
-<article class="ts-panel"><span>why it matters</span><strong>Governed knowledge access</strong><p>Enterprise AI succeeds when it combines useful answers with permissioning, auditability, and human judgment.</p></article>
+<aside class="enterprise-cards">
+<article class="ts-panel"><span>technology used</span><strong>LLM + retrieval</strong><p>The assistant connects natural-language questions to curated internal research and knowledge bases.</p></article>
+<article class="ts-panel"><span>how it is used</span><strong>Advisor support</strong><p>Financial advisors can search complex documents faster and surface relevant material for client work.</p></article>
+<article class="ts-panel"><span>why it matters</span><strong>Governed expertise</strong><p>The value is not only answering. It is access control, traceability, and expert review around the answer.</p></article>
 </aside>
 </div>
 
@@ -4434,31 +4848,37 @@ class: frontier-case-study-slide
 class: future-synthesis-slide
 ---
 
-<section class="slide-shell transformer-section frontier-section future84">
+<section class="slide-shell transformer-section frontier-section future-synthesis-rebuild">
 <div class="ts-header">
 <span>FINAL SYNTHESIS</span>
 <h1>From Perceptron to Agentic Systems</h1>
 <p>AI evolved from simple decision boundaries to systems that perceive, generate, plan, and act.</p>
 </div>
 
-<div class="ff84-redesign-layout">
-<article class="ts-panel ff84-image-band">
-<figure><img :src="'/images/biological-neuron-vs-perceptron.png'" alt="Biological neuron and perceptron image from Wikimedia Commons"><figcaption>early neural ideas</figcaption></figure>
-<figure><img :src="'/images/attention-paper-first-page.png'" alt="Attention Is All You Need paper first page"><figcaption>transformer era</figcaption></figure>
-<figure><img :src="'/images/genai-dalle-sample-grid.png'" alt="DALL-E sample grid from Wikimedia Commons"><figcaption>generative systems</figcaption></figure>
-<figure><img :src="'/images/agent-robonaut-working.jpg'" alt="NASA Robonaut 2 working image from Wikimedia Commons"><figcaption>action in the world</figcaption></figure>
+<div class="synthesis-layout">
+<article class="ts-panel synthesis-gallery">
+<figure class="wide"><img :src="'/images/biological-neuron-vs-perceptron.png'" alt="Biological neuron and perceptron image from Wikimedia Commons"><figcaption>neural roots</figcaption></figure>
+<figure><img :src="'/images/attention-paper-first-page.png'" alt="Attention Is All You Need paper first page"><figcaption>attention</figcaption></figure>
+<figure><img :src="'/images/genai-dalle-sample-grid.png'" alt="DALL-E sample grid from Wikimedia Commons"><figcaption>generation</figcaption></figure>
+<figure><img :src="'/images/agent-robonaut-working.jpg'" alt="NASA Robonaut 2 working image from Wikimedia Commons"><figcaption>embodiment</figcaption></figure>
+<figure><img :src="'/images/future-earth-apollo17.jpg'" alt="NASA Apollo 17 image of Earth from Wikimedia Commons"><figcaption>world systems</figcaption></figure>
 </article>
 
-<article class="ts-panel ff84-synthesis-roadmap">
-<div class="ff84-milestone"><span>01</span><strong>Perceptrons</strong><p>linear decision boundaries</p></div>
-<i></i>
-<div class="ff84-milestone"><span>02</span><strong>Deep learning</strong><p>learned representations</p></div>
-<i></i>
-<div class="ff84-milestone"><span>03</span><strong>Transformers</strong><p>attention and scale</p></div>
-<i></i>
-<div class="ff84-milestone"><span>04</span><strong>Generative agents</strong><p>create, use tools, remember</p></div>
-<i></i>
-<div class="ff84-milestone"><span>05</span><strong>World systems</strong><p>simulate, plan, act safely</p></div>
+<article class="ts-panel synthesis-roadmap">
+<div class="synthesis-road-head">
+<span>course arc</span>
+<strong>From decision boundary to intelligent system.</strong>
+<p>Each era adds a new layer of capability: representation, scale, generation, memory, tools, planning, and safety.</p>
+</div>
+
+<div class="synthesis-steps">
+<article><span>01</span><strong>Perceptrons</strong><p>learn a boundary</p></article>
+<article><span>02</span><strong>Deep networks</strong><p>learn representations</p></article>
+<article><span>03</span><strong>CNNs + RNNs</strong><p>see images, read sequences</p></article>
+<article><span>04</span><strong>Transformers</strong><p>use attention at scale</p></article>
+<article><span>05</span><strong>LLMs + Generative AI</strong><p>create text, images, code</p></article>
+<article><span>06</span><strong>Agents + world models</strong><p>plan, act, and learn safely</p></article>
+</div>
 </article>
 </div>
 

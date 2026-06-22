@@ -29,18 +29,28 @@ npm run build
 
 ## Design Notes
 
-The slide uses a clean white academic keynote style with deep blue, electric blue, cyan, purple, and dark-gray accents. The composition combines a strong title block, a local generated hero image, and a compact five-stage course roadmap.
+The deck uses a clean white academic keynote style with deep blue, electric blue, cyan, purple, and dark-gray accents. The rebuilt title slide combines a strong title block, online-sourced local visual assets, and a compact five-stage course roadmap.
 
-All image references are local. No online hotlinked images are used. The slide 1 hero image is stored at `public/images/slide-1-ai-evolution-hero.png`.
+All image references are local. No online hotlinked images are used.
 
 The custom stylesheet includes safe-area constraints, a framed image container, bounded roadmap cards, and overflow protection to keep content inside a 16:9 Slidev presentation frame.
 
 ## Image Attributions
 
+- `public/images/cover-wikimedia-servers.jpg`: "Wikimedia Servers-0051 17.jpg" by Victor Grigas, Wikimedia Commons, CC BY-SA 3.0. https://commons.wikimedia.org/wiki/File:Wikimedia_Servers-0051_17.jpg
+- `public/images/cover-neural-network.svg`: "Neural network.svg" from Wikimedia Commons; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/File:Neural_network.svg
+- `public/images/cover-artificial-neuron.svg`: "Artificial neuron structure.svg" from Wikimedia Commons; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/File:Artificial_neuron_structure.svg
+- `public/images/cover-ai-brain-icon.svg`: "Icon AI brain black.svg" from Wikimedia Commons; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/File:Icon_AI_brain_black.svg
 - `public/images/biological-neuron-vs-perceptron.png`: "Organization of a biological brain and a perceptron" from Wikimedia Commons, sourced from Frank Rosenblatt, "The Design of an Intelligent Automaton," Research Reviews, Office of Naval Research, October 1958. Public domain. https://commons.wikimedia.org/wiki/File:Organization_of_a_biological_brain_and_a_perceptron.png
+- `public/images/slide-6-biological-neuron-online.svg`: "Neuron.svg" by User:Dhp1080 / Interiot~commonswiki, Wikimedia Commons, based on "Anatomy and Physiology" by the US National Cancer Institute SEER Program, GFDL and CC BY-SA licenses. https://commons.wikimedia.org/wiki/File:Neuron.svg
+- `public/images/slide-6-artificial-neuron-online.svg`: "Artificial neuron structure.svg" by Funcs, Wikimedia Commons, CC0 1.0 public domain dedication. https://commons.wikimedia.org/wiki/File:Artificial_neuron_structure.svg
+- `public/images/slide-9-artificial-neural-network-online.svg`: "Artificial neural network.svg" by Cburnett, Wikimedia Commons, CC BY-SA 3.0 / GFDL. https://commons.wikimedia.org/wiki/File:Artificial_neural_network.svg
 - `public/images/geoffrey-hinton-photo.jpg`: "Geoffrey Hinton in 2026" by Cmichel67, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Geoffrey_Hinton_in_2026.jpg
 - `public/images/yann-lecun-photo.jpg`: "Laura Chaubard & Yann Le Cun - 2024 (53814052697) (cropped).jpg" by Jérémy Barande, Wikimedia Commons, CC BY-SA 2.0. https://commons.wikimedia.org/wiki/File:Laura_Chaubard_%26_Yann_Le_Cun_-_2024_(53814052697)_(cropped).jpg
 - `public/images/backpropagation-online-explanation.png`: backpropagation illustration sourced from Stackademic, "The Difference Between Back Propagation and Forward Propagation in Deep Learning." https://stackademic.com/blog/the-difference-between-back-propagation-and-forward-propagation-in-deep-learning-2b2248e6d00c
+- `public/images/backpropagation-chain-rule-mit.png`: "The computation graph for backpropagation through a three-layer MLP" from Foundations of Computer Vision, Chapter 14, by Antonio Torralba, Phillip Isola, and William Freeman, CC BY-NC-ND. https://visionbook.mit.edu/backpropagation.html
+- `public/images/generalization-overfitting-wikimedia.svg`: "Overfitting.svg" from Wikimedia Commons; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/File:Overfitting.svg
+- `public/images/generalization-medical-xray-wikimedia.jpg`: "Normal posteroanterior (PA) chest radiograph (X-ray).jpg" from Wikimedia Commons; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg
 - `public/images/imagenet-cat.jpg`: "Cat August 2010-4.jpg" by Alvesgaspar, Wikimedia Commons, CC BY-SA 3.0 / GFDL. https://commons.wikimedia.org/wiki/File:Cat_August_2010-4.jpg
 - `public/images/imagenet-dog.jpg`: "Golden Retriever Carlos (10581910556).jpg" by Dirk Vorderstraße, Wikimedia Commons/Flickr, CC BY 2.0. https://commons.wikimedia.org/wiki/File:Golden_Retriever_Carlos_(10581910556).jpg
 - `public/images/imagenet-duck.jpg`: "Male mallard duck 2.jpg" by Acarpentier / Alain Carpentier, Wikimedia Commons, CC BY 3.0 / GFDL. https://commons.wikimedia.org/wiki/File:Male_mallard_duck_2.jpg
@@ -121,6 +131,15 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/future-rl-diagram.svg`: "Reinforcement learning diagram.svg" by Megajuice, Wikimedia Commons, CC0 / public domain dedication. https://commons.wikimedia.org/wiki/File:Reinforcement_learning_diagram.svg
 - `public/images/future-federated-learning.png`: "Federated learning process central case.png" by Jeromemetronome, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Federated_learning_process_central_case.png
 - `public/images/future-edge-computing.png`: "IIR scalabilité perpendiculaire.png" by JJ.FLEURY, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:IIR_scalabilit%C3%A9_perpendiculaire.png
+- `public/images/fabio-fl-protocol-online.png`: "Centralized federated learning protocol.png" from Wikimedia Commons, used as an educational federated-learning visual reference. https://commons.wikimedia.org/wiki/File:Centralized_federated_learning_protocol.png
+- `public/images/fabio-iclr-logo-online.svg`: International Conference on Learning Representations logo, downloaded from Wikipedia media storage and used as an event/context reference. https://en.wikipedia.org/wiki/International_Conference_on_Learning_Representations
+- `public/images/slide-4-ai-meaning-online.jpg`: abstract neural-network sphere image by Growtika, downloaded from Unsplash search results during an earlier slide 4 draft. Current slide 4 no longer uses this image. Source image URL: https://images.unsplash.com/photo-1674027444485-cec3da58eef4
+- Slide 4 quote references: Alan Turing, "Computing Machinery and Intelligence" (1950), https://doi.org/10.1093/mind/LIX.236.433; John McCarthy, "What is Artificial Intelligence?", https://www-formal.stanford.edu/jmc/whatisai/node1.html; Tesler's theorem reference, https://en.wikipedia.org/wiki/AI_effect
+- `public/images/slide-11-visualising-ai-representations.jpg`: Visualising AI artwork from the Unsplash x DeepMind project, credited on the Unsplash blog to Rose Pilkington's AI perception/AGI artwork series. Source image URL: https://storage.ghost.io/c/80/1d/801d5d13-5875-4136-9bfc-1e2fe01b2bff/content/images/2022/06/RP_AGI_01.jpg; project context: https://unsplash.com/blog/unsplash-x-deepmind/
+- `public/images/slide-11-representations-online.jpg`: abstract network/light-lines image by Sandip Kalal, downloaded from Unsplash search results and used locally for slide 11. Source image URL: https://images.unsplash.com/photo-1647356161576-4e80c6619a0e
+- `public/images/ml-problem-regression-scatter.png`: PNG preview of "Scatter diagram for quality characteristic XXX.svg" by DanielPenfield, Wikimedia Commons, CC BY-SA 3.0 / GFDL. https://commons.wikimedia.org/wiki/File:Scatter_diagram_for_quality_characteristic_XXX.svg
+- `public/images/ml-problem-classification-svm.png`: PNG preview of "Svm separating hyperplanes (SVG).svg" by ZackWeinberg, based on PNG by Cyc, Wikimedia Commons, CC BY-SA 3.0. https://commons.wikimedia.org/wiki/File:Svm_separating_hyperplanes_(SVG).svg
+- `public/images/ml-problem-clustering-kmeans.png`: PNG preview of "Rosa Gold Glow 2 small noblue color space.png" by Dcoetzee, Wikimedia Commons, public domain. https://commons.wikimedia.org/wiki/File:Rosa_Gold_Glow_2_small_noblue_color_space.png
 
 ### Future AI Frontiers case-study sources
 
@@ -130,5 +149,7 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/cnn-autonomous-car.jpg`: Waymo Jaguar I-Pace photo from Wikimedia Commons, also used as the Waymo case-study image. https://commons.wikimedia.org/wiki/File:Waymo_Jaguar_I-Pace_in_San_Francisco_2023_dllu.jpg Factual source: Waymo Driver and safety overview, https://waymo.com/waymo-driver/
 - `public/images/google-logo-official.png`: official Google logo image downloaded from Google branding assets URL, also used for the Gboard federated-learning case study. https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png Factual sources: Google Research federated learning overview, https://research.google/blog/federated-learning-collaborative-machine-learning-without-centralized-training-data/ and Gboard federated-learning discussion, https://research.google/blog/improving-gboard-suggestions-with-federated-learning/
 - `public/images/case-aws-logo.svg`: AWS logo downloaded through Wikimedia Commons redirect. Source: https://commons.wikimedia.org/wiki/Special:Redirect/file/Amazon_Web_Services_Logo.svg Factual source: Amazon Bedrock Guardrails, https://aws.amazon.com/bedrock/guardrails/
+- `public/images/case-guardrails-warning.svg`: "OOjs UI icon alert-warning-black.svg" by OOjs UI Team and contributors, Wikimedia Commons, MIT License. https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_alert-warning-black.svg
 - `public/images/case-github-logo.svg`: GitHub icon from Simple Icons CDN. Simple Icons is licensed under CC0-1.0. https://simpleicons.org/ Factual sources: GitHub Copilot overview, https://github.com/features/copilot and GitHub Copilot docs, https://docs.github.com/en/copilot
 - `public/images/case-morganstanley-logo.svg`: Morgan Stanley logo downloaded through Wikimedia Commons redirect. Source: https://commons.wikimedia.org/wiki/Special:Redirect/file/Morgan_Stanley_Logo.svg Factual source: OpenAI customer story on Morgan Stanley, https://openai.com/index/morgan-stanley/
+- `public/images/case-openai-logo.svg`: OpenAI logo downloaded through Wikimedia Commons redirect. Source: https://commons.wikimedia.org/wiki/Special:Redirect/file/OpenAI_Logo.svg Factual source for the Morgan Stanley + OpenAI case study: https://openai.com/index/morgan-stanley/

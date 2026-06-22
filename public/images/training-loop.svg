@@ -22,11 +22,11 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#06b6d4"/>
+    <marker id="arrow" viewBox="0 0 18 18" refX="16" refY="9" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 1 2 L 17 9 L 1 16 Z" fill="#4fb8d7"/>
     </marker>
-    <marker id="returnArrow" viewBox="0 0 10 10" refX="1.4" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M 10 0 L 0 5 L 10 10 z" fill="#7c3aed"/>
+    <marker id="returnArrow" viewBox="0 0 18 18" refX="16" refY="9" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 1 2 L 17 9 L 1 16 Z" fill="#6f63e8"/>
     </marker>
   </defs>
 
@@ -36,14 +36,11 @@
   <rect x="54" y="86" width="1292" height="548" rx="32" fill="#ffffff" stroke="#d9e6f5" stroke-width="2" filter="url(#shadow)"/>
   <rect x="94" y="136" width="1212" height="408" rx="26" fill="#f8fbff" stroke="#d9e6f5" stroke-width="2"/>
 
-  <g fill="none" stroke-linecap="round" stroke-width="7" opacity="0.92" filter="url(#softGlow)">
-    <path d="M 404 258 H 512" stroke="url(#accent)" marker-end="url(#arrow)"/>
-    <path d="M 774 258 H 882" stroke="url(#accent)" marker-end="url(#arrow)"/>
-    <path d="M 1138 326 C 1160 356 1160 392 1138 422" stroke="url(#accent)" marker-end="url(#arrow)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" opacity="0.82">
+    <path d="M 425 258 H 468" stroke="#4fb8d7" marker-end="url(#arrow)"/>
+    <path d="M 795 258 H 838" stroke="#4fb8d7" marker-end="url(#arrow)"/>
+    <path d="M 1178 335 C 1204 366 1202 390 1165 419" stroke="#4fb8d7" marker-end="url(#arrow)"/>
   </g>
-
-  <path d="M 760 488 C 592 564 344 558 238 450" fill="none" stroke="url(#returnAccent)" stroke-width="12" stroke-linecap="round" opacity="0.11" filter="url(#softGlow)"/>
-  <path d="M 760 488 C 592 564 344 558 238 450" fill="none" stroke="url(#returnAccent)" stroke-width="6" stroke-linecap="round" opacity="0.95" filter="url(#softGlow)" marker-end="url(#returnArrow)"/>
 
   <g>
     <rect x="122" y="196" width="282" height="134" rx="18" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
@@ -80,6 +77,10 @@
     <text x="902" y="456" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#172033">Update weights</text>
     <text x="902" y="492" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#5c6678">change parameters</text>
   </g>
+
+  <path d="M 812 500 C 668 610 342 618 184 520 C 116 478 94 263 116 263" fill="none" stroke="url(#returnAccent)" stroke-width="8" stroke-linecap="round" opacity="0.08"/>
+  <path d="M 812 500 C 668 610 342 618 184 520 C 116 478 94 263 116 263" fill="none" stroke="#5b5ff0" stroke-width="4.2" stroke-linecap="round" opacity="0.84"/>
+  <path d="M 116 254 L 134 263 L 116 272 Z" fill="#5b5ff0" opacity="0.88"/>
 
   <rect x="248" y="414" width="406" height="50" rx="25" fill="#0f172a" opacity="0.94"/>
   <text x="451" y="445" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#ffffff">better prediction next iteration</text>
