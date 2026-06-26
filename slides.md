@@ -662,11 +662,7 @@ class: forward-propagation-slide
 
 <div class="forward-layout forward-template-layout">
 <div class="forward-visual-frame">
-<div class="flow-label input-flow-label">Input</div>
-<div class="flow-label layer-one-label">Layer 1</div>
-<div class="flow-label layer-two-label">Layer 2</div>
-<div class="flow-label output-flow-label">Prediction</div>
-<img :src="'/images/forward-propagation-flow.svg'" alt="Input features flowing through two neural network layers to an output prediction" />
+<img :src="'/images/forward-desktop.png'" alt="Forward propagation diagram with input layer, hidden layer, and output layer" />
 </div>
 <div class="forward-card">
 <span>Each layer transforms the signal.</span>
@@ -808,6 +804,91 @@ class: loss-measure-slide
 <img :src="'/images/perceptron-loss-surface-projection.svg'" alt="Stylized loss surface with a red optimization path and a projected point" />
 </figure>
 </div>
+</div>
+</section>
+
+---
+class: loss-formulas-slide
+---
+
+<section class="slide-shell training-slide loss-family-slide">
+<div class="training-header">
+<h1>Common Loss Functions</h1>
+<p>The right loss depends on the output: numbers need distance penalties; classes need probability or margin penalties.</p>
+</div>
+
+<div class="loss-family-layout">
+<article class="loss-family-panel regression-loss-panel">
+<div class="loss-family-head">
+<span>Regression</span>
+<strong>Distance from the target value</strong>
+</div>
+<figure class="loss-family-figure">
+<img :src="'/images/loss-huber-curve.svg'" alt="Huber and squared error loss curves from Wikimedia Commons" />
+</figure>
+
+<div class="loss-formula-list">
+<article class="loss-formula-card">
+<span>MSE</span>
+<div class="loss-equation">
+<b>L<sub>MSE</sub></b><em>=</em><i class="lf-frac"><small>1</small><small>N</small></i><i class="lf-sum">&sum;<sup>N</sup><sub>i=1</sub></i><b>(y<sub>i</sub> - ŷ<sub>i</sub>)<sup>2</sup></b>
+</div>
+<p>Large residuals count much more.</p>
+</article>
+
+<article class="loss-formula-card">
+<span>MAE</span>
+<div class="loss-equation">
+<b>L<sub>MAE</sub></b><em>=</em><i class="lf-frac"><small>1</small><small>N</small></i><i class="lf-sum">&sum;<sup>N</sup><sub>i=1</sub></i><b>|y<sub>i</sub> - ŷ<sub>i</sub>|</b>
+</div>
+<p>Linear penalty, robust to outliers.</p>
+</article>
+
+<article class="loss-formula-card huber-card">
+<span>Huber</span>
+<div class="loss-equation piecewise">
+<b>L<sub>&delta;</sub>(r)</b><em>=</em><span class="lf-piece"><small>½r<sup>2</sup>, |r| &le; &delta;</small><small>&delta;(|r| - ½&delta;), otherwise</small></span>
+</div>
+<p>MSE near zero, MAE far away.</p>
+</article>
+</div>
+</article>
+
+<article class="loss-family-panel classification-loss-panel">
+<div class="loss-family-head">
+<span>Classification</span>
+<strong>Probability or margin on the correct class</strong>
+</div>
+<figure class="loss-family-figure">
+<img :src="'/images/loss-hinge-vs-zero-one.svg'" alt="Hinge loss and zero-one loss curves from Wikimedia Commons" />
+</figure>
+
+<div class="loss-formula-list">
+<article class="loss-formula-card">
+<span>Binary cross-entropy</span>
+<div class="loss-equation compact-equation">
+<b>L<sub>BCE</sub></b><em>=</em><b>-</b><i class="lf-frac"><small>1</small><small>N</small></i><i class="lf-sum">&sum;<sup>N</sup><sub>i=1</sub></i><b>[y<sub>i</sub>log(p<sub>i</sub>) + (1-y<sub>i</sub>)log(1-p<sub>i</sub>)]</b>
+</div>
+<p>Punishes confident wrong probabilities.</p>
+</article>
+
+<article class="loss-formula-card">
+<span>Categorical cross-entropy</span>
+<div class="loss-equation compact-equation">
+<b>L<sub>CE</sub></b><em>=</em><b>-</b><i class="lf-frac"><small>1</small><small>N</small></i><i class="lf-sum">&sum;<sup>N</sup><sub>i=1</sub></i><i class="lf-sum">&sum;<sup>K</sup><sub>k=1</sub></i><b>y<sub>ik</sub>log(p<sub>ik</sub>)</b>
+</div>
+<p>Negative log probability of the true class.</p>
+</article>
+
+<article class="loss-formula-card hinge-card">
+<span>Hinge</span>
+<div class="loss-equation">
+<b>L<sub>hinge</sub></b><em>=</em><i class="lf-frac"><small>1</small><small>N</small></i><i class="lf-sum">&sum;<sup>N</sup><sub>i=1</sub></i><b>max(0, 1 - y<sub>i</sub>s<sub>i</sub>)</b>
+</div>
+<p>Pays loss inside or beyond the margin.</p>
+</article>
+</div>
+</article>
 </div>
 </section>
 
@@ -1111,57 +1192,49 @@ class: representation-learning-slide
 class: generalization-slide
 ---
 
-<section class="slide-shell concept-slide gen-premium">
+<section class="slide-shell concept-slide gen-premium gen-v3">
 <div class="concept-header">
 <h1>Generalization</h1>
-<p>A good model does not only work on training data — it must work on new data too.</p>
+<p>A useful model learns the pattern that survives new data. Too simple misses it; too complex memorizes noise.</p>
 </div>
 
-<div class="gen-v2-story">
-<div class="gen-v2-principle">
-<div class="gen-v2-kicker">Core principle</div>
-<strong>Learn the pattern that survives new data.</strong>
-<p>Training data is only a sample. A useful model captures stable structure and ignores accidental noise.</p>
+<div class="gen-v3-board">
+<article class="gen-v3-fit under">
+<span>too simple</span>
+<strong>Underfitting</strong>
+<svg viewBox="0 0 300 170" role="img" aria-label="Underfitting plot">
+<path class="rl-plot-grid" d="M34 38 H270 M34 86 H270 M34 134 H270 M86 20 V150 M154 20 V150 M222 20 V150"/>
+<path class="rl-fit-line muted" d="M48 124 L256 64"/>
+<circle class="rl-plot-blue" cx="64" cy="112" r="8"/><circle class="rl-plot-blue" cx="104" cy="90" r="8"/><circle class="rl-plot-blue" cx="142" cy="68" r="8"/><circle class="rl-plot-purple" cx="186" cy="102" r="8"/><circle class="rl-plot-purple" cx="224" cy="76" r="8"/><circle class="rl-plot-purple" cx="252" cy="44" r="8"/>
+</svg>
+<p><b>House prices:</b> only uses size, misses location and condition.</p>
+</article>
 
-<div class="gen-v2-path">
-<div>
-<span>Seen cases</span>
-<strong>Training set</strong>
-</div>
-<i aria-hidden="true"></i>
-<div>
-<span>Stable rule</span>
-<strong>Model</strong>
-</div>
-<i aria-hidden="true"></i>
-<div>
-<span>Unseen cases</span>
-<strong>Test set</strong>
-</div>
+<article class="gen-v3-fit good">
+<span>balanced</span>
+<strong>Good fit</strong>
+<svg viewBox="0 0 300 170" role="img" aria-label="Good fit plot">
+<path class="rl-plot-grid" d="M34 38 H270 M34 86 H270 M34 134 H270 M86 20 V150 M154 20 V150 M222 20 V150"/>
+<path class="rl-fit-line" d="M48 132 C94 90 132 78 170 96 C210 114 232 78 260 42"/>
+<circle class="rl-plot-blue" cx="64" cy="114" r="8"/><circle class="rl-plot-blue" cx="104" cy="88" r="8"/><circle class="rl-plot-blue" cx="142" cy="78" r="8"/><circle class="rl-plot-purple" cx="186" cy="102" r="8"/><circle class="rl-plot-purple" cx="224" cy="76" r="8"/><circle class="rl-plot-purple" cx="252" cy="46" r="8"/>
+</svg>
+<p><b>Useful model:</b> keeps stable signals and ignores accidental noise.</p>
+</article>
+
+<article class="gen-v3-fit over">
+<span>too specific</span>
+<strong>Overfitting</strong>
+<svg viewBox="0 0 300 170" role="img" aria-label="Overfitting plot">
+<path class="rl-plot-grid" d="M34 38 H270 M34 86 H270 M34 134 H270 M86 20 V150 M154 20 V150 M222 20 V150"/>
+<path class="rl-fit-line over" d="M50 130 C78 52 94 142 118 90 C142 36 156 130 186 102 C212 74 218 30 234 78 C244 108 254 68 264 44"/>
+<circle class="rl-plot-blue" cx="64" cy="114" r="8"/><circle class="rl-plot-blue" cx="104" cy="88" r="8"/><circle class="rl-plot-blue" cx="142" cy="78" r="8"/><circle class="rl-plot-purple" cx="186" cy="102" r="8"/><circle class="rl-plot-purple" cx="224" cy="76" r="8"/><circle class="rl-plot-purple" cx="252" cy="46" r="8"/>
+</svg>
+<p><b>Cat classifier:</b> memorizes backgrounds or watermarks, then fails on new scenes.</p>
+</article>
 </div>
 
-<figure class="gen-v2-chart">
-<img :src="'/images/generalization-overfitting-wikimedia.svg'" alt="Illustration of stable fitting versus overfitting on noisy data" />
-<figcaption>A smooth rule usually transfers better than a curve that chases every training point.</figcaption>
-</figure>
-</div>
-
-<div class="gen-v2-case">
-<div class="gen-v2-case-copy">
-<div class="example-badge">Real case</div>
-<strong>Medical AI</strong>
-<p>A diagnostic model should work on new patients, scanners, and hospitals, not only on examples seen during training.</p>
-</div>
-<figure class="gen-v2-xray">
-<img :src="'/images/generalization-medical-xray-wikimedia.jpg'" alt="Chest X-ray example for medical AI generalization" />
-<figcaption>Unseen patient image</figcaption>
-</figure>
-<div class="gen-v2-checks">
-<span>train on examples</span>
-<span>validate on held-out patients</span>
-<span>deploy only if performance transfers</span>
-</div>
-</div>
+<div class="gen-v3-flow">
+<b>Training set</b><i></i><b>Model</b><i></i><b>Validation / test set</b><strong>judge on unseen data</strong>
 </div>
 
 <div class="concept-takeaway">Success is measured on unseen data.</div>
@@ -1171,48 +1244,45 @@ class: generalization-slide
 class: overfitting-slide
 ---
 
-<section class="slide-shell concept-slide overfitting-concept">
+<section class="slide-shell concept-slide overfitting-concept overfitting-v3">
 <div class="concept-header">
 <h1>Overfitting</h1>
-<p>When a model memorizes the training data instead of learning the real pattern.</p>
+<p>Underfitting is too simple. Overfitting is too specific. A useful model sits in the middle.</p>
 </div>
 
-<div class="rl-overfit-layout">
-<div class="rl-fit-frame">
-<div class="rl-fit-panel">
-<strong>Underfitting</strong>
+<div class="fit-v3-grid">
+<article class="fit-v3-card under">
+<div class="fit-v3-heading"><span>too simple</span><strong>Underfitting</strong></div>
 <svg viewBox="0 0 300 190" role="img" aria-label="Underfitting plot">
 <path class="rl-plot-grid" d="M34 42 H270 M34 96 H270 M34 150 H270 M86 24 V166 M154 24 V166 M222 24 V166"/>
 <path class="rl-fit-line muted" d="M48 130 L256 72"/>
 <circle class="rl-plot-blue" cx="64" cy="118" r="8"/><circle class="rl-plot-blue" cx="104" cy="96" r="8"/><circle class="rl-plot-blue" cx="142" cy="74" r="8"/><circle class="rl-plot-purple" cx="186" cy="108" r="8"/><circle class="rl-plot-purple" cx="224" cy="82" r="8"/><circle class="rl-plot-purple" cx="252" cy="48" r="8"/>
 </svg>
-</div>
-<div class="rl-fit-panel good">
-<strong>Good fit</strong>
+<div class="fit-v3-example"><b>House prices</b><p>Only uses size. Misses location, condition, and neighborhood.</p></div>
+</article>
+
+<article class="fit-v3-card good">
+<div class="fit-v3-heading"><span>balanced</span><strong>Good fit</strong></div>
 <svg viewBox="0 0 300 190" role="img" aria-label="Good fit plot">
 <path class="rl-plot-grid" d="M34 42 H270 M34 96 H270 M34 150 H270 M86 24 V166 M154 24 V166 M222 24 V166"/>
 <path class="rl-fit-line" d="M48 140 C94 96 132 86 170 104 C210 122 232 84 260 46"/>
 <circle class="rl-plot-blue" cx="64" cy="122" r="8"/><circle class="rl-plot-blue" cx="104" cy="96" r="8"/><circle class="rl-plot-blue" cx="142" cy="84" r="8"/><circle class="rl-plot-purple" cx="186" cy="108" r="8"/><circle class="rl-plot-purple" cx="224" cy="82" r="8"/><circle class="rl-plot-purple" cx="252" cy="52" r="8"/>
 </svg>
-</div>
-<div class="rl-fit-panel">
-<strong>Overfitting</strong>
+<div class="fit-v3-example"><b>Useful pattern</b><p>Keeps stable signals and ignores one-off training noise.</p></div>
+</article>
+
+<article class="fit-v3-card over">
+<div class="fit-v3-heading"><span>too specific</span><strong>Overfitting</strong></div>
 <svg viewBox="0 0 300 190" role="img" aria-label="Overfitting plot">
 <path class="rl-plot-grid" d="M34 42 H270 M34 96 H270 M34 150 H270 M86 24 V166 M154 24 V166 M222 24 V166"/>
 <path class="rl-fit-line over" d="M50 138 C78 58 94 152 118 96 C142 40 156 140 186 108 C212 80 218 32 234 84 C244 118 254 74 264 48"/>
 <circle class="rl-plot-blue" cx="64" cy="122" r="8"/><circle class="rl-plot-blue" cx="104" cy="96" r="8"/><circle class="rl-plot-blue" cx="142" cy="84" r="8"/><circle class="rl-plot-purple" cx="186" cy="108" r="8"/><circle class="rl-plot-purple" cx="224" cy="82" r="8"/><circle class="rl-plot-purple" cx="252" cy="52" r="8"/>
 </svg>
-</div>
-</div>
-
-<div class="rl-side-list">
-<span>Too simple → misses the pattern</span>
-<span>Balanced → captures the pattern</span>
-<span>Too complex → memorizes noise</span>
-</div>
+<div class="fit-v3-example"><b>Cat classifier</b><p>Learns backgrounds or watermarks, then fails on new scenes.</p></div>
+</article>
 </div>
 
-<div class="concept-takeaway">Too much flexibility can become memorization.</div>
+<div class="concept-takeaway">The goal is not the most flexible curve. It is the pattern that survives new data.</div>
 </section>
 
 ---
@@ -1285,15 +1355,14 @@ class: dlx-takeoff-slide
 class: dlx-imagenet-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-imagenet">
+<section class="slide-shell dlx-slide dlx-imagenet imagenet-v3">
 <div class="dlx-header">
 <h1>The ImageNet Moment</h1>
-<p>2012 showed that deep networks could transform computer vision.</p>
+<p>ImageNet made the comparison concrete: hand-crafted vision pipelines met end-to-end CNNs at scale.</p>
 </div>
 
-<div class="dlx-main dlx-imagenet-stage">
-<div class="dlx-imagewall-card">
-<div class="dlx-imagewall" aria-label="Real natural image examples used to evoke ImageNet-style classes">
+<div class="dlx-main imagenet-v3-board">
+<div class="imagenet-v3-wall" aria-label="Real natural image examples used to evoke ImageNet-style classes">
 <figure><img :src="'/images/imagenet-cat.jpg'" alt="Tabby cat"><figcaption>tabby cat</figcaption></figure>
 <figure><img :src="'/images/imagenet-dog.jpg'" alt="Golden retriever"><figcaption>golden retriever</figcaption></figure>
 <figure><img :src="'/images/imagenet-duck.jpg'" alt="Mallard duck"><figcaption>mallard</figcaption></figure>
@@ -1301,17 +1370,18 @@ class: dlx-imagenet-slide
 <figure><img :src="'/images/imagenet-car.jpg'" alt="Car"><figcaption>car</figcaption></figure>
 <figure><img :src="'/images/imagenet-airplane.jpg'" alt="Aircraft"><figcaption>aircraft</figcaption></figure>
 </div>
-<div class="dlx-caption-row">
-<span>ImageNet benchmark</span>
-<span>real natural image categories</span>
-</div>
-</div>
 
-<div class="dlx-turning-card">
-<span class="dlx-year">2012</span>
-<h2>AlexNet</h2>
-<p>A deep CNN trained with GPUs dramatically improved large-scale image classification.</p>
-<div class="dlx-mini-flow"><b>Images</b><i></i><b>Deep CNN</b><i></i><b>Classes</b></div>
+<div class="imagenet-v3-compare">
+<article>
+<span>before deep learning</span>
+<strong>Traditional vision</strong>
+<p><b>Methods:</b> Canny / Sobel for edges, Harris for corners, SIFT / HOG descriptors, then SVM or Random Forest classifiers.</p>
+</article>
+<article class="cnn">
+<span>2012 breakthrough</span>
+<strong>AlexNet CNN</strong>
+<p><b>Methods:</b> learned convolution filters, feature maps, pooling, and backpropagation trained end to end on many labeled images.</p>
+</article>
 </div>
 </div>
 
@@ -1322,27 +1392,46 @@ class: dlx-imagenet-slide
 class: dlx-feature-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-feature">
+<section class="slide-shell dlx-slide dlx-feature dlx-feature-v3">
 <div class="dlx-header">
 <h1>From Hand-Crafted Features to Learned Features</h1>
 <p>Before deep learning, humans designed features. CNNs learned them.</p>
 </div>
 
-<div class="dlx-main dlx-feature-stage">
-<article class="dlx-compare-card dlx-traditional">
+<div class="dlx-main feature-v3-board">
+<article class="feature-v3-column traditional">
 <span>Traditional vision</span>
-<h2>Design features</h2>
-<div class="dlx-pipeline">
-<b>image</b><i></i><b>edges<br/>corners<br/>SIFT / HOG</b><i></i><b>classifier</b>
+<h2>Engineer the features</h2>
+<div class="feature-v3-pipeline">
+<b>image</b><i></i><b>descriptors</b><i></i><b>classifier</b>
 </div>
+<div class="feature-v3-methods">
+<b>Sobel / Canny<small>edges</small></b>
+<b>Harris<small>corners</small></b>
+<b>SIFT / HOG<small>descriptors</small></b>
+<b>SVM / Forest<small>classifier</small></b>
+</div>
+<p>Works well when the right visual cues are known in advance, but each new task needs careful feature engineering.</p>
 </article>
 
-<article class="dlx-compare-card dlx-learned">
-<span>Deep learning</span>
-<h2>Learn representations</h2>
-<div class="dlx-hierarchy">
-<b>pixels</b><i></i><b>edges</b><i></i><b>textures</b><i></i><b>parts</b><i></i><b>object</b>
+<div class="feature-v3-shift">
+<strong>key shift</strong>
+<span>feature design moves into the model</span>
 </div>
+
+<article class="feature-v3-column learned">
+<span>CNN era</span>
+<h2>Learn the features</h2>
+<div class="feature-v3-pipeline">
+<b>pixels</b><i></i><b>feature maps</b><i></i><b>prediction</b>
+</div>
+<div class="feature-v3-methods">
+<b>Conv filters<small>learned</small></b>
+<b>Feature maps<small>evidence</small></b>
+<b>Pooling<small>compact invariance</small></b>
+<b>Backprop<small>end-to-end</small></b>
+</div>
+<p>Early layers learn edges, deeper layers combine them into textures, parts, and object-level evidence.</p>
 </article>
 </div>
 
@@ -1443,23 +1532,25 @@ class: dlx-cnn-needed-slide
 class: dlx-history-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-history">
+<section class="slide-shell dlx-slide dlx-history history-v3">
 <div class="dlx-header">
 <h1>Historical Roots of CNNs</h1>
-<p>From biologically inspired vision models to practical image recognition.</p>
+<p>This slide exists because CNNs were not a sudden trick: they combined three ideas that matured over time.</p>
 </div>
 
-<div class="dlx-main dlx-history-stage">
-<div class="dlx-timeline-card">
-<article><span>1980</span><strong>Kunihiko Fukushima</strong><p>Neocognitron: a hierarchical vision model inspired by visual cortex.</p></article>
-<article><span>1989-1998</span><strong>Yann LeCun and collaborators</strong><p>LeNet: CNNs trained for handwritten digit and document recognition.</p></article>
-<article><span>2012</span><strong>AlexNet</strong><p>CNNs scale with GPUs and large visual datasets.</p></article>
+<div class="dlx-main history-v3-board">
+<div class="history-v3-timeline">
+<article><span>1980</span><strong>Hierarchy</strong><p>Fukushima's Neocognitron showed that vision can be built in layers: simple patterns become complex ones.</p></article>
+<article><span>1989-1998</span><strong>Trainable filters</strong><p>LeCun's LeNet made convolution practical for handwritten digits and document recognition.</p></article>
+<article><span>2012</span><strong>Scale</strong><p>AlexNet used GPUs and ImageNet to show CNNs could work on large natural-image tasks.</p></article>
 </div>
 
-<figure class="dlx-person-card">
-<img :src="'/images/yann-lecun-photo.jpg'" alt="Yann LeCun in 2024">
-<figcaption><strong>Yann LeCun</strong><span>LeNet and practical CNNs for recognition</span><small>2018 ACM Turing Award recipient</small></figcaption>
-</figure>
+<aside class="history-v3-why">
+<span>Why it matters</span>
+<strong>The same recipe still appears in modern vision models.</strong>
+<p>Local detectors, shared weights, layered features, and large-scale training are the bridge from early CNNs to today's visual AI.</p>
+<div><b>local patches</b><b>shared filters</b><b>feature hierarchy</b></div>
+</aside>
 </div>
 
 <div class="dlx-takeaway">CNNs combined biological inspiration, efficient architecture, and scalable training.</div>
@@ -1469,39 +1560,53 @@ class: dlx-history-slide
 class: dlx-transition-slide
 ---
 
-<section class="slide-shell dlx-slide dlx-transition">
+<section class="slide-shell dlx-slide dlx-transition dlx-transition-v3">
 <div class="dlx-header">
-<h1>Next: Convolutional Neural Networks</h1>
-<p>How filters learn to see edges, textures, parts, and objects.</p>
+<h1>Roadmap: Inside a CNN</h1>
+<p>This slide is the map for the next section: how pixels become visual evidence.</p>
 </div>
 
-<div class="dlx-main dlx-next-stage dlx-next-stage-real">
-<figure class="dlx-next-step dlx-next-image dlx-real-input">
+<div class="dlx-main cnn-roadmap-v3">
+<div class="cnn-roadmap-v3-flow">
+<figure class="cnn-roadmap-v3-step input">
+<span>01</span>
 <img :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Real zebra stripe image used as CNN input">
-<figcaption><span>input image</span><strong>real texture</strong></figcaption>
+<figcaption><strong>Input image</strong><small>2D pixel geometry</small></figcaption>
 </figure>
-<div class="dlx-flow-arrow"></div>
-<div class="dlx-next-step dlx-next-filter dlx-real-filter">
-<span>Sobel filter</span>
-<div class="dlx-kernel-matrix" aria-label="Sobel X convolution kernel">
+<i></i>
+<div class="cnn-roadmap-v3-step filter">
+<span>02</span>
+<strong>Convolution</strong>
+<div class="cnn-roadmap-kernel" aria-label="Example convolution kernel">
 <b>-1</b><b>0</b><b>1</b>
 <b>-2</b><b>0</b><b>2</b>
 <b>-1</b><b>0</b><b>1</b>
 </div>
-<small>edge detector</small>
+<small>shared filter scans</small>
 </div>
-<div class="dlx-flow-arrow"></div>
-<div class="dlx-next-step dlx-next-maps dlx-real-maps">
-<span>feature maps</span>
-<figure><img class="map-edge" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible edge feature map from zebra image"><small>edges</small></figure>
-<figure><img class="map-texture" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible texture feature map from zebra image"><small>texture</small></figure>
-<figure><img class="map-contrast" :src="'/images/cnn-convolution-zebra-stripes.jpg'" alt="Plausible contrast feature map from zebra image"><small>contrast</small></figure>
+<i></i>
+<div class="cnn-roadmap-v3-step maps">
+<span>03</span>
+<strong>Feature maps</strong>
+<div class="cnn-roadmap-mapstack" aria-hidden="true"><b></b><b></b><b></b></div>
+<small>where visual evidence appears</small>
 </div>
-<div class="dlx-flow-arrow"></div>
-<div class="dlx-next-step dlx-next-predict"><span>prediction</span><strong>visual hierarchy</strong></div>
+<i></i>
+<div class="cnn-roadmap-v3-step output">
+<span>04</span>
+<strong>Hierarchy</strong>
+<div class="cnn-roadmap-hierarchy"><b>edges</b><b>textures</b><b>parts</b><b>object</b></div>
+<small>evidence to recognition</small>
+</div>
 </div>
 
-<div class="dlx-takeaway">Next, we open the CNN black box: filters, feature maps, pooling, and visual hierarchies.</div>
+<div class="cnn-roadmap-v3-notes">
+<article><b>Why this slide exists</b><p>It turns "CNNs learn features" into concrete operations: scan, activate, compress, combine.</p></article>
+<article><b>What comes next</b><p>The following slides zoom into convolution, filters, pooling, and visual hierarchy one at a time.</p></article>
+</div>
+</div>
+
+<div class="dlx-takeaway">A CNN preserves image geometry while learning increasingly abstract visual features.</div>
 </section>
 
 ---
@@ -1676,6 +1781,68 @@ class: cnn-convolution-core-slide
 </div>
 
 <div class="cnn-topic-takeaway">Convolution detects local patterns wherever they appear.</div>
+</section>
+
+---
+class: cnn-convolution-math-slide
+---
+
+<section class="slide-shell cnn-topic-slide cnn-convolution-math">
+<div class="cnn-topic-header">
+<span>CONVOLUTIONAL NEURAL NETWORKS</span>
+<h1>Convolution: The Math</h1>
+<p>A filter produces each output cell by multiplying a local patch by shared weights and summing the result.</p>
+</div>
+
+<div class="conv-math-layout">
+<figure class="conv-math-visual">
+<img :src="'/images/cnn-convolution-math-desktop.png'" alt="Illustration of a convolution operation with input matrix, kernel, and output feature map">
+<figcaption><strong>Sliding window</strong><span>the same kernel is applied at every spatial location</span></figcaption>
+</figure>
+
+<aside class="conv-math-panel">
+<article class="conv-equation-card main-equation">
+<span>single-channel operation</span>
+<div class="conv-equation">
+<b>Z<sub>i,j</sub></b><em>=</em><i class="cm-sum">&sum;<sup>K-1</sup><sub>u=0</sub></i><i class="cm-sum">&sum;<sup>K-1</sup><sub>v=0</sub></i><b>X<sub>i+u,j+v</sub> · W<sub>u,v</sub> + b</b>
+</div>
+<p>Each output value is a weighted sum over one local image patch. CNN libraries usually implement this as cross-correlation, but it is commonly called convolution.</p>
+</article>
+
+<div class="conv-dot-demo">
+<article>
+<span>patch</span>
+<div class="cm-matrix input">
+<b>2</b><b>1</b><b>0</b>
+<b>3</b><b>1</b><b>2</b>
+<b>0</b><b>1</b><b>3</b>
+</div>
+</article>
+<i>·</i>
+<article>
+<span>kernel</span>
+<div class="cm-matrix kernel">
+<b>1</b><b>0</b><b>-1</b>
+<b>1</b><b>0</b><b>-1</b>
+<b>1</b><b>0</b><b>-1</b>
+</div>
+</article>
+<i>=</i>
+<article class="cm-output">
+<span>activation</span>
+<strong>-4</strong>
+</article>
+</div>
+
+<div class="conv-shape-row">
+<article><span>stride S</span><strong>moves the window</strong><p>larger stride makes smaller feature maps</p></article>
+<article><span>padding P</span><strong>adds border pixels</strong><p>keeps spatial size when needed</p></article>
+<article><span>output size</span><strong>⌊(H + 2P - K)/S⌋ + 1</strong><p>applied to height and width</p></article>
+</div>
+</aside>
+</div>
+
+<div class="cnn-topic-takeaway">Mathematically, convolution is a shared local dot product repeated across the image.</div>
 </section>
 
 ---
@@ -2145,6 +2312,106 @@ class: cnn-evolution-slide
 </section>
 
 ---
+class: fm-case-slide fm-alexnet-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-alexnet">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>AlexNet</h1>
+<p>2012 - University of Toronto</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>original architecture</span>
+<strong>A deep CNN scaled to ImageNet with GPU training.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/cnn-history-alexnet-commons.svg'" alt="AlexNet architecture block diagram">
+</figure>
+<div class="fm-secondary-row fm-imagenet-strip">
+<figure><img :src="'/images/imagenet-cat.jpg'" alt="ImageNet-style cat example"></figure>
+<figure><img :src="'/images/imagenet-dog.jpg'" alt="ImageNet-style dog example"></figure>
+<figure><img :src="'/images/imagenet-airplane.jpg'" alt="ImageNet-style airplane example"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Large-scale GPU-trained CNNs.</strong>
+<p>AlexNet won ImageNet 2012 by training a much deeper vision model on massive labeled images.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>It launched the deep learning wave.</strong>
+<p>The accuracy jump made learned visual features decisively better than hand-designed pipelines.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>ReLU, dropout, and stacked convolutions.</strong>
+<p>Simple nonlinear blocks plus regularization made deeper supervised vision practical.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>2012 marks the ImageNet moment where deep learning became the default direction for computer vision.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-resnet-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-resnet">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>ResNet</h1>
+<p>2015 - Microsoft Research</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>residual block</span>
+<strong>Skip connections let information and gradients pass through depth.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/cnn-history-resnet.svg'" alt="ResNet residual block diagram">
+</figure>
+<div class="fm-flow">
+<article><span>input</span><strong>x</strong></article>
+<i></i>
+<article><span>residual</span><strong>F(x)</strong></article>
+<i></i>
+<article><span>output</span><strong>F(x) + x</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Residual learning for very deep nets.</strong>
+<p>Instead of learning a full mapping, each block learns a correction added to the input.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Depth stopped being the bottleneck.</strong>
+<p>Networks with dozens or hundreds of layers became trainable and more accurate.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Identity skip connections.</strong>
+<p>The shortcut path preserves signal, stabilizes optimization, and improves gradient flow.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>ResNet made residual connections a standard building block across vision, language, and multimodal models.</span></div>
+</section>
+
+---
 class: nlp-sequence-intro-slide
 ---
 
@@ -2298,6 +2565,54 @@ class: nlp-embedding-slide
 </div>
 
 <div class="nlp-takeaway">Embeddings turn language into geometry.</div>
+</section>
+
+---
+class: fm-case-slide fm-word2vec-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-word2vec">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>Word2Vec</h1>
+<p>2013 - Google</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>semantic geometry</span>
+<strong>Words become points whose distances encode meaning.</strong>
+</div>
+<figure class="fm-main-figure fm-photo">
+<img :src="'/images/nlp-word-embeddings-colah.png'" alt="Visualization of word embedding clusters">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/nlp-skip-gram.svg'" alt="Skip-gram training diagram"></figure>
+<figure><img :src="'/images/nlp-word-vector-analogy.svg'" alt="Word vector analogy diagram"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Distributed word representations.</strong>
+<p>Words learned from nearby context became dense vectors instead of sparse one-hot IDs.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Meaning became computable geometry.</strong>
+<p>Models could compare, cluster, and reuse semantic similarity across language tasks.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Predict context or target words.</strong>
+<p>CBOW and Skip-gram learn useful vectors from a simple local prediction objective.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Word2Vec made analogies like King - Man + Woman = Queen the symbol of semantic embeddings.</span></div>
 </section>
 
 ---
@@ -2457,6 +2772,55 @@ class: nlp-gates-slide
 </div>
 
 <div class="nlp-takeaway">Gates made sequence memory more controllable.</div>
+</section>
+
+---
+class: fm-case-slide fm-lstm-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-lstm">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>LSTM</h1>
+<p>1997 - Hochreiter and Schmidhuber</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>gated recurrent memory</span>
+<strong>A memory cell controls what survives across time.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/nlp-colah-lstm-chain.png'" alt="LSTM chain diagram showing memory flow and gates">
+</figure>
+<div class="fm-gate-row">
+<b>Forget Gate</b>
+<b>Input Gate</b>
+<b>Output Gate</b>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Long-range memory in RNNs.</strong>
+<p>LSTMs addressed the vanishing gradient problem that made distant context hard to learn.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Sequences could remember useful evidence.</strong>
+<p>Speech, translation, and language modeling became stronger before Transformers arrived.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Gates regulate the cell state.</strong>
+<p>Forget, input, and output gates decide what to erase, write, and expose.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>LSTMs made neural sequence memory practical and dominated NLP before attention-based models took over.</span></div>
 </section>
 
 ---
@@ -2797,9 +3161,12 @@ class: rnn-to-transformer-slide
 <p>All tokens connect in parallel.</p>
 <div class="attn51-attention-web" aria-hidden="true">
 <svg viewBox="0 0 260 100">
-<path d="M38 74 C92 14 168 14 222 74" />
-<path d="M38 74 C94 92 166 92 222 74" />
-<path d="M80 30 C120 76 140 76 180 30" />
+<path class="attn51-bus" d="M34 32 H226" />
+<path class="attn51-drop" d="M34 32 V74 M98 32 V74 M162 32 V74 M226 32 V74" />
+<circle cx="34" cy="32" r="4" />
+<circle cx="98" cy="32" r="4" />
+<circle cx="162" cy="32" r="4" />
+<circle cx="226" cy="32" r="4" />
 </svg>
 <b>the</b><b>model</b><b>uses</b><b>context</b>
 </div>
@@ -2881,6 +3248,156 @@ class: transformer-block-slide
 </div>
 
 <div class="ts-takeaway">The Transformer block combines context mixing and nonlinear feature transformation.</div>
+</section>
+
+---
+class: fm-case-slide fm-bert-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-bert">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>BERT</h1>
+<p>2018 - Google AI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>encoder-only transformer</span>
+<strong>Bidirectional attention learns context from both sides.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/bert-one-seq-d2l.svg'" alt="BERT encoder-only architecture diagram">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/elmo-gpt-bert-d2l.svg'" alt="Comparison of ELMo GPT and BERT architectures"></figure>
+<div class="fm-caption">
+<span>pretraining objective</span>
+<strong>Masked tokens force contextual understanding.</strong>
+</div>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Bidirectional pretraining at scale.</strong>
+<p>BERT reads left and right context together instead of predicting only forward text.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>It reset NLP benchmarks.</strong>
+<p>Pretraining plus fine tuning became the dominant recipe for understanding tasks.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Encoder-only Transformer.</strong>
+<p>Self-attention builds a contextual representation for every token in the input.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>BERT made foundation-style pretraining standard for search, classification, extraction, and ranking.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-gpt3-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-gpt3">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>GPT-3</h1>
+<p>2020 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>decoder-only scaling</span>
+<strong>Autoregressive Transformers became few-shot learners.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-gpt3-scaling.png'" alt="GPT-3 scaling chart from the language models are few-shot learners paper">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/gpt-decoder-only-d2l.svg'" alt="GPT decoder-only architecture diagram"></figure>
+<figure><img :src="'/images/fm-gpt3-metalearning.png'" alt="GPT-3 in-context learning diagram"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>In-context learning at frontier scale.</strong>
+<p>Prompt examples could steer behavior without updating model weights.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Scale changed how models were used.</strong>
+<p>The model became a general interface for writing, coding, reasoning, and task transfer.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Large decoder-only Transformer.</strong>
+<p>Causal attention predicts the next token while larger data, compute, and parameters improve capability.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>GPT-3 turned scaling laws and prompting into the central language-model paradigm.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-t5-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-t5">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>T5</h1>
+<p>2020 - Google Research</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>text-to-text transfer</span>
+<strong>Every NLP task becomes input text mapped to output text.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/t5-encoder-decoder-d2l.svg'" alt="T5 encoder-decoder architecture diagram">
+</figure>
+<div class="fm-flow">
+<article><span>input</span><strong>task as text</strong></article>
+<i></i>
+<article><span>model</span><strong>encoder-decoder</strong></article>
+<i></i>
+<article><span>output</span><strong>text answer</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>A unified text-to-text framework.</strong>
+<p>Translation, summarization, classification, and QA all used the same sequence format.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Task boundaries became simpler.</strong>
+<p>One pretrained model could be adapted by changing the textual prompt and target.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Encoder-decoder Transformer.</strong>
+<p>The encoder reads the prompt; the decoder generates the target sequence.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>T5 helped normalize instruction-like task formatting before modern prompt-based LLMs.</span></div>
 </section>
 
 ---
@@ -3226,6 +3743,108 @@ class: llm-assistant-slide
 </section>
 
 ---
+class: fm-case-slide fm-instructgpt-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-instructgpt">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>InstructGPT</h1>
+<p>2022 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>rlhf pipeline</span>
+<strong>Human preferences shape the assistant behavior.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-instructgpt-rlhf.png'" alt="InstructGPT three-step RLHF training pipeline diagram">
+</figure>
+<div class="fm-flow">
+<article><span>step 1</span><strong>SFT</strong></article>
+<i></i>
+<article><span>step 2</span><strong>reward model</strong></article>
+<i></i>
+<article><span>step 3</span><strong>PPO</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Instruction tuning plus RLHF.</strong>
+<p>The model was optimized to follow user instructions and prefer helpful responses.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Alignment became a product capability.</strong>
+<p>Raw language-model fluency was converted into more useful assistant behavior.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>The backbone stays GPT-like.</strong>
+<p>The major shift is the training pipeline: demonstrations, rankings, reward modeling, and policy optimization.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>InstructGPT made RLHF the practical bridge between pretrained LLMs and deployed assistants.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-chatgpt-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-chatgpt">
+<div class="ts-header">
+<span>FOUNDATION MODEL CASE</span>
+<h1>ChatGPT</h1>
+<p>2022 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-logo-visual">
+<div class="fm-visual-head">
+<span>conversational interface</span>
+<strong>LLMs became accessible through dialogue.</strong>
+</div>
+<div class="fm-logo-mark fm-composite-logo">
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
+</div>
+<div class="fm-flow">
+<article><span>2020</span><strong>GPT-3</strong></article>
+<i></i>
+<article><span>2022</span><strong>InstructGPT</strong></article>
+<i></i>
+<article><span>2022</span><strong>ChatGPT</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>A mass-market LLM interface.</strong>
+<p>Conversation made prompting natural for people outside ML and software engineering.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Adoption became global.</strong>
+<p>ChatGPT turned LLMs from research systems into everyday tools for work and learning.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>GPT plus instruction alignment.</strong>
+<p>The breakthrough was not just model scale, but the product loop around dialogue and feedback.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>ChatGPT made generative AI a mainstream interface and accelerated the modern LLM ecosystem.</span></div>
+</section>
+
+---
 class: llm-capabilities-slide
 ---
 
@@ -3296,6 +3915,347 @@ class: llm-limits-slide
 </section>
 
 ---
+class: fm-case-slide fm-llama-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-llama">
+<div class="ts-header">
+<span>OPEN-WEIGHT LLM CASE</span>
+<h1>LLaMA</h1>
+<p>2023 - Meta AI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>open-weight family</span>
+<strong>Efficient decoder-only LLMs made frontier-style research more accessible.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/gpt-decoder-only-d2l.svg'" alt="Decoder-only Transformer architecture used as LLaMA-style reference">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/tool-meta.svg'" alt="Meta logo"></figure>
+<figure><img :src="'/images/fm-llama-training-loss.png'" alt="LLaMA training loss chart from the LLaMA paper"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Strong open-weight foundation models.</strong>
+<p>LLaMA showed that carefully trained smaller models could compete with much larger systems.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Research became easier to reproduce.</strong>
+<p>Open weights accelerated fine tuning, evaluation, local deployment, and community experimentation.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Efficient decoder-only Transformer.</strong>
+<p>The innovation was an optimized training recipe, data mix, and inference-friendly architecture choices.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>LLaMA helped start the open-weight revolution that reshaped applied LLM research.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-mistral-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-mistral">
+<div class="ts-header">
+<span>OPEN-WEIGHT LLM CASE</span>
+<h1>Mistral 7B</h1>
+<p>2023 - Mistral AI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>efficient dense transformer</span>
+<strong>Sliding-window attention reduces cost while keeping strong local context.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-mistral-swa.png'" alt="Mistral sliding-window attention diagram">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/tool-mistralai.svg'" alt="Mistral AI logo"></figure>
+<figure><img :src="'/images/fm-mistral-header.jpeg'" alt="Mistral paper header illustration"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Compact dense models with frontier-like quality.</strong>
+<p>Mistral 7B made small open models surprisingly competitive on practical benchmarks.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Efficiency became a model-design goal.</strong>
+<p>Strong capability no longer required serving only very large models.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Sliding-window attention and grouped-query attention.</strong>
+<p>The model keeps inference efficient while preserving useful context for generation.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Mistral made efficient dense open models a serious alternative to larger closed systems.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-deepseek-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-deepseek">
+<div class="ts-header">
+<span>OPEN-WEIGHT LLM CASE</span>
+<h1>DeepSeek</h1>
+<p>2024-2025 - DeepSeek</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>efficient frontier architecture</span>
+<strong>Sparse experts and latent attention target lower training and inference cost.</strong>
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-deepseek-v3-architecture.png'" alt="DeepSeek-V3 architecture diagram with MLA and DeepSeekMoE">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/tool-deepseek.svg'" alt="DeepSeek logo"></figure>
+<figure><img :src="'/images/fm-deepseek-v2-architecture.png'" alt="DeepSeek-V2 architecture diagram"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Cost-efficient frontier-style LLMs.</strong>
+<p>DeepSeek emphasized open, high-performing models with aggressive efficiency engineering.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Capability per dollar became visible.</strong>
+<p>The field began comparing not only benchmark scores, but also training and serving economics.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>MoE plus multi-head latent attention.</strong>
+<p>Sparse routing activates selected experts while latent attention compresses key-value memory.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>DeepSeek pushed open reasoning and cost efficiency into the center of frontier-model discussion.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-o1-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-o1">
+<div class="ts-header">
+<span>REASONING MODEL CASE</span>
+<h1>OpenAI o1</h1>
+<p>2024 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-logo-visual">
+<div class="fm-visual-head">
+<span>test-time reasoning</span>
+<strong>More inference-time thinking improves hard problem solving.</strong>
+</div>
+<div class="fm-logo-mark fm-composite-logo">
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-o1-agentic.png'" alt="Public o1 system-card chart showing agentic task evaluations">
+</figure>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Deliberate test-time reasoning.</strong>
+<p>o1 popularized the idea that models can spend more compute before answering difficult tasks.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Reasoning became a serving-time property.</strong>
+<p>Performance improved by changing how the model thinks at inference, not only by scaling pretraining.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>RL-trained reasoning behavior.</strong>
+<p>The internal architecture is not public; public evidence focuses on reasoning process and evaluations.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>o1 shifted attention from instant answers to models that allocate computation to hard reasoning.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-deepseek-r1-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-deepseek-r1">
+<div class="ts-header">
+<span>REASONING MODEL CASE</span>
+<h1>DeepSeek-R1</h1>
+<p>2025 - DeepSeek</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>open reasoning training</span>
+<strong>Reinforcement learning encourages longer reasoning trajectories.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-deepseek-r1-aime.png'" alt="DeepSeek-R1 AIME performance chart from the paper">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-deepseek-r1-length.png'" alt="DeepSeek-R1 response length during reinforcement learning"></figure>
+<figure><img :src="'/images/tool-deepseek.svg'" alt="DeepSeek logo"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Open-weight reasoning models.</strong>
+<p>DeepSeek-R1 showed strong math and reasoning behavior trained with reinforcement learning.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Reasoning was no longer only closed.</strong>
+<p>The release made reasoning-model training, evaluation, and distillation more accessible.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>RL over reasoning trajectories.</strong>
+<p>Training rewards problem-solving behavior and produces longer, more deliberate chains of reasoning.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>DeepSeek-R1 made open reasoning models a major branch of the LLM landscape.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-distilbert-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-distilbert">
+<div class="ts-header">
+<span>KNOWLEDGE DISTILLATION CASE</span>
+<h1>DistilBERT</h1>
+<p>2019 - Hugging Face</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>teacher-student compression</span>
+<strong>A smaller student learns to imitate a larger BERT teacher.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-distilbert-params.png'" alt="DistilBERT parameter and performance comparison from the paper">
+</figure>
+<div class="fm-flow">
+<article><span>teacher</span><strong>BERT</strong></article>
+<i></i>
+<article><span>signals</span><strong>logits + states</strong></article>
+<i></i>
+<article><span>student</span><strong>DistilBERT</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Practical Transformer compression.</strong>
+<p>A compact model retained much of BERT's accuracy with fewer parameters and faster inference.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Deployment became easier.</strong>
+<p>Distillation made pretrained NLP models more suitable for production latency and memory limits.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Teacher-student training.</strong>
+<p>The student learns from ground truth and from the richer distribution produced by the teacher.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>DistilBERT made compression a standard path from research models to efficient NLP systems.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-deepseek-distill-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-deepseek-distill">
+<div class="ts-header">
+<span>KNOWLEDGE DISTILLATION CASE</span>
+<h1>DeepSeek Distilled Models</h1>
+<p>2025 - DeepSeek</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>reasoning distillation</span>
+<strong>A strong reasoning teacher transfers behavior to smaller students.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-deepseek-r1-length.png'" alt="DeepSeek-R1 reasoning length chart used as evidence of reasoning behavior">
+</figure>
+<div class="fm-flow">
+<article><span>teacher</span><strong>R1</strong></article>
+<i></i>
+<article><span>data</span><strong>reasoning traces</strong></article>
+<i></i>
+<article><span>student</span><strong>Qwen / Llama</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Reasoning skills transferred into smaller models.</strong>
+<p>R1 outputs were used to train compact distilled variants with visible reasoning ability.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Reasoning became cheaper to serve.</strong>
+<p>Distilled models made advanced problem solving more practical on limited infrastructure.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Teacher traces supervise the student.</strong>
+<p>The student learns not only final answers, but the style of intermediate reasoning.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Reasoning distillation connected frontier reasoning models with local and open deployment.</span></div>
+</section>
+
+---
 class: genai-overview-slide
 ---
 
@@ -3336,6 +4296,66 @@ class: genai-overview-slide
 </div>
 
 <div class="ts-takeaway">Generative AI turns models into creative engines.</div>
+</section>
+
+---
+class: genai-methods-slide
+---
+
+<section class="slide-shell transformer-section genai-section genai-methods-slide genai-methods">
+<div class="ts-header">
+<span>GENERATIVE METHODS</span>
+<h1>Main Families of Generative AI</h1>
+<p>Different model families learn the structure of data, then sample new artifacts from that learned structure.</p>
+</div>
+
+<div class="genai-methods-grid">
+<article class="ts-panel genai-method-card method-gan">
+<figure>
+<img :src="'/images/genai-gan-architecture.svg'" alt="Generative adversarial network diagram with generator and discriminator from Wikimedia Commons">
+</figure>
+<div class="genai-method-copy">
+<span>GAN</span>
+<strong>Generator vs discriminator</strong>
+<p>A generator creates synthetic samples from noise, while a discriminator tries to detect what is real. Their competition pushes the generator toward sharper, more realistic outputs.</p>
+</div>
+</article>
+
+<article class="ts-panel genai-method-card method-vae">
+<figure>
+<img :src="'/images/genai-vae-architecture.png'" alt="Reparameterized variational autoencoder architecture diagram from Wikimedia Commons">
+</figure>
+<div class="genai-method-copy">
+<span>Autoencoder / VAE</span>
+<strong>Compress, sample, decode</strong>
+<p>An encoder maps data into a latent space and a decoder reconstructs it. VAEs make that space smooth and probabilistic, so new examples can be sampled and decoded.</p>
+</div>
+</article>
+
+<article class="ts-panel genai-method-card method-diffusion">
+<figure>
+<img :src="'/images/genai-ddim-castle-steps.png'" alt="DDIM diffusion denoising steps turning noise into a generated castle image from Wikimedia Commons">
+</figure>
+<div class="genai-method-copy">
+<span>Diffusion models</span>
+<strong>Reverse noise into structure</strong>
+<p>Training teaches a model how noise corrupts data and how to remove it. Generation starts from random noise and iteratively denoises it into a coherent image, audio, or video.</p>
+</div>
+</article>
+
+<article class="ts-panel genai-method-card method-ar">
+<figure>
+<img :src="'/images/gpt-decoder-only-d2l.svg'" alt="Decoder-only GPT architecture diagram from Dive into Deep Learning">
+</figure>
+<div class="genai-method-copy">
+<span>Autoregressive</span>
+<strong>Predict the next token</strong>
+<p>Text, images, music, or code can be represented as sequences. The model generates one token at a time, conditioning every choice on what has already been produced.</p>
+</div>
+</article>
+</div>
+
+<div class="ts-takeaway">Generative AI is not one technique: it is a family of sampling strategies over learned representations.</div>
 </section>
 
 ---
@@ -3431,6 +4451,102 @@ class: genai-text-image-slide
 </section>
 
 ---
+class: fm-case-slide fm-dalle-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-dalle">
+<div class="ts-header">
+<span>GENERATIVE AI CASE</span>
+<h1>DALL-E</h1>
+<p>2021 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>text-to-image generation</span>
+<strong>Language prompts generate visual scenes through discrete image tokens.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-dalle-dvae.png'" alt="DALL-E dVAE reconstruction examples from the paper">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-dalle-samples.jpg'" alt="DALL-E generated sample comparisons from the paper"></figure>
+<figure><img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Text prompts as image controls.</strong>
+<p>DALL-E showed that natural language could specify objects, style, and composition.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Creation became conversational.</strong>
+<p>Users could describe an image instead of drawing or programming the visual structure.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Autoregressive image-token generation.</strong>
+<p>A transformer models text and discrete visual tokens learned by a dVAE.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>DALL-E made text-to-image generation a flagship example of generative AI.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-stable-diffusion-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-stable-diffusion">
+<div class="ts-header">
+<span>GENERATIVE AI CASE</span>
+<h1>Stable Diffusion</h1>
+<p>2022 - Stability AI, LMU Munich, Runway, CompVis</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>latent diffusion</span>
+<strong>Denoising happens in compressed latent space instead of raw pixels.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/genai-ddim-castle-steps.png'" alt="Diffusion denoising steps from noise to image">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-stable-diffusion-ldm.png'" alt="Latent Diffusion Model architecture diagram from the paper"></figure>
+<figure><img :src="'/images/fm-stable-diffusion-compression.jpg'" alt="Latent diffusion compression illustration from the paper"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Open text-to-image diffusion at scale.</strong>
+<p>Stable Diffusion made high-quality image generation widely runnable and customizable.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Generative art became an ecosystem.</strong>
+<p>Open weights enabled fine tuning, ControlNet-style extensions, local tools, and rapid iteration.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Latent denoising with text conditioning.</strong>
+<p>A U-Net removes noise in latent space while cross-attention injects prompt information.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Stable Diffusion turned diffusion models into a broad open creative platform.</span></div>
+</section>
+
+---
 class: genai-multimodal-slide
 ---
 
@@ -3523,6 +4639,301 @@ class: genai-vlm-slide
 </div>
 
 <div class="ts-takeaway">Vision-language models connect perception with language.</div>
+</section>
+
+---
+class: fm-case-slide fm-clip-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-clip">
+<div class="ts-header">
+<span>MULTIMODAL CASE</span>
+<h1>CLIP</h1>
+<p>2021 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>shared embedding space</span>
+<strong>Images and text are pulled into the same semantic geometry.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-clip-architecture.png'" alt="CLIP contrastive image-text architecture diagram from the paper">
+</figure>
+<div class="fm-modality-row">
+<b>image encoder</b>
+<b>text encoder</b>
+<b>contrastive loss</b>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Image-text alignment at web scale.</strong>
+<p>CLIP learned visual concepts from natural language supervision instead of fixed labels only.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Zero-shot vision became practical.</strong>
+<p>New categories could be recognized through text prompts without retraining the classifier.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Contrastive dual encoders.</strong>
+<p>Matched image-caption pairs are pulled together; mismatched pairs are pushed apart.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>CLIP became the bridge between web-scale language and open-ended visual recognition.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-flamingo-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-flamingo">
+<div class="ts-header">
+<span>MULTIMODAL CASE</span>
+<h1>Flamingo</h1>
+<p>2022 - DeepMind</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>few-shot multimodal learning</span>
+<strong>Interleaved images and text become prompts for a frozen language model.</strong>
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-flamingo-architecture.png'" alt="Flamingo architecture diagram from the paper">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/case-deepmind-logo.svg'" alt="Google DeepMind logo"></figure>
+<div class="fm-caption">
+<span>few-shot interface</span>
+<strong>Examples inside the prompt steer visual-language answers.</strong>
+</div>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Few-shot vision-language prompting.</strong>
+<p>Flamingo could answer multimodal tasks from a handful of image-text examples.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Multimodal models became flexible.</strong>
+<p>It reduced the need to fine tune a separate model for every visual-language task.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Perceiver resampler plus gated cross-attention.</strong>
+<p>Visual tokens are adapted into a frozen LLM through inserted cross-attention layers.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Flamingo showed that multimodal prompting could inherit the flexibility of LLMs.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-blip2-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-blip2">
+<div class="ts-header">
+<span>MULTIMODAL CASE</span>
+<h1>BLIP-2</h1>
+<p>2023 - Salesforce Research</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>efficient visual bridge</span>
+<strong>A lightweight Q-Former connects frozen vision encoders to frozen LLMs.</strong>
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-blip2-overview.png'" alt="BLIP-2 overview architecture diagram from the paper">
+</figure>
+<div class="fm-flow">
+<article><span>vision</span><strong>frozen encoder</strong></article>
+<i></i>
+<article><span>bridge</span><strong>Q-Former</strong></article>
+<i></i>
+<article><span>language</span><strong>frozen LLM</strong></article>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Cheap alignment between vision and LLMs.</strong>
+<p>BLIP-2 avoided training the full vision-language stack end to end.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Multimodal bootstrapping became efficient.</strong>
+<p>Strong frozen components could be combined with a small learned connector.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Q-Former as an information bottleneck.</strong>
+<p>Learned query tokens extract visual evidence in a format an LLM can use.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>BLIP-2 made modular vision-language systems faster and cheaper to build.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-gpt4o-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-gpt4o">
+<div class="ts-header">
+<span>MODERN MULTIMODAL CASE</span>
+<h1>GPT-4o</h1>
+<p>2024 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-logo-visual">
+<div class="fm-visual-head">
+<span>native multimodal reasoning</span>
+<strong>Text, vision, and audio are handled by one unified assistant experience.</strong>
+</div>
+<div class="fm-logo-mark fm-composite-logo">
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/fm-gpt4o-autonomy.png'" alt="GPT-4o system-card autonomy evaluation chart">
+</figure>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Omni-modal interaction in one product loop.</strong>
+<p>GPT-4o made speech, text, and image understanding feel much more immediate.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Multimodal AI became conversational.</strong>
+<p>Users could move between seeing, speaking, and reasoning without separate systems.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Unified multimodal model behavior.</strong>
+<p>The full architecture is proprietary; public material documents the native multimodal capability and evaluations.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>GPT-4o made real-time multimodal assistants a mainstream design target.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-gemini-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-gemini">
+<div class="ts-header">
+<span>MODERN MULTIMODAL CASE</span>
+<h1>Gemini</h1>
+<p>2023 - Google DeepMind</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>native multimodal design</span>
+<strong>Gemini was presented as multimodal from the start.</strong>
+</div>
+<figure class="fm-main-figure fm-product-image">
+<img :src="'/images/fm-gemini-og.png'" alt="Official Gemini visual from Google">
+</figure>
+<div class="fm-modality-row">
+<b>text</b>
+<b>image + video</b>
+<b>audio</b>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>A frontier family built for modalities.</strong>
+<p>Gemini emphasized reasoning across text, images, video, audio, and code.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Multimodal benchmarks moved to the frontier.</strong>
+<p>Video and audio understanding became part of the core model comparison story.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Unified multimodal training objective.</strong>
+<p>The detailed internal architecture is not public, so this slide uses official public Gemini material.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Gemini made native multimodality a defining expectation for frontier model families.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-claude-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-claude">
+<div class="ts-header">
+<span>MODERN MULTIMODAL CASE</span>
+<h1>Claude</h1>
+<p>2023 - Anthropic</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>long-context assistant</span>
+<strong>Document understanding and safety-focused behavior became central strengths.</strong>
+</div>
+<figure class="fm-main-figure fm-product-image">
+<img :src="'/images/fm-claude-og.jpg'" alt="Official Claude visual from Anthropic">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/tool-anthropic.svg'" alt="Anthropic logo"></figure>
+<figure><img :src="'/images/fm-claude-constitutional-ai.png'" alt="Constitutional AI training process diagram from Anthropic paper"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Long-context, safety-oriented assistant behavior.</strong>
+<p>Claude became known for document reasoning, careful writing, and large context windows.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Enterprise document workflows changed.</strong>
+<p>Long inputs made it practical to analyze contracts, reports, codebases, and research material.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Alignment process plus long-context training.</strong>
+<p>The architecture is proprietary; public technical material highlights Constitutional AI and system behavior.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Claude made long-context document understanding a central frontier-assistant capability.</span></div>
 </section>
 
 ---
@@ -3817,6 +5228,158 @@ class: agentic-history-slide
 </div>
 
 <div class="ts-takeaway">Agents evolved from scripted behavior to systems that can use models, tools, memory, and feedback.</div>
+</section>
+
+---
+class: fm-case-slide fm-autogpt-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-autogpt">
+<div class="ts-header">
+<span>AGENTIC AI CASE</span>
+<h1>AutoGPT</h1>
+<p>2023 - Significant Gravitas</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-logo-visual">
+<div class="fm-visual-head">
+<span>autonomous task loop</span>
+<strong>An LLM repeatedly plans, acts, observes, and revises.</strong>
+</div>
+<div class="fm-logo-mark">
+<img :src="'/images/fm-autogpt-logo.svg'" alt="AutoGPT logo">
+</div>
+<figure class="fm-main-figure">
+<img :src="'/images/agent-generative-architecture.png'" alt="Generative agent architecture diagram with memory and planning">
+</figure>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Viral autonomous LLM task execution.</strong>
+<p>AutoGPT popularized giving an LLM a goal, memory, tools, and a repeated action loop.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Agents became a software pattern.</strong>
+<p>The field moved from single prompts to loops that inspect state and choose next actions.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Plan-act-observe iterations.</strong>
+<p>The model decomposes tasks, calls tools, stores context, and continues until the goal is reached or fails.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>AutoGPT made agent loops a mainstream design pattern for LLM applications.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-operator-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-operator">
+<div class="ts-header">
+<span>AGENTIC AI CASE</span>
+<h1>OpenAI Operator</h1>
+<p>2025 - OpenAI</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-logo-visual">
+<div class="fm-visual-head">
+<span>computer use</span>
+<strong>An agent interacts with websites through a browser-like action loop.</strong>
+</div>
+<div class="fm-logo-mark fm-composite-logo">
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
+</div>
+<div class="fm-mini-browser">
+<div class="fm-mini-browser-top"><i></i><i></i><i></i><span>browser task</span></div>
+<div class="fm-mini-browser-body">
+<div class="fm-mini-image"><img :src="'/images/agent-virtual-agent-diagram.jpg'" alt="Virtual agent diagram"></div>
+<div class="fm-flow">
+<article><span>observe</span><strong>screen</strong></article>
+<article><span>decide</span><strong>next action</strong></article>
+<article><span>act</span><strong>click / type</strong></article>
+</div>
+</div>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Consumer-facing computer use.</strong>
+<p>Operator framed web interaction as a model-driven loop over screen perception and actions.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Agents could use existing interfaces.</strong>
+<p>Instead of needing an API for every service, the agent can interact with websites like a user.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Vision plus reasoning plus UI actions.</strong>
+<p>The agent observes the page, chooses actions, and executes clicks, typing, and scrolling with safeguards.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Operator pushed agentic AI toward real computer-use workflows beyond chat.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-manus-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-manus">
+<div class="ts-header">
+<span>AGENTIC AI CASE</span>
+<h1>Manus</h1>
+<p>2025 - Butterfly Effect</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>autonomous workflows</span>
+<strong>A general agent product coordinates web, files, and task execution.</strong>
+</div>
+<figure class="fm-main-figure fm-product-image">
+<img :src="'/images/fm-manus-og.png'" alt="Official Manus social preview visual">
+</figure>
+<div class="fm-agent-loop">
+<b>plan</b>
+<b>browse</b>
+<b>execute</b>
+<b>deliver</b>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>A packaged autonomous workflow agent.</strong>
+<p>Manus emphasized end-to-end task completion across web browsing, files, and multi-step plans.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Agent UX moved beyond demos.</strong>
+<p>The product focused attention on persistence, task state, delegation, and deliverables.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Planner-executor loop with tools.</strong>
+<p>The agent breaks goals into actions, works across interfaces, and returns completed artifacts.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>Manus made autonomous workflow agents part of the public conversation around AI assistants.</span></div>
 </section>
 
 ---
@@ -4369,6 +5932,150 @@ class: future-embodied-ai-slide
 </section>
 
 ---
+class: fm-case-slide fm-rt2-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-rt2">
+<div class="ts-header">
+<span>EMBODIED AI CASE</span>
+<h1>RT-2</h1>
+<p>2023 - Google DeepMind</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>vision-language-action</span>
+<strong>Web-scale visual-language knowledge becomes robot actions.</strong>
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-rt2-architecture.png'" alt="RT-2 vision-language-action architecture diagram">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-rt2-capabilities.png'" alt="RT-2 robot capability examples from the paper"></figure>
+<figure><img :src="'/images/case-deepmind-logo.svg'" alt="Google DeepMind logo"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Vision-Language-Action models.</strong>
+<p>RT-2 converted visual-language model outputs into robot action tokens.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Robots gained semantic generalization.</strong>
+<p>Knowledge learned from web data helped robots respond to novel objects and instructions.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>Actions represented as language tokens.</strong>
+<p>The same sequence modeling machinery can predict both words and robot control actions.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>RT-2 connected foundation-model knowledge with physical robot behavior.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-rtx-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-rtx">
+<div class="ts-header">
+<span>EMBODIED AI CASE</span>
+<h1>RT-X</h1>
+<p>2023 - Google DeepMind and Open X-Embodiment collaborators</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>multi-robot learning</span>
+<strong>Robot policies learn from diverse embodiments and tasks.</strong>
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-rtx-architecture.png'" alt="RT-X model architecture and training diagram">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-rtx-dataset.png'" alt="Open X-Embodiment dataset overview from the RT-X paper"></figure>
+<figure><img :src="'/images/case-deepmind-logo.svg'" alt="Google DeepMind logo"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>Cross-embodiment robot data scaling.</strong>
+<p>RT-X combined data from many robots to train policies with broader transfer.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Robot learning moved beyond one lab setup.</strong>
+<p>Generalization improved when policies learned from varied arms, sensors, objects, and tasks.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>RT-1-X and RT-2-X co-training.</strong>
+<p>Models use large multi-robot datasets to learn action policies that transfer across embodiments.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>RT-X made dataset scale and embodiment diversity central to robot foundation models.</span></div>
+</section>
+
+---
+class: fm-case-slide fm-groot-slide
+---
+
+<section class="slide-shell transformer-section fm-case fm-groot">
+<div class="ts-header">
+<span>EMBODIED AI CASE</span>
+<h1>NVIDIA GR00T N1</h1>
+<p>2025 - NVIDIA</p>
+</div>
+
+<div class="fm-layout">
+<article class="ts-panel fm-visual fm-has-strip">
+<div class="fm-visual-head">
+<span>humanoid foundation model</span>
+<strong>A dual-system VLA stack targets general humanoid manipulation.</strong>
+</div>
+<figure class="fm-main-figure fm-top">
+<img :src="'/images/fm-groot-architecture.png'" alt="NVIDIA GR00T N1 architecture diagram from the paper">
+</figure>
+<div class="fm-secondary-row two">
+<figure><img :src="'/images/fm-groot-overview.png'" alt="NVIDIA GR00T N1 overview diagram"></figure>
+<figure><img :src="'/images/tool-nvidia.svg'" alt="NVIDIA logo"></figure>
+</div>
+</article>
+
+<aside class="fm-case-cards">
+<article class="ts-panel fm-case-card">
+<span>What it introduced</span>
+<strong>A humanoid robot foundation model.</strong>
+<p>GR00T N1 frames humanoid control as a generalist vision-language-action problem.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Why it mattered</span>
+<strong>Physical AI moved toward foundation models.</strong>
+<p>Robotics began adopting the same scalable pretraining logic that transformed language and vision.</p>
+</article>
+<article class="ts-panel fm-case-card">
+<span>Key architectural idea</span>
+<strong>System 2 reasoning plus System 1 action.</strong>
+<p>A VLM handles semantic planning while a diffusion transformer produces low-level robot actions.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway fm-impact"><b>Impact on AI timeline</b><span>GR00T points toward generalist humanoid models trained across robot data, simulation, and tasks.</span></div>
+</section>
+
+---
 class: frontier-case-study-slide
 ---
 
@@ -4527,6 +6234,57 @@ class: future-federated-edge-slide
 </div>
 
 <div class="ts-takeaway">Not all intelligence will live in the cloud.</div>
+</section>
+
+---
+class: future-fedavg-slide
+---
+
+<section class="slide-shell transformer-section frontier-section fedavg81">
+<div class="ts-header">
+<span>FEDERATED OPTIMIZATION</span>
+<h1>FedAvg: Federated Averaging</h1>
+<p>The classic FL loop: local training on private data, then server-side averaging of model weights.</p>
+</div>
+
+<div class="fedavg81-layout">
+<article class="ts-panel fedavg81-visual-panel">
+<div class="fedavg81-visual-head">
+<span>FedAvg loop</span>
+<strong>Broadcast, train locally, upload, average.</strong>
+</div>
+<div class="fedavg81-image-frame">
+<img :src="'/images/future-federated-learning.png'" alt="Federated learning process central case diagram from Wikimedia Commons">
+</div>
+<div class="fedavg81-formula">
+<span>weighted aggregation</span>
+<b>w<sub>t+1</sub> = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub> / n) w<sub>t+1</sub><sup>k</sup></b>
+</div>
+</article>
+
+<aside class="fedavg81-side">
+<article class="ts-panel fedavg81-limits-card">
+<span>where it breaks</span>
+<strong>FedAvg is simple, not magic.</strong>
+<div class="fedavg81-limit-list">
+<div><b>Non-IID data</b><p>local distributions differ, so updates can drift away from the global objective</p></div>
+<div><b>Central server</b><p>the coordinator becomes a bottleneck, trust anchor, and single point of failure</p></div>
+<div><b>Scaling friction</b><p>many rounds, weak devices, dropouts, and large models make updates costly</p></div>
+</div>
+</article>
+
+<article class="ts-panel fedavg81-chain-card">
+<div class="fedavg81-chain-visual" aria-hidden="true">
+<b>client</b><i></i><b>ledger</b><i></i><b>global model</b>
+</div>
+<span>FL + blockchain</span>
+<strong>Blockchain can coordinate trust.</strong>
+<p>A ledger can record rounds, validate contributions, and automate incentives. <b>Tradeoff:</b> latency/cost; no automatic privacy or non-IID fix.</p>
+</article>
+</aside>
+</div>
+
+<div class="ts-takeaway">FedAvg keeps raw data local, but production FL still needs governance, robustness, privacy, and scale engineering.</div>
 </section>
 
 ---
@@ -4858,7 +6616,7 @@ class: future-synthesis-slide
 <div class="synthesis-layout">
 <article class="ts-panel synthesis-gallery">
 <figure class="wide"><img :src="'/images/biological-neuron-vs-perceptron.png'" alt="Biological neuron and perceptron image from Wikimedia Commons"><figcaption>neural roots</figcaption></figure>
-<figure><img :src="'/images/attention-paper-first-page.png'" alt="Attention Is All You Need paper first page"><figcaption>attention</figcaption></figure>
+<figure class="attention-paper-zoom"><img :src="'/images/attention-paper-first-page.png'" alt="Attention Is All You Need paper first page"><figcaption>attention</figcaption></figure>
 <figure><img :src="'/images/genai-dalle-sample-grid.png'" alt="DALL-E sample grid from Wikimedia Commons"><figcaption>generation</figcaption></figure>
 <figure><img :src="'/images/agent-robonaut-working.jpg'" alt="NASA Robonaut 2 working image from Wikimedia Commons"><figcaption>embodiment</figcaption></figure>
 <figure><img :src="'/images/future-earth-apollo17.jpg'" alt="NASA Apollo 17 image of Earth from Wikimedia Commons"><figcaption>world systems</figcaption></figure>
@@ -4883,4 +6641,183 @@ class: future-synthesis-slide
 </div>
 
 <div class="ts-takeaway">AI evolved from simple decision boundaries to systems that perceive, generate, plan, and act.</div>
+</section>
+
+---
+class: tools-chapter-slide
+---
+
+<section class="slide-shell transformer-section tools-section tools-chapter">
+<div class="tools-chapter-copy">
+<span>PRACTICAL TOOLKIT</span>
+<h1>Tools Behind the AI Stack</h1>
+<p>Every concept in the course has a practical ecosystem: notebooks for exploration, libraries for learning, model hubs for reuse, and engineering tools for deployment.</p>
+</div>
+
+<div class="tools-logo-cloud" aria-label="AI tools logo cloud">
+<article><img :src="'/images/tool-python.svg'" alt="Python logo"><b>Python</b><p>language for AI workflows</p></article>
+<article><img :src="'/images/tool-jupyter.svg'" alt="Jupyter logo"><b>Jupyter</b><p>interactive notebooks</p></article>
+<article><img :src="'/images/tool-numpy.svg'" alt="NumPy logo"><b>NumPy</b><p>fast numerical arrays</p></article>
+<article><img :src="'/images/tool-pandas.svg'" alt="pandas logo"><b>pandas</b><p>tables and data cleaning</p></article>
+<article><img :src="'/images/tool-scikitlearn.svg'" alt="scikit-learn logo"><b>scikit-learn</b><p>classical ML toolkit</p></article>
+<article><img :src="'/images/tool-pytorch.svg'" alt="PyTorch logo"><b>PyTorch</b><p>flexible model training</p></article>
+<article><img :src="'/images/tool-tensorflow.svg'" alt="TensorFlow logo"><b>TensorFlow</b><p>training and serving</p></article>
+<article><img :src="'/images/tool-huggingface.svg'" alt="Hugging Face logo"><b>Hugging Face</b><p>model and dataset hub</p></article>
+<article><img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo"><b>OpenAI</b><p>foundation-model APIs</p></article>
+<article><img :src="'/images/tool-langchain.svg'" alt="LangChain logo"><b>LangChain</b><p>retrieval and agents</p></article>
+<article><img :src="'/images/tool-docker.svg'" alt="Docker logo"><b>Docker</b><p>reproducible runtimes</p></article>
+<article><img :src="'/images/case-github-logo.svg'" alt="GitHub logo"><b>GitHub</b><p>versioning and collaboration</p></article>
+</div>
+
+<div class="ts-takeaway">The theory becomes useful when it is connected to tools, data, experiments, and deployment.</div>
+</section>
+
+---
+class: tools-data-slide
+---
+
+<section class="slide-shell transformer-section tools-section tools-data">
+<div class="ts-header">
+<span>DATA + CLASSICAL ML</span>
+<h1>Python, Notebooks, and Machine Learning Libraries</h1>
+<p>The first practical layer turns data into experiments: load, clean, visualize, fit, evaluate, iterate.</p>
+</div>
+
+<div class="tools-workflow-layout">
+<article class="ts-panel tools-stack-card data-stack-card">
+<div class="tools-stack-logos">
+<img :src="'/images/tool-python.svg'" alt="Python logo">
+<img :src="'/images/tool-jupyter.svg'" alt="Jupyter logo">
+<img :src="'/images/tool-numpy.svg'" alt="NumPy logo">
+<img :src="'/images/tool-pandas.svg'" alt="pandas logo">
+<img :src="'/images/tool-scikitlearn.svg'" alt="scikit-learn logo">
+</div>
+<strong>Exploration before scale.</strong>
+<p>Most ML work starts in Python: inspect data in notebooks, transform arrays and tables, then train baseline models.</p>
+</article>
+
+<aside class="tools-pipeline">
+<article><span>01</span><strong>Jupyter</strong><p>interactive experiments and teaching notebooks</p></article>
+<i></i>
+<article><span>02</span><strong>NumPy + pandas</strong><p>arrays, tables, cleaning, feature engineering</p></article>
+<i></i>
+<article><span>03</span><strong>scikit-learn</strong><p>regression, classification, clustering, metrics</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Classical ML tooling is about fast iteration and clear evaluation.</div>
+</section>
+
+---
+class: tools-deep-learning-slide
+---
+
+<section class="slide-shell transformer-section tools-section tools-deep-learning">
+<div class="ts-header">
+<span>DEEP LEARNING</span>
+<h1>Frameworks for Neural Networks</h1>
+<p>Deep learning tools manage tensors, automatic differentiation, GPU execution, datasets, checkpoints, and training loops.</p>
+</div>
+
+<div class="tools-dl-layout">
+<article class="ts-panel tools-dl-framework pytorch-card">
+<img :src="'/images/tool-pytorch.svg'" alt="PyTorch logo">
+<div><span>research friendly</span><strong>PyTorch</strong><p>Imperative tensor code, autograd, modules, optimizers, and an ecosystem widely used in research.</p></div>
+</article>
+
+<article class="ts-panel tools-dl-framework tensorflow-card">
+<img :src="'/images/tool-tensorflow.svg'" alt="TensorFlow logo">
+<div><span>production ecosystem</span><strong>TensorFlow</strong><p>Training and serving stack with Keras APIs, deployment tooling, and broad platform support.</p></div>
+</article>
+
+<article class="ts-panel tools-dl-framework hub-card">
+<img :src="'/images/tool-huggingface.svg'" alt="Hugging Face logo">
+<div><span>model reuse</span><strong>Hugging Face</strong><p>Models, datasets, tokenizers, evaluation tools, and a hub for sharing trained artifacts.</p></div>
+</article>
+
+<aside class="tools-training-loop">
+<article><b>data loader</b><small>batches examples</small></article>
+<i></i>
+<article><b>model</b><small>forward pass</small></article>
+<i></i>
+<article><b>loss</b><small>training signal</small></article>
+<i></i>
+<article><b>optimizer</b><small>updates weights</small></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Frameworks automate gradients and hardware so we can focus on architecture and data.</div>
+</section>
+
+---
+class: tools-genai-agents-slide
+---
+
+<section class="slide-shell transformer-section tools-section tools-genai-agents">
+<div class="ts-header">
+<span>GENERATIVE AI + AGENTS</span>
+<h1>Tools for LLM Apps and Agentic Systems</h1>
+<p>Modern AI applications combine foundation-model APIs, retrieval, orchestration, tool calls, memory, and monitoring.</p>
+</div>
+
+<div class="tools-agent-layout">
+<article class="ts-panel tools-agent-hero">
+<div class="tools-agent-logos">
+<img :src="'/images/case-openai-logo.svg'" alt="OpenAI logo">
+<img :src="'/images/tool-huggingface.svg'" alt="Hugging Face logo">
+<img :src="'/images/tool-langchain.svg'" alt="LangChain logo">
+</div>
+<strong>From model call to system behavior.</strong>
+<p>An LLM app is rarely just a prompt. It usually wraps a model with retrieval, tools, memory, policies, and product interfaces.</p>
+</article>
+
+<aside class="tools-agent-cards">
+<article><span>model APIs</span><strong>OpenAI / hosted models</strong><p>chat, embeddings, multimodal inputs, structured outputs</p></article>
+<article><span>model hubs</span><strong>Hugging Face</strong><p>open models, datasets, fine-tuning, evaluation</p></article>
+<article><span>orchestration</span><strong>LangChain</strong><p>chains, tools, retrievers, agents, memory patterns</p></article>
+<article><span>retrieval</span><strong>Vector databases</strong><p>embed documents, search similar chunks, ground answers</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">LLM tooling turns generation into grounded workflows.</div>
+</section>
+
+---
+class: tools-delivery-slide
+---
+
+<section class="slide-shell transformer-section tools-section tools-delivery">
+<div class="ts-header">
+<span>ENGINEERING WORKFLOW</span>
+<h1>From Experiment to Working System</h1>
+<p>Useful AI needs reproducible code, version control, packaging, APIs, monitoring, and human review around the model.</p>
+</div>
+
+<div class="tools-delivery-layout">
+<article class="ts-panel tools-delivery-board">
+<div class="tools-delivery-logos">
+<img :src="'/images/tool-git.svg'" alt="Git logo">
+<img :src="'/images/case-github-logo.svg'" alt="GitHub logo">
+<img :src="'/images/tool-docker.svg'" alt="Docker logo">
+<img :src="'/images/tool-python.svg'" alt="Python logo">
+</div>
+<div class="tools-delivery-flow">
+<article><span>code</span><strong>Git</strong></article>
+<i></i>
+<article><span>collab</span><strong>GitHub</strong></article>
+<i></i>
+<article><span>package</span><strong>Docker</strong></article>
+<i></i>
+<article><span>serve</span><strong>API</strong></article>
+</div>
+</article>
+
+<aside class="tools-delivery-principles">
+<article><span>reproducibility</span><strong>same code, same environment</strong><p>Pin dependencies, track data versions, keep model checkpoints inspectable.</p></article>
+<article><span>evaluation</span><strong>tests plus model metrics</strong><p>Combine software tests with accuracy, calibration, latency, and safety checks.</p></article>
+<article><span>operations</span><strong>monitor behavior after launch</strong><p>Log prompts, outputs, drift, cost, failures, and human feedback.</p></article>
+</aside>
+</div>
+
+<div class="ts-takeaway">Production AI is a software system around a model, not only a trained model.</div>
 </section>

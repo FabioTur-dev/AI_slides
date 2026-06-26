@@ -1,18 +1,14 @@
 # From the Perceptron to Agentic AI
 
-A premium Slidev opening slide for a university-level academic presentation on the evolution of Artificial Intelligence.
+A polished Slidev deck for a university-level journey through the evolution of Artificial Intelligence: perceptrons, neural networks, deep learning, CNNs, sequence models, transformers, LLMs, generative models, agents, and emerging AI frontiers.
 
-## Project Structure
+## Overview
 
-- `slides.md` contains only slide 1.
-- `styles/custom.css` defines the premium opening-slide visual system.
-- `style.css` imports the custom stylesheet for Slidev.
-- `scripts/image_prompts.json` documents the prompt used for the slide 1 hero visual.
-- `public/images/` stores local slide visuals referenced as `/images/...`.
-- `public/diagrams/` is reserved for exported or hand-authored diagram assets.
-- `components/` is available for optional lightweight Vue components.
+This repository contains the source for an academic AI lecture deck built with [Slidev](https://sli.dev/). The presentation is designed as a visual, narrative course arc: it starts from biological neurons and the perceptron, then moves through representation learning, backpropagation, CNNs, language models, attention, modern foundation models, agentic systems, and future directions such as embodied AI, federated learning, edge AI, and safety.
 
-## Run
+The deck uses local assets only, so the presentation can run and build without hotlinking external media. Source and license notes for images and research figures are tracked below in the attribution section.
+
+## Quick Start
 
 ```bash
 npm install
@@ -21,19 +17,41 @@ npm run dev
 
 Slidev will start the presentation locally, usually at `http://localhost:3030`.
 
-## Build
+## Scripts
+
+- `npm run dev`: starts the local Slidev development server.
+- `npm run build`: builds the static presentation into `dist/`.
+- `npm run export`: exports the deck through Slidev's export pipeline.
+
+## Project Structure
+
+- `slides.md`: the complete Slidev presentation.
+- `styles/custom.css`: the main visual system and slide-specific layouts.
+- `style.css`: Slidev stylesheet entrypoint that imports the custom CSS.
+- `public/images/`: local images, diagrams, logos, and research figures referenced by the deck.
+- `components/`: optional Vue components for interactive Slidev content.
+- `scripts/image_prompts.json`: prompt notes for generated or curated visual assets.
+- `vercel.json` and `netlify.toml`: static hosting configuration for deployment.
+
+## Build And Deploy
 
 ```bash
 npm run build
 ```
 
+The generated `dist/` directory is ignored by Git and can be deployed by any static host. Vercel and Netlify configuration files are already included.
+
 ## Design Notes
 
-The deck uses a clean white academic keynote style with deep blue, electric blue, cyan, purple, and dark-gray accents. The rebuilt title slide combines a strong title block, online-sourced local visual assets, and a compact five-stage course roadmap.
+The deck uses a clean academic keynote style with white space, deep blue, electric blue, cyan, purple, and dark-gray accents. Layouts are optimized for a 16:9 presentation frame and include overflow protection for dense educational content.
 
-All image references are local. No online hotlinked images are used.
+The visual language favors clear hierarchy, framed figures, compact case-study cards, and slide-specific compositions rather than generic templates. Complex topics are broken into progressive visual explanations, from neural foundations to frontier foundation-model case studies.
 
-The custom stylesheet includes safe-area constraints, a framed image container, bounded roadmap cards, and overflow protection to keep content inside a 16:9 Slidev presentation frame.
+## Asset Policy
+
+- All slide visuals are stored locally under `public/images/`.
+- Research figures, Wikimedia assets, brand marks, generated visuals, and author-provided images are documented in the attribution list below.
+- Build artifacts, local caches, and generated Slidev output are intentionally excluded from version control.
 
 ## Image Attributions
 
@@ -61,6 +79,7 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/cnn-explainer-interface.png`: screenshot provided by the course author of the CNN Explainer web interface. CNN Explainer is available at https://poloclub.github.io/cnn-explainer/
 - `public/images/cnn-convolution-zebra-stripes.jpg`: "Zebra-stripes-black-and-white-zoo-39245.jpg" by igorowitsch/Pixabay, Wikimedia Commons, CC0. https://commons.wikimedia.org/wiki/File:Zebra-stripes-black-and-white-zoo-39245.jpg
 - `public/images/cnn-convolution-zebra-patch.jpg`: local square crop derived from `cnn-convolution-zebra-stripes.jpg`.
+- `public/images/cnn-convolution-math-desktop.png`: convolution illustration provided by the course author from the local Desktop file `convolution.png`.
 - `public/images/cnn-filters-facade.jpg`: "Sunlight on the curved honeycomb glass façade of the hotel Andaz mixed with interior lighting at sunset in Singapore.jpg" by Basile Morin, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Sunlight_on_the_curved_honeycomb_glass_fa%C3%A7ade_of_the_hotel_Andaz_mixed_with_interior_lighting_at_sunset_in_Singapore.jpg
 - `public/images/cnn-medical-xray.jpg`: "Normal posteroanterior (PA) chest radiograph (X-ray).jpg" from Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg
 - `public/images/cnn-autonomous-car.jpg`: "Waymo Jaguar I-Pace in San Francisco 2023 dllu.jpg" from Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Waymo_Jaguar_I-Pace_in_San_Francisco_2023_dllu.jpg
@@ -117,6 +136,8 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/genai-dalle-radish.jpg`: "DALL-E radish.jpg," Wikimedia Commons, public domain / PD-algorithm. https://commons.wikimedia.org/wiki/File:DALL-E_radish.jpg
 - `public/images/genai-taskmatrix-ai.jpg`: "Overview of TaskMatrix.AI (for enabling completing tasks by connecting foundation models with many APIs).jpg," Wikimedia Commons, CC BY 4.0. https://commons.wikimedia.org/wiki/File:Overview_of_TaskMatrix.AI_(for_enabling_completing_tasks_by_connecting_foundation_models_with_many_APIs).jpg
 - `public/images/genai-stable-astronaut-horse.webp`: "Astronaut Riding a Horse (SD3.5).webp" by VulcanSphere, generated with Stable Diffusion 3.5 Large, Wikimedia Commons, CC0 / public domain where applicable. https://commons.wikimedia.org/wiki/File:Astronaut_Riding_a_Horse_(SD3.5).webp
+- `public/images/genai-gan-architecture.svg`: "Generative adversarial network.svg" by Zhang, Aston; Lipton, Zachary C.; Li, Mu; Smola, Alexander J., Wikimedia Commons / Dive into Deep Learning, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Generative_adversarial_network.svg
+- `public/images/genai-vae-architecture.png`: "Reparameterized Variational Autoencoder.png" by EugenioTL, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Reparameterized_Variational_Autoencoder.png
 - `public/images/genai-ddim-castle-steps.png`: "X-Y plot of algorithmically-generated AI art of European-style castle in Japan demonstrating DDIM diffusion steps.png" by Benlisquare, generated with Stable Diffusion V1-5, Wikimedia Commons, PD-algorithm. https://commons.wikimedia.org/wiki/File:X-Y_plot_of_algorithmically-generated_AI_art_of_European-style_castle_in_Japan_demonstrating_DDIM_diffusion_steps.png
 - `public/images/genai-stable-shrine-landscape.png`: "Algorithmically-generated landscape artwork of forest with Shinto shrine.png" by Benlisquare, generated with Stable Diffusion V1-4, Wikimedia Commons, PD-algorithm. https://commons.wikimedia.org/wiki/File:Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine.png
 - `public/images/agent-eliza-conversation.png`: "ELIZA conversation.png," Wikimedia Commons, public domain / PD text. https://commons.wikimedia.org/wiki/File:ELIZA_conversation.png
@@ -132,6 +153,7 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/future-federated-learning.png`: "Federated learning process central case.png" by Jeromemetronome, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Federated_learning_process_central_case.png
 - `public/images/future-edge-computing.png`: "IIR scalabilité perpendiculaire.png" by JJ.FLEURY, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:IIR_scalabilit%C3%A9_perpendiculaire.png
 - `public/images/fabio-fl-protocol-online.png`: "Centralized federated learning protocol.png" from Wikimedia Commons, used as an educational federated-learning visual reference. https://commons.wikimedia.org/wiki/File:Centralized_federated_learning_protocol.png
+- FedAvg slide references: McMahan et al., "Communication-Efficient Learning of Deep Networks from Decentralized Data," https://arxiv.org/abs/1602.05629; Sun et al., "Decentralized Federated Averaging," https://arxiv.org/abs/2104.11375; Nguyen et al., "Federated Learning Meets Blockchain in Edge Computing," https://arxiv.org/abs/2104.01776
 - `public/images/fabio-iclr-logo-online.svg`: International Conference on Learning Representations logo, downloaded from Wikipedia media storage and used as an event/context reference. https://en.wikipedia.org/wiki/International_Conference_on_Learning_Representations
 - `public/images/slide-4-ai-meaning-online.jpg`: abstract neural-network sphere image by Growtika, downloaded from Unsplash search results during an earlier slide 4 draft. Current slide 4 no longer uses this image. Source image URL: https://images.unsplash.com/photo-1674027444485-cec3da58eef4
 - Slide 4 quote references: Alan Turing, "Computing Machinery and Intelligence" (1950), https://doi.org/10.1093/mind/LIX.236.433; John McCarthy, "What is Artificial Intelligence?", https://www-formal.stanford.edu/jmc/whatisai/node1.html; Tesler's theorem reference, https://en.wikipedia.org/wiki/AI_effect
@@ -140,6 +162,40 @@ The custom stylesheet includes safe-area constraints, a framed image container, 
 - `public/images/ml-problem-regression-scatter.png`: PNG preview of "Scatter diagram for quality characteristic XXX.svg" by DanielPenfield, Wikimedia Commons, CC BY-SA 3.0 / GFDL. https://commons.wikimedia.org/wiki/File:Scatter_diagram_for_quality_characteristic_XXX.svg
 - `public/images/ml-problem-classification-svm.png`: PNG preview of "Svm separating hyperplanes (SVG).svg" by ZackWeinberg, based on PNG by Cyc, Wikimedia Commons, CC BY-SA 3.0. https://commons.wikimedia.org/wiki/File:Svm_separating_hyperplanes_(SVG).svg
 - `public/images/ml-problem-clustering-kmeans.png`: PNG preview of "Rosa Gold Glow 2 small noblue color space.png" by Dcoetzee, Wikimedia Commons, public domain. https://commons.wikimedia.org/wiki/File:Rosa_Gold_Glow_2_small_noblue_color_space.png
+- `public/images/forward-desktop.png`: user-provided forward propagation image copied from the local Desktop for slide 14.
+- `public/images/loss-huber-curve.svg`: "Huber loss.svg" by Qwertyus, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Huber_loss.svg
+- `public/images/loss-hinge-vs-zero-one.svg`: "Hinge loss vs zero one loss.svg" by Qwertyus, Wikimedia Commons, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Hinge_loss_vs_zero_one_loss.svg
+- `public/images/tool-python.svg`, `tool-jupyter.svg`, `tool-numpy.svg`, `tool-pandas.svg`, `tool-scikitlearn.svg`, `tool-pytorch.svg`, `tool-tensorflow.svg`, `tool-huggingface.svg`, `tool-langchain.svg`, `tool-docker.svg`, and `tool-git.svg`: brand icons downloaded from Simple Icons CDN, licensed CC0-1.0. https://simpleicons.org/
+
+### Foundation model case-study sources
+
+- `public/images/fm-gpt3-scaling.png` and `fm-gpt3-metalearning.png`: figures from OpenAI, "Language Models are Few-Shot Learners" / GPT-3 paper. https://arxiv.org/abs/2005.14165
+- `public/images/fm-instructgpt-rlhf.png`: RLHF pipeline figure from OpenAI, "Training language models to follow instructions with human feedback." https://arxiv.org/abs/2203.02155
+- `public/images/fm-clip-architecture.png`: CLIP architecture figure from OpenAI, "Learning Transferable Visual Models From Natural Language Supervision." https://arxiv.org/abs/2103.00020
+- `public/images/fm-flamingo-architecture.png`: Flamingo architecture figure from DeepMind, "Flamingo: a Visual Language Model for Few-Shot Learning." https://arxiv.org/abs/2204.14198
+- `public/images/fm-blip2-overview.png`: BLIP-2 overview figure from Salesforce Research, "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models." https://arxiv.org/abs/2301.12597
+- `public/images/fm-llama-training-loss.png`: LLaMA training-loss figure from Meta AI, "LLaMA: Open and Efficient Foundation Language Models." https://arxiv.org/abs/2302.13971
+- `public/images/fm-mistral-header.jpeg` and `fm-mistral-swa.png`: figures from Mistral AI, "Mistral 7B." https://arxiv.org/abs/2310.06825
+- `public/images/fm-deepseek-v2-architecture.png`: architecture figure from DeepSeek-AI, "DeepSeek-V2." https://arxiv.org/abs/2405.04434
+- `public/images/fm-deepseek-v3-architecture.png`: architecture figure from DeepSeek-AI, "DeepSeek-V3 Technical Report." https://arxiv.org/abs/2412.19437
+- `public/images/fm-o1-agentic.png`: agentic task evaluation figure from OpenAI, "OpenAI o1 System Card." https://arxiv.org/abs/2412.16720
+- `public/images/fm-gpt4o-autonomy.png`: model autonomy evaluation figure from OpenAI, "GPT-4o System Card." https://arxiv.org/abs/2410.21276
+- `public/images/fm-deepseek-r1-aime.png` and `fm-deepseek-r1-length.png`: figures from DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." https://arxiv.org/abs/2501.12948
+- `public/images/fm-distilbert-params.png`: model-size/performance figure from Hugging Face, "DistilBERT, a distilled version of BERT." https://arxiv.org/abs/1910.01108
+- `public/images/fm-dalle-dvae.png` and `fm-dalle-samples.jpg`: figures from OpenAI, "Zero-Shot Text-to-Image Generation." https://arxiv.org/abs/2102.12092
+- `public/images/fm-stable-diffusion-ldm.png` and `fm-stable-diffusion-compression.jpg`: figures from "High-Resolution Image Synthesis with Latent Diffusion Models." https://arxiv.org/abs/2112.10752
+- `public/images/fm-rt2-architecture.png` and `fm-rt2-capabilities.png`: figures from Google DeepMind, "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control." https://arxiv.org/abs/2307.15818
+- `public/images/fm-rtx-architecture.png` and `fm-rtx-dataset.png`: figures from Google DeepMind and Open X-Embodiment collaborators, "Open X-Embodiment: Robotic Learning Datasets and RT-X Models." https://arxiv.org/abs/2310.08864
+- `public/images/fm-groot-overview.png` and `fm-groot-architecture.png`: figures from NVIDIA, "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots." https://arxiv.org/abs/2503.14734
+- `public/images/fm-claude-constitutional-ai.png`: Constitutional AI process figure from Anthropic, "Constitutional AI: Harmlessness from AI Feedback." https://arxiv.org/abs/2212.08073
+- `public/images/fm-gemini-og.png`: official Gemini public preview image from Google. https://gemini.google.com/
+- `public/images/fm-claude-og.jpg`: official Claude public preview image from Anthropic. https://www.anthropic.com/claude
+- `public/images/fm-manus-og.png`: official Manus public preview image. https://manus.im/
+- `public/images/fm-autogpt-logo.svg`: AutoGPT logo from Wikimedia Commons redirect; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/Special:Redirect/file/AutoGPT_Logo_(2024-present).svg
+- `public/images/fm-chatgpt-logo.png`: ChatGPT logo downloaded through Wikimedia Commons redirect; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/Special:Redirect/file/ChatGPT-Logo.png
+- `public/images/fm-gemini-logo.svg`: Google Gemini logo downloaded through Wikimedia Commons redirect; source and license metadata listed on the file page. https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Gemini_logo.svg
+- `public/images/tool-meta.svg`, `tool-mistralai.svg`, `tool-anthropic.svg`, `tool-deepseek.svg`, `tool-googlegemini.svg`, and `tool-nvidia.svg`: brand icons downloaded from Simple Icons CDN, licensed CC0-1.0. https://simpleicons.org/
+- Factual/product sources for closed or productized models where internal architecture diagrams are not public: OpenAI ChatGPT launch, https://openai.com/index/chatgpt/; OpenAI Operator announcement, https://openai.com/index/introducing-operator/; Google Gemini technical report, https://arxiv.org/abs/2312.11805; Anthropic Claude overview, https://www.anthropic.com/claude; Manus overview, https://manus.im/
 
 ### Future AI Frontiers case-study sources
 
